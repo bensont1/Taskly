@@ -10,4 +10,7 @@
 
 @interface Task : NSObject
 
+@property NSString *title;
+@property NSString *detailedInfo;
+
 @end

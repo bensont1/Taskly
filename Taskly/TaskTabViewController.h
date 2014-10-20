@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TaskTabViewController : UIViewController
+@interface TaskTabViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
