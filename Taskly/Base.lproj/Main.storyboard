@@ -84,6 +84,9 @@
                                     <navigationItem title="Task Details" id="hgR-hK-cNf"/>
                                 </items>
                             </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oH6-PW-prF">
+                                <rect key="frame" x="0.0" y="255" width="600" height="296"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -93,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8y-sq-S6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186" y="-1056"/>
+            <point key="canvasLocation" x="186" y="-1066"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -107,23 +110,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Fill out any additional details here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8w-7E-5WS">
-                                <rect key="frame" x="0.0" y="130" width="600" height="421"/>
-                                <color key="backgroundColor" white="0.90371236313868608" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What do you need done?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utn-Ue-ooe">
                                 <rect key="frame" x="0.0" y="64" width="600" height="67"/>
                                 <color key="backgroundColor" white="0.80078125" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Fill out additional details here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XyA-r6-e2X">
+                                <rect key="frame" x="0.0" y="131" width="600" height="420"/>
+                                <color key="backgroundColor" white="0.89817708333333335" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="utn-Ue-ooe" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="NWv-8Z-YX5"/>
-                            <constraint firstAttribute="width" secondItem="d8w-7E-5WS" secondAttribute="width" id="kAw-Nu-dQd"/>
+                            <constraint firstItem="XyA-r6-e2X" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="yGX-xv-4Mw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="44H-mz-st2">
@@ -150,16 +153,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What's your budget?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OT7-lh-pEh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What's your budget?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OT7-lh-pEh">
                                 <rect key="frame" x="0.0" y="64" width="384" height="50"/>
                                 <color key="backgroundColor" white="0.90091811131386867" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Fixed? Negotiable?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duo-Ti-6Xc">
-                                <rect key="frame" x="383" y="64" width="217" height="50"/>
-                                <color key="backgroundColor" white="0.90091811129999999" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="When do you need it done?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHc-Vy-Qpg">
@@ -177,12 +174,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aMj-u7-n2v">
+                                <rect key="frame" x="419" y="75" width="159" height="29"/>
+                                <segments>
+                                    <segment title="Fixed"/>
+                                    <segment title="Negotiable"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WPm-Rl-6Ie" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="5Rl-Sv-kb1"/>
                             <constraint firstItem="omq-26-yP9" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="FMH-qS-Iq4"/>
-                            <constraint firstAttribute="width" secondItem="OT7-lh-pEh" secondAttribute="width" id="IVy-5W-lzQ"/>
                             <constraint firstItem="KHc-Vy-Qpg" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="cNv-Rd-TkB"/>
                         </constraints>
                     </view>
