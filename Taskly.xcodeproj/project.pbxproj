@@ -38,6 +38,7 @@
 		3951493C19F5C2F10063C4CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493B19F5C2F00063C4CF /* SystemConfiguration.framework */; };
 		3951493E19F5C2F50063C4CF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493D19F5C2F50063C4CF /* Social.framework */; };
 		3951494019F5C2F90063C4CF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493F19F5C2F90063C4CF /* Accounts.framework */; };
+		3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494619F5C88B0063C4CF /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		3951493B19F5C2F00063C4CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3951493D19F5C2F50063C4CF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3951493F19F5C2F90063C4CF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		3951494519F5C88B0063C4CF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3951494619F5C88B0063C4CF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 		390A28AF19EBC0E5009976F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3951494519F5C88B0063C4CF /* SettingsViewController.h */,
+				3951494619F5C88B0063C4CF /* SettingsViewController.m */,
 				390A28B619EBC41E009976F7 /* TaskDetailViewController.h */,
 				390A28B719EBC41E009976F7 /* TaskDetailViewController.m */,
 				390A28AC19EBC0DF009976F7 /* TaskTabViewController.h */,
@@ -337,6 +342,7 @@
 				390A28B519EBC330009976F7 /* Task.m in Sources */,
 				390A28B819EBC41E009976F7 /* TaskDetailViewController.m in Sources */,
 				390A288519EBAB48009976F7 /* AppDelegate.m in Sources */,
+				3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */,
 				390A288219EBAB48009976F7 /* main.m in Sources */,
 				390A28B219EBC27B009976F7 /* TaskManager.m in Sources */,
 				390A28AE19EBC0DF009976F7 /* TaskTabViewController.m in Sources */,

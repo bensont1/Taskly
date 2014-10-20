@@ -196,7 +196,7 @@
         <!--Account-->
         <scene sceneID="1Wa-5m-hRz">
             <objects>
-                <viewController id="6ED-uk-49a" sceneMemberID="viewController">
+                <viewController id="6ED-uk-49a" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mJ3-r8-eBN"/>
                         <viewControllerLayoutGuide type="bottom" id="LrL-5f-Vyw"/>
@@ -204,6 +204,17 @@
                     <view key="view" contentMode="scaleToFill" id="ebL-BM-3c8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKh-UG-FHQ">
+                                <rect key="frame" x="276" y="179" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="performLogout:" destination="6ED-uk-49a" eventType="touchUpInside" id="2Fb-D7-ObH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" selectedImage="first" id="2xN-iP-WjJ"/>
