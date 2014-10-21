@@ -42,6 +42,7 @@
 		3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */; };
 		3951495119F5FA130063C4CF /* stepper_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951494F19F5FA130063C4CF /* stepper_up.png */; };
 		3951495219F5FA130063C4CF /* stepper_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951495019F5FA130063C4CF /* stepper_down.png */; };
+		395C2E1619F6099900C21DBD /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 395C2E1519F6099900C21DBD /* NewTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskDetailViewController.m; sourceTree = "<group>"; };
 		3951494F19F5FA130063C4CF /* stepper_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_up.png; sourceTree = "<group>"; };
 		3951495019F5FA130063C4CF /* stepper_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_down.png; sourceTree = "<group>"; };
+		395C2E1419F6099900C21DBD /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskViewController.h; sourceTree = "<group>"; };
+		395C2E1519F6099900C21DBD /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 				390A28B419EBC330009976F7 /* Task.m */,
 				390A28AF19EBC0E5009976F7 /* ViewControllers */,
 				390A288C19EBAB48009976F7 /* Main.storyboard */,
+				395C2E1419F6099900C21DBD /* NewTaskViewController.h */,
+				395C2E1519F6099900C21DBD /* NewTaskViewController.m */,
 				3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */,
 				3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */,
 				390A288F19EBAB48009976F7 /* Images.xcassets */,
@@ -354,6 +359,7 @@
 			files = (
 				390A28B519EBC330009976F7 /* Task.m in Sources */,
 				390A28B819EBC41E009976F7 /* TaskDetailViewController.m in Sources */,
+				395C2E1619F6099900C21DBD /* NewTaskViewController.m in Sources */,
 				390A288519EBAB48009976F7 /* AppDelegate.m in Sources */,
 				3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */,
 				390A288219EBAB48009976F7 /* main.m in Sources */,

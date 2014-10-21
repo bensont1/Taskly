@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="186" y="-1056"/>
         </scene>
-        <!--View Controller-->
+        <!--New Task View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="NewTaskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -95,20 +95,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What do you need done?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utn-Ue-ooe">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What do you need done?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utn-Ue-ooe">
                                 <rect key="frame" x="0.0" y="64" width="600" height="67"/>
-                                <color key="backgroundColor" white="0.80078125" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.73964707167832155" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Fill out additional details here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XyA-r6-e2X">
-                                <rect key="frame" x="0.0" y="131" width="600" height="420"/>
-                                <color key="backgroundColor" white="0.89817708333333335" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's your budget?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-4N-cNS">
+                                <rect key="frame" x="0.0" y="223" width="220" height="70"/>
+                                <color key="backgroundColor" white="0.75410879630000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nIb-R1-uRW">
+                                <rect key="frame" x="0.0" y="329" width="600" height="225"/>
+                                <date key="date" timeIntervalSinceReferenceDate="435554535.12396002">
+                                    <!--2014-10-21 03:22:15 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="When do you need it done by?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMX-7D-XfU">
+                                <rect key="frame" x="0.0" y="293" width="600" height="36"/>
+                                <color key="backgroundColor" white="0.85434877622377625" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxH-FJ-Vy9">
+                                <rect key="frame" x="220" y="223" width="380" height="70"/>
+                                <color key="backgroundColor" white="0.74789663461538458" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCS-0z-bPW">
+                                <rect key="frame" x="365" y="243" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lB-J2-m9z">
+                                <rect key="frame" x="323" y="235" width="39" height="23"/>
+                                <state key="normal" image="stepper_up.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="K48-S7-DOZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClV-Gi-JG8">
+                                <rect key="frame" x="323" y="258" width="39" height="23"/>
+                                <state key="normal" image="stepper_down.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="NTe-fe-cxN"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Fill in additional details here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-fo-dep">
+                                <rect key="frame" x="0.0" y="131" width="600" height="92"/>
+                                <color key="backgroundColor" white="0.90166083916083917" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y4y-fo-dep" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="Awm-EG-sjr"/>
+                            <constraint firstItem="utn-Ue-ooe" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="Gh9-zS-RI1"/>
+                            <constraint firstAttribute="width" secondItem="GMX-7D-XfU" secondAttribute="width" id="jN1-ir-KTv"/>
+                            <constraint firstAttribute="width" secondItem="nIb-R1-uRW" secondAttribute="width" id="zpU-ub-NLy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="44H-mz-st2">
                         <barButtonItem key="rightBarButtonItem" title="Continue" id="hlk-EM-mmg">
@@ -117,10 +175,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="hourMinutePicker" destination="nIb-R1-uRW" id="MJI-RZ-ZXk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="-376"/>
+            <point key="canvasLocation" x="-540" y="-358"/>
         </scene>
         <!--New Task Detail View Controller-->
         <scene sceneID="rCK-nH-upp">
@@ -134,137 +195,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OT7-lh-pEh">
-                                <rect key="frame" x="220" y="64" width="380" height="50"/>
-                                <color key="backgroundColor" white="0.90091811131386867" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXp-m6-gt1">
-                                <rect key="frame" x="220" y="114" width="380" height="50"/>
-                                <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-Rl-6Ie">
-                                <rect key="frame" x="0.0" y="214" width="600" height="342"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="362"/>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. 123 Londonderry Road, Oslo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omq-26-yP9">
-                                <rect key="frame" x="220" y="164" width="380" height="50"/>
-                                <color key="backgroundColor" white="0.74774749087591252" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When do you need it done?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-hi-5l1">
-                                <rect key="frame" x="0.0" y="114" width="220" height="50"/>
-                                <color key="backgroundColor" white="0.89568865740740744" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where's your task?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urv-rD-nh3">
-                                <rect key="frame" x="0.0" y="164" width="220" height="50"/>
-                                <color key="backgroundColor" white="0.80196759259259254" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's your budget?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoY-MU-L5t">
-                                <rect key="frame" x="0.0" y="64" width="220" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Where are you located?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoY-MU-L5t">
+                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                                 <color key="backgroundColor" white="0.75410879629629635" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFW-qo-b2q">
-                                <rect key="frame" x="274" y="116" width="39" height="23"/>
-                                <state key="normal" image="stepper_up.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="incrementHour:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="HMx-Wc-rBp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ta6-ew-jzY">
-                                <rect key="frame" x="348" y="67" width="39" height="23"/>
-                                <state key="normal" image="stepper_up.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="incrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="t9d-Z1-pmD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4J-At-Tof">
-                                <rect key="frame" x="388" y="116" width="39" height="23"/>
-                                <state key="normal" image="stepper_up.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="incrementMinutes:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="hWi-IH-pBL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip3-bX-S32">
-                                <rect key="frame" x="274" y="139" width="39" height="23"/>
-                                <state key="normal" image="stepper_down.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="decrementHour:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="CLx-h1-F6j"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAq-zY-Lme">
-                                <rect key="frame" x="348" y="90" width="39" height="23"/>
-                                <state key="normal" image="stepper_down.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="decrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="1aY-6q-v9p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GL4-1u-rSZ">
-                                <rect key="frame" x="388" y="139" width="39" height="23"/>
-                                <state key="normal" image="stepper_down.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="decrementMinutes:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="dUf-fK-cwz"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 hour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaY-86-Khe">
-                                <rect key="frame" x="320" y="122" width="67" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-0a-eI8">
-                                <rect key="frame" x="435" y="122" width="95" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngt-A5-Nhi">
-                                <rect key="frame" x="390" y="75" width="90" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTm-34-V99">
+                                <rect key="frame" x="0.0" y="476" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WPm-Rl-6Ie" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="5Rl-Sv-kb1"/>
+                            <constraint firstItem="BTm-34-V99" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="7d0-Or-9Eq"/>
+                            <constraint firstItem="GoY-MU-L5t" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="dMh-lC-gDT"/>
+                            <constraint firstItem="WPm-Rl-6Ie" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="lkR-SI-95t"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="hoursLabel" destination="QaY-86-Khe" id="W9h-Bh-lam"/>
-                        <outlet property="minutesLabel" destination="kFc-0a-eI8" id="NH7-sp-yfa"/>
-                        <outlet property="priceLabel" destination="ngt-A5-Nhi" id="mFN-YW-BPz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4T-vH-gpy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186" y="-376"/>
+            <point key="canvasLocation" x="186" y="-358"/>
         </scene>
         <!--Account-->
         <scene sceneID="1Wa-5m-hRz">
