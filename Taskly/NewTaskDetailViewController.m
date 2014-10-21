@@ -42,6 +42,7 @@
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        MKPlacemark *MKplacemark = [[MKPlacemark alloc] initWithPlacemark:placemark];
         MKCoordinateRegion region;
         region.center.latitude = placemark.region.center.latitude;
         region.center.longitude = placemark.region.center.longitude;
@@ -54,6 +55,8 @@
         region.span = span;
         
         [self.mapView setRegion:region animated:YES];
+        [self.mapView addAnnotation:MKplacemark];
+
     }];
 }
 
