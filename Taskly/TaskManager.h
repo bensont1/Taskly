@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Task.h"
 
 @interface TaskManager : NSObject
+
++(NSMutableArray*)getTasks;
 
 @end

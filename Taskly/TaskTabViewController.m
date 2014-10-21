@@ -18,7 +18,45 @@
 @implementation TaskTabViewController {
     NSMutableArray *tasks;
     Task *selectedTask;
+    
+    NSString *titleTextKey;
+    NSString *detailTextKey;
+    NSString *priceTextKey;
 }
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aCoder {
+    self = [super initWithCoder:aCoder];
+    if (self) {
+        // The className to query on
+        self.parseClassName = @"Tasks";
+        
+        titleTextKey = @"title";
+        detailTextKey = @"detail";
+        priceTextKey = @"price";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = YES;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = YES;
+        
+        // The number of objects to show per page
+        self.objectsPerPage = 25;
+    }
+    return self;
+}
+
+
+#pragma mark - Parse Implementation
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -112,44 +150,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO; //removes weird space above first cell
-    
-    Task *task1 = [[Task alloc] init];
-    task1.title = @"TASK";
-    task1.detailedInfo = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam";
-    
-    Task *task2 = [[Task alloc] init];
-    task2.title = @"TASK";
-    task2.detailedInfo = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam";
-    
-    Task *task3 = [[Task alloc] init];
-    task3.title = @"TASK";
-    task3.detailedInfo = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam";
-    
-    Task *task4 = [[Task alloc] init];
-    task4.title = @"TASK";
-    task4.detailedInfo = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam";
-    
-    Task *task5 = [[Task alloc] init];
-    task5.title = @"TASK";
-    task5.detailedInfo = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam";
-    tasks = [[NSMutableArray alloc] initWithObjects:task1, task2, task3, task4, task5, nil];
+    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    //self.automaticallyAdjustsScrollViewInsets = NO; //removes weird space above first cell
 }
 
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return tasks.count;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell" forIndexPath:indexPath];
-    Task *currentTask = tasks[indexPath.row];
-    
-    cell.textLabel.text = currentTask.title;
-    cell.detailTextLabel.text = currentTask.detailedInfo;
-    
+    cell.textLabel.text = [object objectForKey:titleTextKey];
+    cell.detailTextLabel.text = [object objectForKey:detailTextKey];
+    NSLog(@"Config Cell: %@", [object objectForKey:titleTextKey]);
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

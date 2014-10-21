@@ -21,7 +21,6 @@
 		390A28B819EBC41E009976F7 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A28B719EBC41E009976F7 /* TaskDetailViewController.m */; };
 		390A28C019EBC970009976F7 /* hamburger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 390A28BF19EBC970009976F7 /* hamburger_icon.png */; };
 		3951492019F5C28F0063C4CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951491D19F5C28F0063C4CF /* Bolts.framework */; };
-		3951492119F5C28F0063C4CF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951491E19F5C28F0063C4CF /* Parse.framework */; };
 		3951492219F5C28F0063C4CF /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951491F19F5C28F0063C4CF /* ParseFacebookUtils.framework */; };
 		3951492419F5C2980063C4CF /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951492319F5C2980063C4CF /* Twitter.framework */; };
 		3951492619F5C2AF0063C4CF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951492519F5C2AF0063C4CF /* ImageIO.framework */; };
@@ -39,6 +38,7 @@
 		3951493E19F5C2F50063C4CF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493D19F5C2F50063C4CF /* Social.framework */; };
 		3951494019F5C2F90063C4CF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493F19F5C2F90063C4CF /* Accounts.framework */; };
 		3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494619F5C88B0063C4CF /* SettingsViewController.m */; };
+		3951494B19F5EB7D0063C4CF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951491E19F5C28F0063C4CF /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3951494B19F5EB7D0063C4CF /* Parse.framework in Frameworks */,
 				3951494019F5C2F90063C4CF /* Accounts.framework in Frameworks */,
 				3951493E19F5C2F50063C4CF /* Social.framework in Frameworks */,
 				3951493C19F5C2F10063C4CF /* SystemConfiguration.framework in Frameworks */,
@@ -117,7 +118,6 @@
 				3951492619F5C2AF0063C4CF /* ImageIO.framework in Frameworks */,
 				3951492419F5C2980063C4CF /* Twitter.framework in Frameworks */,
 				3951492019F5C28F0063C4CF /* Bolts.framework in Frameworks */,
-				3951492119F5C28F0063C4CF /* Parse.framework in Frameworks */,
 				3951492219F5C28F0063C4CF /* ParseFacebookUtils.framework in Frameworks */,
 				390A28AB19EBB8E1009976F7 /* MapKit.framework in Frameworks */,
 				390A28A919EBACF6009976F7 /* UIKit.framework in Frameworks */,

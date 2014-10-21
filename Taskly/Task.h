@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface Task : NSObject
 
 @property NSString *title;
-@property NSString *detailedInfo;
+@property NSString *detail;
+@property NSNumber *price;
+@property PFUser *user;
 
 @end
