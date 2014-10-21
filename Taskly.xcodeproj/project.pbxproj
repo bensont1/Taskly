@@ -39,6 +39,9 @@
 		3951494019F5C2F90063C4CF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493F19F5C2F90063C4CF /* Accounts.framework */; };
 		3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494619F5C88B0063C4CF /* SettingsViewController.m */; };
 		3951494B19F5EB7D0063C4CF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951491E19F5C28F0063C4CF /* Parse.framework */; };
+		3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */; };
+		3951495119F5FA130063C4CF /* stepper_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951494F19F5FA130063C4CF /* stepper_up.png */; };
+		3951495219F5FA130063C4CF /* stepper_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951495019F5FA130063C4CF /* stepper_down.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,10 @@
 		3951493F19F5C2F90063C4CF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3951494519F5C88B0063C4CF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3951494619F5C88B0063C4CF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskDetailViewController.h; sourceTree = "<group>"; };
+		3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskDetailViewController.m; sourceTree = "<group>"; };
+		3951494F19F5FA130063C4CF /* stepper_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_up.png; sourceTree = "<group>"; };
+		3951495019F5FA130063C4CF /* stepper_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_down.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +171,8 @@
 				390A28B419EBC330009976F7 /* Task.m */,
 				390A28AF19EBC0E5009976F7 /* ViewControllers */,
 				390A288C19EBAB48009976F7 /* Main.storyboard */,
+				3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */,
+				3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */,
 				390A288F19EBAB48009976F7 /* Images.xcassets */,
 				390A289119EBAB48009976F7 /* LaunchScreen.xib */,
 				390A287F19EBAB48009976F7 /* Supporting Files */,
@@ -174,6 +183,8 @@
 		390A287F19EBAB48009976F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3951494F19F5FA130063C4CF /* stepper_up.png */,
+				3951495019F5FA130063C4CF /* stepper_down.png */,
 				390A28BF19EBC970009976F7 /* hamburger_icon.png */,
 				390A288019EBAB48009976F7 /* Info.plist */,
 				390A288119EBAB48009976F7 /* main.m */,
@@ -318,6 +329,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3951495119F5FA130063C4CF /* stepper_up.png in Resources */,
+				3951495219F5FA130063C4CF /* stepper_down.png in Resources */,
 				390A288E19EBAB48009976F7 /* Main.storyboard in Resources */,
 				390A289319EBAB48009976F7 /* LaunchScreen.xib in Resources */,
 				390A28C019EBC970009976F7 /* hamburger_icon.png in Resources */,
@@ -346,6 +359,7 @@
 				390A288219EBAB48009976F7 /* main.m in Sources */,
 				390A28B219EBC27B009976F7 /* TaskManager.m in Sources */,
 				390A28AE19EBC0DF009976F7 /* TaskTabViewController.m in Sources */,
+				3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
