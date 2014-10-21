@@ -49,15 +49,12 @@
         region.center.longitude = placemark.region.center.longitude;
         MKCoordinateSpan span;
         double radius = placemark.region.radius / 1000; // convert to km
-        
-        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
         span.latitudeDelta = radius / 112.0;
-        
         region.span = span;
-        
         [self.mapView setRegion:region animated:YES];
         [self.mapView addAnnotation:MKplacemark];
         location = placemark;
+        
         NSLog([self printLocationFromPlacemark:location]);
     }];
 }

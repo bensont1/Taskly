@@ -15,6 +15,7 @@
 @property NSString *details;
 @property NSNumber *price;
 @property CLPlacemark *location;
+@property NSNumber *duration; //duration stored as seconds, format correctly when needed
 @property PFUser *user;
 
 @end

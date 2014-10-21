@@ -11,6 +11,6 @@
 
 @interface TaskDetailViewController : UIViewController
 
-@property Task *task;
+@property PFObject *task;
 
 @end

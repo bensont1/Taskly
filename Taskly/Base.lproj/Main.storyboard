@@ -69,15 +69,73 @@
                                     <navigationItem title="Task Details" id="hgR-hK-cNf"/>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oH6-PW-prF">
-                                <rect key="frame" x="0.0" y="255" width="600" height="296"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Task Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOa-aU-bEE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="36"/>
+                                <color key="backgroundColor" white="0.85295563811188813" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time until expiration:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKu-8m-Pyv">
+                                <rect key="frame" x="0.0" y="204" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Task details" translatesAutoresizingMaskIntoConstraints="NO" id="650-dU-gck">
+                                <color key="backgroundColor" white="0.94648710664335667" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-mv-xoa">
+                                <rect key="frame" x="0.0" y="247" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCL-gI-sdi">
+                                <rect key="frame" x="0.0" y="223" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HFx-03-YH4">
+                                <rect key="frame" x="0.0" y="306" width="600" height="245"/>
                             </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Task details" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKs-T3-H6m">
+                                <rect key="frame" x="0.0" y="99" width="600" height="97"/>
+                                <color key="backgroundColor" white="0.94648710660000002" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6q-cj-DVL">
+                                <rect key="frame" x="0.0" y="269" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6vy-KO-OTA" firstAttribute="width" secondItem="qnV-Ju-WdM" secondAttribute="width" id="AGE-r1-ehp"/>
+                            <constraint firstAttribute="width" secondItem="c6q-cj-DVL" secondAttribute="width" id="CLh-Mj-6hQ"/>
+                            <constraint firstItem="pKu-8m-Pyv" firstAttribute="width" secondItem="qnV-Ju-WdM" secondAttribute="width" id="Dx7-Yz-iFQ"/>
+                            <constraint firstAttribute="width" secondItem="Xfx-mv-xoa" secondAttribute="width" id="W9P-OU-E2J"/>
+                            <constraint firstItem="GOa-aU-bEE" firstAttribute="width" secondItem="qnV-Ju-WdM" secondAttribute="width" id="hYC-Ti-HEP"/>
+                            <constraint firstItem="lKs-T3-H6m" firstAttribute="width" secondItem="qnV-Ju-WdM" secondAttribute="width" id="jaD-Zf-e7e"/>
+                            <constraint firstItem="HFx-03-YH4" firstAttribute="width" secondItem="qnV-Ju-WdM" secondAttribute="width" id="thu-9c-LX1"/>
+                            <constraint firstAttribute="width" secondItem="WCL-gI-sdi" secondAttribute="width" id="vlk-FA-3Fd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="expirationlabel" destination="WCL-gI-sdi" id="eMi-nr-gcH"/>
+                        <outlet property="mapView" destination="HFx-03-YH4" id="qdq-JK-5l5"/>
+                        <outlet property="priceLabel" destination="c6q-cj-DVL" id="LHh-x3-Y3G"/>
+                        <outlet property="taskDetails" destination="lKs-T3-H6m" id="kBS-oU-7c3"/>
+                        <outlet property="taskTitle" destination="GOa-aU-bEE" id="5wj-JQ-l6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8y-sq-S6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,7 +280,6 @@
                             <constraint firstItem="WPm-Rl-6Ie" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="5Rl-Sv-kb1"/>
                             <constraint firstItem="BTm-34-V99" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="7d0-Or-9Eq"/>
                             <constraint firstItem="GoY-MU-L5t" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="dMh-lC-gDT"/>
-                            <constraint firstItem="WPm-Rl-6Ie" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="lkR-SI-95t"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

@@ -15,10 +15,11 @@
     [newTask setObject:task.title forKey:@"title"];
     [newTask setObject:task.details forKey:@"details"];
     [newTask setObject:task.price forKey:@"price"];
+    [newTask setObject:task.duration forKey:@"duration"];
     
     NSString *locationString = [self locationFromPlacemark:task.location];
     [newTask setObject:locationString forKey:@"location"];
-
+    
     [newTask saveInBackground];
 }
 

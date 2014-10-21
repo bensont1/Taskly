@@ -17,7 +17,7 @@
 
 @implementation TaskTabViewController {
     NSMutableArray *tasks;
-    Task *selectedTask;
+    PFObject *selectedTask;
     
     NSString *titleTextKey;
     NSString *detailTextKey;
@@ -159,14 +159,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell" forIndexPath:indexPath];
     cell.textLabel.text = [object objectForKey:titleTextKey];
     cell.detailTextLabel.text = [object objectForKey:detailTextKey];
-    NSLog(@"Config Cell: %@", [object objectForKey:titleTextKey]);
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    selectedTask = tasks[indexPath.row];
+    selectedTask = [self.objects objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"segueToTaskDetail" sender:self];
-    
 }
 
 

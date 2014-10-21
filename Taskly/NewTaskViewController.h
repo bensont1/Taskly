@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Task.h"
 
 @interface NewTaskViewController : UIViewController
+
+@property Task *task;
 
 @end

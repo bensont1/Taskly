@@ -11,7 +11,6 @@
 #import "Task.h"
 
 @interface NewTaskViewController ()
-@property Task *task;
 @property (weak, nonatomic) IBOutlet UITextField *taskTitleField;
 @property (weak, nonatomic) IBOutlet UITextView *additionalDetailField;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
@@ -54,6 +53,7 @@
     self.task.title = self.taskTitleField.text;
     self.task.details = self.additionalDetailField.text;
     self.task.price = [NSNumber numberWithFloat:price];
+    self.task.duration = [NSNumber numberWithInt:self.hourMinutePicker.countDownDuration]; //picker gives seconds only so store as seconds
 }
 
 
