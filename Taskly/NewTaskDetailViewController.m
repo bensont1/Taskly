@@ -77,6 +77,8 @@
     else {
         self.task.location = location;
         [TaskManager addTask:self.task];
+        [self showTaskAddedAlert];
+        //[self performSegueWithIdentifier:@"backToAddTaskMainView" sender:self];
     }
 }
 
@@ -94,6 +96,14 @@
     }
     
     return YES;
+}
+
+-(void)showTaskAddedAlert {
+    [[[UIAlertView alloc] initWithTitle:@"Task Added!"
+                                message:@"Your task has been added successfully! Hopefully it will be filled soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 -(void)showInvalidLocationAlert {
