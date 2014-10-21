@@ -14,6 +14,7 @@
 @property NSString *title;
 @property NSString *detail;
 @property NSNumber *price;
+@property NSString *address; //change type to some type of location later
 @property PFUser *user;
 
 @end

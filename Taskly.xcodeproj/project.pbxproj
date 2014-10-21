@@ -18,7 +18,6 @@
 		390A28AE19EBC0DF009976F7 /* TaskTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A28AD19EBC0DF009976F7 /* TaskTabViewController.m */; };
 		390A28B219EBC27B009976F7 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A28B119EBC27B009976F7 /* TaskManager.m */; };
 		390A28B519EBC330009976F7 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A28B419EBC330009976F7 /* Task.m */; };
-		390A28B819EBC41E009976F7 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A28B719EBC41E009976F7 /* TaskDetailViewController.m */; };
 		390A28C019EBC970009976F7 /* hamburger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 390A28BF19EBC970009976F7 /* hamburger_icon.png */; };
 		3951492019F5C28F0063C4CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951491D19F5C28F0063C4CF /* Bolts.framework */; };
 		3951492219F5C28F0063C4CF /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951491F19F5C28F0063C4CF /* ParseFacebookUtils.framework */; };
@@ -75,8 +74,6 @@
 		390A28B119EBC27B009976F7 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
 		390A28B319EBC330009976F7 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		390A28B419EBC330009976F7 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
-		390A28B619EBC41E009976F7 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
-		390A28B719EBC41E009976F7 /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
 		390A28BF19EBC970009976F7 /* hamburger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_icon.png; sourceTree = "<group>"; };
 		3951491D19F5C28F0063C4CF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Resources/parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		3951491E19F5C28F0063C4CF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Resources/parse-library-1/Parse.framework"; sourceTree = "<group>"; };
@@ -174,10 +171,6 @@
 				390A28B419EBC330009976F7 /* Task.m */,
 				390A28AF19EBC0E5009976F7 /* ViewControllers */,
 				390A288C19EBAB48009976F7 /* Main.storyboard */,
-				395C2E1419F6099900C21DBD /* NewTaskViewController.h */,
-				395C2E1519F6099900C21DBD /* NewTaskViewController.m */,
-				3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */,
-				3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */,
 				390A288F19EBAB48009976F7 /* Images.xcassets */,
 				390A289119EBAB48009976F7 /* LaunchScreen.xib */,
 				390A287F19EBAB48009976F7 /* Supporting Files */,
@@ -217,10 +210,9 @@
 		390A28AF19EBC0E5009976F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				39CDCA7C19F62C5800108DCB /* New Task */,
 				3951494519F5C88B0063C4CF /* SettingsViewController.h */,
 				3951494619F5C88B0063C4CF /* SettingsViewController.m */,
-				390A28B619EBC41E009976F7 /* TaskDetailViewController.h */,
-				390A28B719EBC41E009976F7 /* TaskDetailViewController.m */,
 				390A28AC19EBC0DF009976F7 /* TaskTabViewController.h */,
 				390A28AD19EBC0DF009976F7 /* TaskTabViewController.m */,
 			);
@@ -252,6 +244,17 @@
 				390A28A819EBACF6009976F7 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39CDCA7C19F62C5800108DCB /* New Task */ = {
+			isa = PBXGroup;
+			children = (
+				395C2E1419F6099900C21DBD /* NewTaskViewController.h */,
+				395C2E1519F6099900C21DBD /* NewTaskViewController.m */,
+				3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */,
+				3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */,
+			);
+			name = "New Task";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +361,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				390A28B519EBC330009976F7 /* Task.m in Sources */,
-				390A28B819EBC41E009976F7 /* TaskDetailViewController.m in Sources */,
 				395C2E1619F6099900C21DBD /* NewTaskViewController.m in Sources */,
 				390A288519EBAB48009976F7 /* AppDelegate.m in Sources */,
 				3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */,

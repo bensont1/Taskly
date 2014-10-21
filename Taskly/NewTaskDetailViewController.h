@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import "Task.h"
 
-@interface NewTaskDetailViewController : UIViewController
+@interface NewTaskDetailViewController : UIViewController <UISearchBarDelegate>
+
+@property Task *task;
 
 @end

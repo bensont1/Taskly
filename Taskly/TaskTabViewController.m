@@ -7,7 +7,7 @@
 //
 
 #import "TaskTabViewController.h"
-#import "TaskDetailViewController.h"
+#import "NewTaskDetailViewController.h"
 #import "TaskManager.h"
 #import "Task.h"
 
@@ -171,7 +171,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    TaskDetailViewController *destination = segue.destinationViewController;
+    NewTaskDetailViewController *destination = segue.destinationViewController;
     destination.task = selectedTask;
 }
 

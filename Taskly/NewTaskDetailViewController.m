@@ -10,66 +10,51 @@
 
 @interface NewTaskDetailViewController ()
 
-- (IBAction)incrementPrice:(id)sender;
-- (IBAction)decrementPrice:(id)sender;
-- (IBAction)incrementHour:(id)sender;
-- (IBAction)decrementHour:(id)sender;
-- (IBAction)incrementMinutes:(id)sender;
-- (IBAction)decrementMinutes:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *hoursLabel;
-@property (weak, nonatomic) IBOutlet UILabel *minutesLabel;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
 @implementation NewTaskDetailViewController {
-    float price;
-    int hours;
-    int minutes;
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UIBarButtonItem *addTaskButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Add Task"
+                                   initWithTitle:@"Done"
                                    style:UIBarButtonItemStylePlain
                                    target:self
-                                      action:@selector(addTask:)];
+                                   action:@selector(addTask:)];
     self.navigationItem.rightBarButtonItem = addTaskButton;
-    
-    price = 10;
-    hours = 1;
-    minutes = 0;
 }
 
-- (IBAction)incrementPrice:(id)sender {
-    price++;
-    self.priceLabel.text = [NSString stringWithFormat:@"$%1.2f", price];
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    //@optional
 }
 
-- (IBAction)decrementPrice:(id)sender {
-    price--;
-    self.priceLabel.text = [NSString stringWithFormat:@"$%1.2f", price];
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    //@optional
 }
 
-- (IBAction)incrementHour:(id)sender {
-    hours++;
-    self.hoursLabel.text = [NSString stringWithFormat:@"%d hour", hours];
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        MKCoordinateRegion region;
+        region.center.latitude = placemark.region.center.latitude;
+        region.center.longitude = placemark.region.center.longitude;
+        MKCoordinateSpan span;
+        double radius = placemark.region.radius / 1000; // convert to km
+        
+        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
+        span.latitudeDelta = radius / 112.0;
+        
+        region.span = span;
+        
+        [self.mapView setRegion:region animated:YES];
+    }];
 }
 
-- (IBAction)decrementHour:(id)sender {
-    hours--;
-    self.hoursLabel.text = [NSString stringWithFormat:@"%d hour", hours];
-}
-
-- (IBAction)incrementMinutes:(id)sender {
-    minutes++;
-    self.minutesLabel.text = [NSString stringWithFormat:@"%d minutes", minutes];
-}
-
-- (IBAction)decrementMinutes:(id)sender {
-    minutes--;
-    self.minutesLabel.text = [NSString stringWithFormat:@"%d minutes", minutes];
-}
 @end
