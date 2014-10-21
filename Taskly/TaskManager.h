@@ -11,6 +11,6 @@
 
 @interface TaskManager : NSObject
 
-+(NSMutableArray*)getTasks;
++ (void)addTask:(Task *)task;
 
 @end

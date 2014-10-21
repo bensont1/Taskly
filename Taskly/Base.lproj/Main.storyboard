@@ -140,6 +140,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="incrementPrice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="EPM-HZ-BjZ"/>
                                     <action selector="incrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="K48-S7-DOZ"/>
                                 </connections>
                             </button>
@@ -149,7 +150,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="decrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="NTe-fe-cxN"/>
+                                    <action selector="decrementPrice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ghk-uT-CJ2"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Fill in additional details here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-fo-dep">
@@ -176,7 +177,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="hourMinutePicker" destination="nIb-R1-uRW" id="MJI-RZ-ZXk"/>
+                        <outlet property="additionalDetailField" destination="y4y-fo-dep" id="VXa-fO-ZFV"/>
+                        <outlet property="hourMinutePicker" destination="nIb-R1-uRW" id="r5A-eW-ioi"/>
+                        <outlet property="priceLabel" destination="BCS-0z-bPW" id="S42-D6-1QO"/>
+                        <outlet property="taskTitleField" destination="utn-Ue-ooe" id="ixz-eg-FCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

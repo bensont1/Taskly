@@ -12,9 +12,9 @@
 @interface Task : NSObject
 
 @property NSString *title;
-@property NSString *detail;
+@property NSString *details;
 @property NSNumber *price;
-@property NSString *address; //change type to some type of location later
+@property CLPlacemark *location;
 @property PFUser *user;
 
 @end

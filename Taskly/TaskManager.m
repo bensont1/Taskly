@@ -10,4 +10,35 @@
 
 @implementation TaskManager
 
++ (void)addTask:(Task *)task {
+    PFObject *newTask = [PFObject objectWithClassName:@"Tasks"];
+    [newTask setObject:task.title forKey:@"title"];
+    [newTask setObject:task.details forKey:@"details"];
+    [newTask setObject:task.price forKey:@"price"];
+    
+    NSString *locationString = [self locationFromPlacemark:task.location];
+    [newTask setObject:locationString forKey:@"location"];
+
+    [newTask saveInBackground];
+}
+
++ (NSString *)locationFromPlacemark:(CLPlacemark*)placemark {
+    NSString *formattedLocation;
+    
+    formattedLocation = [NSString stringWithFormat:@"%@, %@", placemark.locality, placemark.administrativeArea];
+    
+    //add address if available
+    if(placemark.subThoroughfare != nil) {
+        NSString *formattedLocationWithAddress = [NSString stringWithFormat:@"%@ %@, %@",
+                             placemark.subThoroughfare,
+                             placemark.thoroughfare,
+                             formattedLocation];
+        
+        return formattedLocationWithAddress;
+    }
+    else {
+        return formattedLocation;
+    }
+}
+
 @end

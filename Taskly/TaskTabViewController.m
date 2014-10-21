@@ -7,7 +7,7 @@
 //
 
 #import "TaskTabViewController.h"
-#import "NewTaskDetailViewController.h"
+#import "TaskDetailViewController.h"
 #import "TaskManager.h"
 #import "Task.h"
 
@@ -40,7 +40,7 @@
         self.parseClassName = @"Tasks";
         
         titleTextKey = @"title";
-        detailTextKey = @"detail";
+        detailTextKey = @"details";
         priceTextKey = @"price";
         
         // Whether the built-in pull-to-refresh is enabled
@@ -169,9 +169,12 @@
     
 }
 
+
+#pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NewTaskDetailViewController *destination = segue.destinationViewController;
+    TaskDetailViewController *destination = segue.destinationViewController;
     destination.task = selectedTask;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "NewTaskDetailViewController.h"
+#import "TaskManager.h"
 
 @interface NewTaskDetailViewController ()
 
@@ -15,18 +16,18 @@
 @end
 
 @implementation NewTaskDetailViewController {
-
+    CLPlacemark *location;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *addTaskButton = [[UIBarButtonItem alloc]
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Done"
                                    style:UIBarButtonItemStylePlain
                                    target:self
                                    action:@selector(addTask:)];
-    self.navigationItem.rightBarButtonItem = addTaskButton;
+    self.navigationItem.rightBarButtonItem = doneButton;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -56,8 +57,54 @@
         
         [self.mapView setRegion:region animated:YES];
         [self.mapView addAnnotation:MKplacemark];
-
+        location = placemark;
+        NSLog([self printLocationFromPlacemark:location]);
     }];
+}
+
+-(NSString*)printLocationFromPlacemark:(CLPlacemark*)placemark {
+    NSString *locationString = [NSString stringWithFormat:@"%@ %@\n%@ %@ %@\n%@",
+                   placemark.subThoroughfare, //street address #
+                   placemark.thoroughfare, //street
+                   placemark.locality, //city
+                   placemark.administrativeArea, //state
+                   placemark.postalCode, //zip code
+                   placemark.country]; //country
+    return locationString;
+}
+
+-(void)addTask:(UIButton *)sender {
+    if(![self verifyAddress]) {
+        [self showInvalidLocationAlert];
+    }
+    else {
+        self.task.location = location;
+        [TaskManager addTask:self.task];
+    }
+}
+
+-(BOOL)verifyAddress {
+    //must have city and state
+    if(location.locality == nil || location.administrativeArea == nil) {
+        return NO;
+    }
+    
+    //may not have street number without street name
+    if(location.subThoroughfare != nil) {
+        if(location.thoroughfare == nil) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+-(void)showInvalidLocationAlert {
+    [[[UIAlertView alloc] initWithTitle:@"Invalid Location"
+                                message:@"Please make sure you've entered a valid address. The minimum required information is city and state."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 @end
