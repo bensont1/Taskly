@@ -65,5 +65,9 @@
      NewTaskDetailViewController *destination = segue.destinationViewController;
      destination.task = self.task;
 }
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    textView.text = @" ";
+}
 
 @end
