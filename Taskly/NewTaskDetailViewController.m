@@ -16,7 +16,8 @@
 @end
 
 @implementation NewTaskDetailViewController {
-    CLPlacemark *location;
+    //CLPlacemark *location;
+    PFGeoPoint *location;
 }
 
 - (void)viewDidLoad {
@@ -43,14 +44,21 @@
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        CLLocation *placemarkLocation = placemark.location;
+        CLLocationCoordinate2D coordinate = [placemarkLocation coordinate];
+        
+        location = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
+                                                      longitude:coordinate.longitude];
+        
         MKPlacemark *MKplacemark = [[MKPlacemark alloc] initWithPlacemark:placemark];
         MKCoordinateRegion region;
-        region.center.latitude = placemark.region.center.latitude;
-        region.center.longitude = placemark.region.center.longitude;
+        
+        region.center = [(CLCircularRegion *)placemark.region center];
         MKCoordinateSpan span;
         double radius = placemark.region.radius / 1000; // convert to km
         span.latitudeDelta = radius / 112.0;
         region.span = span;
+        
         [self.mapView setRegion:region animated:YES];
         [self.mapView addAnnotation:MKplacemark];
         location = placemark;
@@ -71,32 +79,33 @@
 }
 
 -(void)addTask:(UIButton *)sender {
-    if(![self verifyAddress]) {
-        [self showInvalidLocationAlert];
-    }
-    else {
+    //if(![self verifyAddress]) {
+        //[self showInvalidLocationAlert];
+    //}
+    //else {
         self.task.location = location;
         [TaskManager addTask:self.task];
         [self showTaskAddedAlert];
         //[self performSegueWithIdentifier:@"backToAddTaskMainView" sender:self];
-    }
+    //}
 }
 
--(BOOL)verifyAddress {
-    //must have city and state
-    if(location.locality == nil || location.administrativeArea == nil) {
-        return NO;
-    }
-    
-    //may not have street number without street name
-    if(location.subThoroughfare != nil) {
-        if(location.thoroughfare == nil) {
-            return NO;
-        }
-    }
-    
-    return YES;
-}
+//-(BOOL)verifyAddress {
+//    //must have city and state
+//    MKPlacemark *place = [[MKPlacemark alloc] initWithCoordinate:];
+//    if(location.locality == nil || location.administrativeArea == nil) {
+//        return NO;
+//    }
+//    
+//    //may not have street number without street name
+//    if(location.subThoroughfare != nil) {
+//        if(location.thoroughfare == nil) {
+//            return NO;
+//        }
+//    }
+//    
+//    return YES;
+//}
 
 -(void)showTaskAddedAlert {
     [[[UIAlertView alloc] initWithTitle:@"Task Added!"
