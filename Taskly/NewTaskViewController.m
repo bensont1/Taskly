@@ -41,7 +41,9 @@
 }
 
 - (IBAction)decrementPrice:(id)sender {
-    price--;
+    if(price > 0) {
+        price--;
+    }
     [self updatePriceLabel];
 }
 
