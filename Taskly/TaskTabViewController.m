@@ -99,6 +99,20 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSLog(@"User Success login: %@", user);
+    
+    // set Facebook data to parse
+    // After logging in with Facebook
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection,
+                                          id result,
+                                          NSError *error) {
+        if (!error) {
+            NSString *facebookName = [result objectForKey:@"name"];
+            NSLog(@"Facebook Name: %@", facebookName);
+            [[PFUser currentUser] setObject:facebookName forKey:@"fullName"];
+            [[PFUser currentUser] saveEventually];
+        }
+    }];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

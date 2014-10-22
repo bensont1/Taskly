@@ -7,14 +7,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb466202143522654</string>
+				<string>fb466224066853795</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookDisplayName</key>
-	<string>Taskly</string>
+	<string>Taskly - Test1</string>
 	<key>FacebookAppID</key>
-	<string>466202143522654</string>
+	<string>466224066853795</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

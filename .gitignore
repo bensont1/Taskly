@@ -25,12 +25,6 @@ DerivedData
 # CocoaPods
 Pods
 
-# Crap
-Bolts.framework
-Parse.framework
-ParseFacebookUtils.framework
-
-
 ### Xcode ###
 build
 *.xcodeproj/*
