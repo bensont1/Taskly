@@ -159,8 +159,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's your budget?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-4N-cNS">
-                                <rect key="frame" x="0.0" y="223" width="220" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What's your budget?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-4N-cNS">
+                                <rect key="frame" x="0.0" y="223" width="219" height="70"/>
                                 <color key="backgroundColor" white="0.75410879630000005" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,38 +179,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxH-FJ-Vy9">
-                                <rect key="frame" x="220" y="223" width="380" height="70"/>
-                                <color key="backgroundColor" white="0.74789663461538458" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCS-0z-bPW">
-                                <rect key="frame" x="365" y="243" width="90" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lB-J2-m9z">
-                                <rect key="frame" x="323" y="235" width="39" height="23"/>
-                                <state key="normal" image="stepper_up.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="incrementPrice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="EPM-HZ-BjZ"/>
-                                    <action selector="incrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="K48-S7-DOZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClV-Gi-JG8">
-                                <rect key="frame" x="323" y="258" width="39" height="23"/>
-                                <state key="normal" image="stepper_down.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="decrementPrice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ghk-uT-CJ2"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Fill in additional details here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-fo-dep">
                                 <rect key="frame" x="0.0" y="131" width="600" height="92"/>
                                 <color key="backgroundColor" white="0.90166083916083917" alpha="1" colorSpace="calibratedWhite"/>
@@ -218,12 +186,73 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8C4-DZ-Hue">
+                                <rect key="frame" x="219" y="223" width="381" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$10.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCS-0z-bPW">
+                                        <rect key="frame" x="166" y="20" width="90" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lB-J2-m9z">
+                                        <rect key="frame" x="124" y="12" width="39" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="LTM-GS-qq1"/>
+                                            <constraint firstAttribute="width" constant="39" id="jMJ-SH-8vc"/>
+                                        </constraints>
+                                        <state key="normal" image="stepper_up.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="incrementPrice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="EPM-HZ-BjZ"/>
+                                            <action selector="incrementPrice:" destination="wn2-dh-AzQ" eventType="touchUpInside" id="K48-S7-DOZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClV-Gi-JG8">
+                                        <rect key="frame" x="124" y="35" width="39" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="KNl-NO-lpB"/>
+                                            <constraint firstAttribute="width" constant="39" id="iRh-sq-4Ts"/>
+                                        </constraints>
+                                        <state key="normal" image="stepper_down.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="decrementPrice:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ghk-uT-CJ2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ClV-Gi-JG8" firstAttribute="top" secondItem="3lB-J2-m9z" secondAttribute="bottom" id="0V5-ea-XJf"/>
+                                    <constraint firstItem="BCS-0z-bPW" firstAttribute="leading" secondItem="3lB-J2-m9z" secondAttribute="trailing" constant="3" id="Cki-Uy-S0A"/>
+                                    <constraint firstItem="ClV-Gi-JG8" firstAttribute="top" secondItem="3lB-J2-m9z" secondAttribute="bottom" id="hbw-0T-lka"/>
+                                    <constraint firstItem="BCS-0z-bPW" firstAttribute="leading" secondItem="ClV-Gi-JG8" secondAttribute="trailing" constant="3" id="pNu-B2-aWc"/>
+                                    <constraint firstAttribute="centerX" secondItem="BCS-0z-bPW" secondAttribute="centerX" constant="-20.5" id="x9F-XW-ryA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GMX-7D-XfU" firstAttribute="top" secondItem="8C4-DZ-Hue" secondAttribute="bottom" id="1Y1-d6-cSW"/>
+                            <constraint firstItem="nIb-R1-uRW" firstAttribute="top" secondItem="GMX-7D-XfU" secondAttribute="bottom" id="3Tm-pC-x1o"/>
+                            <constraint firstItem="LGO-4N-cNS" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="744-2V-Lrg"/>
+                            <constraint firstItem="utn-Ue-ooe" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="Asu-OQ-8gD"/>
                             <constraint firstItem="y4y-fo-dep" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="Awm-EG-sjr"/>
+                            <constraint firstItem="LGO-4N-cNS" firstAttribute="top" secondItem="y4y-fo-dep" secondAttribute="bottom" id="EoE-CU-Ofz"/>
                             <constraint firstItem="utn-Ue-ooe" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="Gh9-zS-RI1"/>
+                            <constraint firstItem="y4y-fo-dep" firstAttribute="top" secondItem="utn-Ue-ooe" secondAttribute="bottom" id="GyV-O7-jjS"/>
+                            <constraint firstItem="GMX-7D-XfU" firstAttribute="top" secondItem="8C4-DZ-Hue" secondAttribute="bottom" id="JVe-S7-GeF"/>
+                            <constraint firstItem="8C4-DZ-Hue" firstAttribute="top" secondItem="y4y-fo-dep" secondAttribute="bottom" id="PXe-RJ-JLR"/>
+                            <constraint firstItem="8C4-DZ-Hue" firstAttribute="leading" secondItem="LGO-4N-cNS" secondAttribute="trailing" id="RfM-4P-pq6"/>
+                            <constraint firstItem="nIb-R1-uRW" firstAttribute="top" secondItem="GMX-7D-XfU" secondAttribute="bottom" id="Uoa-cu-eAN"/>
+                            <constraint firstItem="GMX-7D-XfU" firstAttribute="top" secondItem="LGO-4N-cNS" secondAttribute="bottom" id="XEF-g9-WOd"/>
+                            <constraint firstItem="y4y-fo-dep" firstAttribute="top" secondItem="utn-Ue-ooe" secondAttribute="bottom" id="XNn-h5-Fy2"/>
+                            <constraint firstItem="8C4-DZ-Hue" firstAttribute="leading" secondItem="LGO-4N-cNS" secondAttribute="trailing" id="a8h-Ud-B87"/>
+                            <constraint firstAttribute="trailing" secondItem="8C4-DZ-Hue" secondAttribute="trailing" id="dNM-hw-1LB"/>
                             <constraint firstAttribute="width" secondItem="GMX-7D-XfU" secondAttribute="width" id="jN1-ir-KTv"/>
+                            <constraint firstItem="8C4-DZ-Hue" firstAttribute="top" secondItem="y4y-fo-dep" secondAttribute="bottom" id="uK9-gN-GdW"/>
                             <constraint firstAttribute="width" secondItem="nIb-R1-uRW" secondAttribute="width" id="zpU-ub-NLy"/>
                         </constraints>
                     </view>
