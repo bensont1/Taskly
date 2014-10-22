@@ -262,7 +262,7 @@
                     <navigationItem key="navigationItem" id="44H-mz-st2">
                         <barButtonItem key="rightBarButtonItem" title="Continue" id="hlk-EM-mmg">
                             <connections>
-                                <segue destination="wn2-dh-AzQ" kind="show" identifier="" id="pr6-6V-ytI"/>
+                                <action selector="continueToDetailPage:" destination="8rJ-Kc-sve" id="oAc-Yg-3o2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -271,6 +271,7 @@
                         <outlet property="hourMinutePicker" destination="nIb-R1-uRW" id="r5A-eW-ioi"/>
                         <outlet property="priceLabel" destination="BCS-0z-bPW" id="S42-D6-1QO"/>
                         <outlet property="taskTitleField" destination="utn-Ue-ooe" id="ixz-eg-FCM"/>
+                        <segue destination="wn2-dh-AzQ" kind="show" identifier="toNewTaskDetailViewController" id="pVW-0w-l4d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

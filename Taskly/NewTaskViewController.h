@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Task.h"
 
-@interface NewTaskViewController : UIViewController <UITextViewDelegate>
+@interface NewTaskViewController : UIViewController <UITextViewDelegate, UIAlertViewDelegate>
 
 @property Task *task;
 

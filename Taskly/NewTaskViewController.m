@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *additionalDetailField;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *hourMinutePicker;
+
+- (IBAction)continueToDetailPage:(id)sender;
 - (IBAction)incrementPrice:(id)sender;
 - (IBAction)decrementPrice:(id)sender;
 
@@ -28,7 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.task = [[Task alloc] init];
     self.hourMinutePicker.datePickerMode = UIDatePickerModeCountDownTimer;
@@ -58,6 +59,65 @@
     self.task.duration = [NSNumber numberWithInt:self.hourMinutePicker.countDownDuration]; //picker gives seconds only so store as seconds
 }
 
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    textView.text = @"";
+}
+
+- (IBAction)continueToDetailPage:(id)sender {
+    NSLog(@"%lu",(unsigned long)self.taskTitleField.text.length);
+    if(self.taskTitleField.text.length == 0) {
+        [self showNoTitleAlert];
+    }
+    else if(![self verifyAdditionalDetailsField]) {
+        [self showNoAdditionalDetailsAlert];
+    }
+    else {
+        [self performSegueWithIdentifier:@"toNewTaskDetailViewController" sender:self];
+    }
+}
+
+- (BOOL)verifyAdditionalDetailsField {
+    if(self.additionalDetailField.text.length == 0) {
+        return NO;
+    }
+    if([self.additionalDetailField.text isEqualToString:@"Fill in additional details here"]) {
+        return NO;
+    }
+    return YES;
+}
+
+#pragma - Alerts
+
+-(void)showNoTitleAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Title"
+                                message:@"Please add a title to your task before continuing."
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil];
+    
+    [alert setTag:1];
+    [alert show];
+}
+
+-(void)showNoAdditionalDetailsAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No details"
+                                message:@"You didn't fill out any additional details. Are you sure you want to continue?"
+                               delegate:self
+                      cancelButtonTitle:@"Add Details"
+                      otherButtonTitles:@"Continue", nil];
+    
+    [alert setTag:2];
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(alertView.tag == 2) //showNoAdditionalDetailsAlert is active
+        if(buttonIndex == 1) {
+            [self performSegueWithIdentifier:@"toNewTaskDetailViewController" sender:self];
+        }
+}
+
 
 #pragma mark - Navigation
  
@@ -66,10 +126,6 @@
      [self setTaskFields];
      NewTaskDetailViewController *destination = segue.destinationViewController;
      destination.task = self.task;
-}
--(void)textViewDidBeginEditing:(UITextView *)textView
-{
-    textView.text = @" ";
 }
 
 @end
