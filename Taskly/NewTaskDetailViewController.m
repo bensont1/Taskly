@@ -51,19 +51,20 @@
                                                       longitude:coordinate.longitude];
         
         MKPlacemark *MKplacemark = [[MKPlacemark alloc] initWithPlacemark:placemark];
-        MKCoordinateRegion region;
         
-        region.center = [(CLCircularRegion *)placemark.region center];
-        MKCoordinateSpan span;
-        double radius = placemark.region.radius / 1000; // convert to km
-        span.latitudeDelta = radius / 112.0;
-        region.span = span;
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 5000, 5000);
+
+        // remove all annotations
+        NSMutableArray * annotationsToRemove = [ self.mapView.annotations mutableCopy ] ;
+        [ annotationsToRemove removeObject:self.mapView.userLocation ] ;
+        [ self.mapView removeAnnotations:annotationsToRemove ] ;
         
-        [self.mapView setRegion:region animated:YES];
         [self.mapView addAnnotation:MKplacemark];
-        location = placemark;
+        [self.mapView setRegion:region animated:YES];
         
-        NSLog([self printLocationFromPlacemark:location]);
+        //location = placemark;
+        
+        //NSLog([self printLocationFromPlacemark:location]);
     }];
 }
 
