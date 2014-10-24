@@ -39,6 +39,7 @@
     //@optional
 }
 
+#warning TODO: Very messy, could use refactoring
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -61,8 +62,6 @@
         
         [self.mapView addAnnotation:MKplacemark];
         [self.mapView setRegion:region animated:YES];
-        
-        //location = placemark;
         
         //NSLog([self printLocationFromPlacemark:location]);
     }];

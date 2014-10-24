@@ -30,7 +30,6 @@
 		3951493419F5C2DD0063C4CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493319F5C2DD0063C4CF /* MobileCoreServices.framework */; };
 		3951493619F5C2E20063C4CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493519F5C2E20063C4CF /* QuartzCore.framework */; };
 		3951493819F5C2E70063C4CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493719F5C2E70063C4CF /* Security.framework */; };
-		3951493A19F5C2EB0063C4CF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493919F5C2EB0063C4CF /* StoreKit.framework */; };
 		3951493C19F5C2F10063C4CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493B19F5C2F00063C4CF /* SystemConfiguration.framework */; };
 		3951493E19F5C2F50063C4CF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493D19F5C2F50063C4CF /* Social.framework */; };
 		3951494019F5C2F90063C4CF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951493F19F5C2F90063C4CF /* Accounts.framework */; };
@@ -42,7 +41,7 @@
 		39CDCA8219F63AC300108DCB /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA8119F63AC300108DCB /* NewTaskViewController.m */; };
 		8227441219F8291C00BA373D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8227431219F8291B00BA373D /* FacebookSDK.framework */; };
 		8227441319F8291C00BA373D /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8227431419F8291B00BA373D /* FBAudienceNetwork.framework */; };
-		8227441419F8291C00BA373D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8227431519F8291B00BA373D /* README.txt */; };
+		8227441419F8291C00BA373D /* README_FB_Audience.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8227431519F8291B00BA373D /* README_FB_Audience.txt */; };
 		8227442B19F8291C00BA373D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8227433F19F8291B00BA373D /* LICENSE */; };
 		8227442C19F8291C00BA373D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8227434019F8291B00BA373D /* README.txt */; };
 		822744C319F82A8900BA373D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822744C219F82A8900BA373D /* CoreMotion.framework */; };
@@ -93,7 +92,6 @@
 		3951493319F5C2DD0063C4CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3951493519F5C2E20063C4CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3951493719F5C2E70063C4CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		3951493919F5C2EB0063C4CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3951493B19F5C2F00063C4CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3951493D19F5C2F50063C4CF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3951493F19F5C2F90063C4CF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -109,7 +107,7 @@
 		39CDCA8119F63AC300108DCB /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskViewController.m; sourceTree = "<group>"; };
 		8227431219F8291B00BA373D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		8227431419F8291B00BA373D /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
-		8227431519F8291B00BA373D /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8227431519F8291B00BA373D /* README_FB_Audience.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README_FB_Audience.txt; sourceTree = "<group>"; };
 		8227433F19F8291B00BA373D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8227434019F8291B00BA373D /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		822744C219F82A8900BA373D /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -128,7 +126,6 @@
 				3951494019F5C2F90063C4CF /* Accounts.framework in Frameworks */,
 				3951493E19F5C2F50063C4CF /* Social.framework in Frameworks */,
 				3951493C19F5C2F10063C4CF /* SystemConfiguration.framework in Frameworks */,
-				3951493A19F5C2EB0063C4CF /* StoreKit.framework in Frameworks */,
 				3951493819F5C2E70063C4CF /* Security.framework in Frameworks */,
 				822744D019F835A600BA373D /* Parse.framework in Frameworks */,
 				822744CF19F835A600BA373D /* Bolts.framework in Frameworks */,
@@ -251,7 +248,6 @@
 				3951493F19F5C2F90063C4CF /* Accounts.framework */,
 				3951493D19F5C2F50063C4CF /* Social.framework */,
 				3951493B19F5C2F00063C4CF /* SystemConfiguration.framework */,
-				3951493919F5C2EB0063C4CF /* StoreKit.framework */,
 				3951493719F5C2E70063C4CF /* Security.framework */,
 				3951493519F5C2E20063C4CF /* QuartzCore.framework */,
 				3951493319F5C2DD0063C4CF /* MobileCoreServices.framework */,
@@ -284,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				8227431419F8291B00BA373D /* FBAudienceNetwork.framework */,
-				8227431519F8291B00BA373D /* README.txt */,
+				8227431519F8291B00BA373D /* README_FB_Audience.txt */,
 			);
 			path = FBAudienceNetwork;
 			sourceTree = "<group>";
@@ -348,6 +344,12 @@
 				TargetAttributes = {
 					390A287B19EBAB48009976F7 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = BWSLUFSJRA;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					390A289719EBAB48009976F7 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -387,7 +389,7 @@
 				390A289319EBAB48009976F7 /* LaunchScreen.xib in Resources */,
 				390A28C019EBC970009976F7 /* hamburger_icon.png in Resources */,
 				8227442B19F8291C00BA373D /* LICENSE in Resources */,
-				8227441419F8291C00BA373D /* README.txt in Resources */,
+				8227441419F8291C00BA373D /* README_FB_Audience.txt in Resources */,
 				390A289019EBAB48009976F7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

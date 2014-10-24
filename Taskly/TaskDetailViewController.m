@@ -50,21 +50,17 @@
 }
 
 - (void)setMapViewLocation {
-    NSString *locationText = [self.task objectForKey:@"location"];
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:locationText completionHandler:^(NSArray *placemarks, NSError *error) {
-        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        MKPlacemark *MKplacemark = [[MKPlacemark alloc] initWithPlacemark:placemark];
-        MKCoordinateRegion region;
-        region.center.latitude = placemark.region.center.latitude;
-        region.center.longitude = placemark.region.center.longitude;
-        MKCoordinateSpan span;
-        double radius = placemark.region.radius / 1000; // convert to km
-        span.latitudeDelta = radius / 112.0;
-        region.span = span;
-        [self.mapView setRegion:region animated:YES];
-        [self.mapView addAnnotation:MKplacemark];
-    }];
+    //NSString *locationText = [self.task objectForKey:@"location"];
+    
+    PFGeoPoint *locationFromParse = [self.task objectForKey:@"location"];
+    
+    // create annotation to add
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(locationFromParse.latitude, locationFromParse.longitude);
+    MKPlacemark *marker = [[MKPlacemark alloc] initWithCoordinate:coord addressDictionary:nil];
+    
+    // center map
+    [self.mapView setRegion:MKCoordinateRegionMake(coord,MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
+    [self.mapView addAnnotation:marker];
 }
 
 /*
