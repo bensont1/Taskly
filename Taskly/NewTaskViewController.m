@@ -54,10 +54,13 @@
 }
 
 - (void)setTaskFields {
-    self.task.title = self.taskTitleField.text;
-    self.task.details = self.additionalDetailField.text;
-    self.task.price = [NSNumber numberWithFloat:price];
-    self.task.duration = [NSNumber numberWithInt:self.hourMinutePicker.countDownDuration]; //picker gives seconds only so store as seconds
+    if([PFUser currentUser]) {
+        self.task.user = [PFUser currentUser];
+        self.task.title = self.taskTitleField.text;
+        self.task.details = self.additionalDetailField.text;
+        self.task.price = [NSNumber numberWithFloat:price];
+        self.task.duration = [NSNumber numberWithInt:self.hourMinutePicker.countDownDuration]; //picker gives seconds only so store as seconds
+    }
 }
 
 - (IBAction)continueToDetailPage:(id)sender {
@@ -118,6 +121,17 @@
                                delegate:self
                       cancelButtonTitle:@"Add Details"
                       otherButtonTitles:@"Continue", nil];
+    
+    [alert setTag:2];
+    [alert show];
+}
+
+-(void)showNotLoggedInAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not Logged In"
+                                                    message:@"You didn't fill out any additional details. Are you sure you want to continue?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Add Details"
+                                          otherButtonTitles:@"Continue", nil];
     
     [alert setTag:2];
     [alert show];

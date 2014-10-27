@@ -16,11 +16,16 @@
     [newTask setObject:task.details forKey:@"details"];
     [newTask setObject:task.price forKey:@"price"];
     [newTask setObject:task.duration forKey:@"duration"];
+    [newTask setObject:task.user forKey:@"owner"];
     
     //NSString *locationString = [self locationFromPlacemark:task.location];
     [newTask setObject:task.location forKey:@"location"];
     
     [newTask saveInBackground];
+}
+
++ (void)respondToTask:(Task *)task {
+    
 }
 
 + (NSString *)locationFromPlacemark:(CLPlacemark*)placemark {
