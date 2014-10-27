@@ -9,6 +9,7 @@
 #import "NewTaskViewController.h"
 #import "NewTaskDetailViewController.h"
 #import "Task.h"
+#define PLACEHOLDER_TEXT @"Fill in additional details here"
 
 @interface NewTaskViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *taskTitleField;
@@ -59,11 +60,6 @@
     self.task.duration = [NSNumber numberWithInt:self.hourMinutePicker.countDownDuration]; //picker gives seconds only so store as seconds
 }
 
--(void)textViewDidBeginEditing:(UITextView *)textView
-{
-    textView.text = @"";
-}
-
 - (IBAction)continueToDetailPage:(id)sender {
     NSLog(@"%lu",(unsigned long)self.taskTitleField.text.length);
     if(self.taskTitleField.text.length == 0) {
@@ -87,7 +83,23 @@
     return YES;
 }
 
-#pragma - Alerts
+
+#pragma mark - TextView Delegation
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if([textView.text isEqualToString:PLACEHOLDER_TEXT]) {
+        textView.text = @"";
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if([textView.text isEqualToString: @""]) {
+        textView.text = PLACEHOLDER_TEXT;
+    }
+}
+
+#pragma mark - Alerts
 
 -(void)showNoTitleAlert {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Title"

@@ -182,6 +182,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Fill in additional details here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-fo-dep">
                                 <rect key="frame" x="0.0" y="131" width="600" height="92"/>
                                 <color key="backgroundColor" white="0.90166083916083917" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.75491695804195802" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
