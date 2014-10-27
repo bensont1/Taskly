@@ -56,6 +56,7 @@
 - (void)setTaskFields {
     if([PFUser currentUser]) {
         self.task.user = [PFUser currentUser];
+        //self.task.filler = [NSNull null];
         self.task.title = self.taskTitleField.text;
         self.task.details = self.additionalDetailField.text;
         self.task.price = [NSNumber numberWithFloat:price];
