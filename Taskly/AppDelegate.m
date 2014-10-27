@@ -11,6 +11,7 @@
 #warning TODO: PRIOROTY: Store users task history
 
 // Below are nice features to add
+#warning TODO: add button on new task page to set location as current location
 #warning TODO: create custom row view, to display facebook profile image, task title and details, and price, time
 #warning TODO: create real time countdown timer on task
 #warning TODO: get users Current Location when posting task

@@ -86,7 +86,7 @@
         self.task.location = location;
         [TaskManager addTask:self.task];
         [self showTaskAddedAlert];
-        //[self performSegueWithIdentifier:@"backToAddTaskMainView" sender:self];
+        [self performSegueWithIdentifier:@"backToAddTaskMainView" sender:self];
     //}
 }
 

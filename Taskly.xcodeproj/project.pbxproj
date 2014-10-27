@@ -37,6 +37,7 @@
 		3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */; };
 		3951495119F5FA130063C4CF /* stepper_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951494F19F5FA130063C4CF /* stepper_up.png */; };
 		3951495219F5FA130063C4CF /* stepper_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951495019F5FA130063C4CF /* stepper_down.png */; };
+		39B98F6219FEC1AC00CBC247 /* RespondToTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */; };
 		39CDCA7F19F63A2E00108DCB /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */; };
 		39CDCA8219F63AC300108DCB /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA8119F63AC300108DCB /* NewTaskViewController.m */; };
 		8227441219F8291C00BA373D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8227431219F8291B00BA373D /* FacebookSDK.framework */; };
@@ -101,6 +102,8 @@
 		3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskDetailViewController.m; sourceTree = "<group>"; };
 		3951494F19F5FA130063C4CF /* stepper_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_up.png; sourceTree = "<group>"; };
 		3951495019F5FA130063C4CF /* stepper_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_down.png; sourceTree = "<group>"; };
+		39B98F6019FEC1AC00CBC247 /* RespondToTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondToTaskViewController.h; sourceTree = "<group>"; };
+		39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondToTaskViewController.m; sourceTree = "<group>"; };
 		39CDCA7D19F63A2E00108DCB /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
 		39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
 		39CDCA8019F63AC300108DCB /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskViewController.h; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 		390A28AF19EBC0E5009976F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				39B98F6019FEC1AC00CBC247 /* RespondToTaskViewController.h */,
+				39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */,
 				39CDCA8019F63AC300108DCB /* NewTaskViewController.h */,
 				39CDCA8119F63AC300108DCB /* NewTaskViewController.m */,
 				3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */,
@@ -408,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B98F6219FEC1AC00CBC247 /* RespondToTaskViewController.m in Sources */,
 				390A28B519EBC330009976F7 /* Task.m in Sources */,
 				390A288519EBAB48009976F7 /* AppDelegate.m in Sources */,
 				39CDCA8219F63AC300108DCB /* NewTaskViewController.m in Sources */,
