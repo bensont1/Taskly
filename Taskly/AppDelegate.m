@@ -6,6 +6,19 @@
 //  Copyright (c) 2014 ASU. All rights reserved.
 //
 
+// Below are listed in our REQUIREMENTS doc, for grading purposes
+#warning TODO: PRIORITY: Allow users to respond to posted Task
+#warning TODO: PRIOROTY: Store users task history
+
+// Below are nice features to add
+#warning TODO: create custom row view, to display facebook profile image, task title and details, and price, time
+#warning TODO: create real time countdown timer on task
+#warning TODO: get users Current Location when posting task
+#warning TODO: allow users to search by task given location
+#warning TODO: create negotiation process, ask task originator for said price
+#warning TODO: use previous completed task history to give user tasks from the same person
+#warning TODO: create a rating mechanism for trusted task do-ers, increase as more tasks are marked complete and task originator has marked success/good job done
+
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
