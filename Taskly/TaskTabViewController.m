@@ -18,7 +18,6 @@
 @implementation TaskTabViewController {
     NSMutableArray *tasks;
     PFObject *selectedTask;
-    
     NSString *titleTextKey;
     NSString *detailTextKey;
     NSString *priceTextKey;

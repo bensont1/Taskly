@@ -33,6 +33,7 @@
     [super viewDidLoad];
     
     self.task = [[Task alloc] init];
+    [self setFillerToNullUser];
     self.hourMinutePicker.datePickerMode = UIDatePickerModeCountDownTimer;
     price = 10.00;
 }
@@ -55,13 +56,20 @@
 
 - (void)setTaskFields {
     if([PFUser currentUser]) {
-        self.task.user = [PFUser currentUser];
-        //self.task.filler = [NSNull null];
+        self.task.owner = [PFUser currentUser];
         self.task.title = self.taskTitleField.text;
         self.task.details = self.additionalDetailField.text;
         self.task.price = [NSNumber numberWithFloat:price];
         self.task.duration = [NSNumber numberWithInt:self.hourMinutePicker.countDownDuration]; //picker gives seconds only so store as seconds
     }
+}
+
+- (void)setFillerToNullUser {
+    PFQuery *nullUserQuery = [PFQuery queryWithClassName:@"User"];
+    [nullUserQuery whereKey:@"username" equalTo:@"null"];
+    [nullUserQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.task.filler = [objects firstObject];
+    }];
 }
 
 - (IBAction)continueToDetailPage:(id)sender {
