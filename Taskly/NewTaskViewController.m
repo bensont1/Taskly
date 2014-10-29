@@ -65,7 +65,7 @@
 }
 
 - (void)setFillerToNullUser {
-    PFQuery *nullUserQuery = [PFQuery queryWithClassName:@"User"];
+    PFQuery *nullUserQuery = [PFUser query];
     [nullUserQuery whereKey:@"username" equalTo:@"null"];
     [nullUserQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.task.filler = [objects firstObject];
