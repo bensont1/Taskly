@@ -184,6 +184,23 @@
     selectedTask = [self.objects objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"segueToTaskDetail" sender:self];
 }
+/*
+-(PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+//        NSDate *createdAtDate = [self.task createdAt];
+//        int taskDurationInSeconds = [[self.task objectForKey:@"duration"] intValue];
+//        NSDate *expirationDate = [createdAtDate dateByAddingTimeInterval:taskDurationInSeconds];
+//        
+//        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+//        NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitHour | NSCalendarUnitMinute
+//                                                            fromDate:createdAtDate
+//                                                              toDate:expirationDate
+//                                                             options:0];
+//        NSString *timeUntilExpiration = [NSString stringWithFormat:@"%ld hours and %ld minutes", [components hour], [components minute]];
+//        return timeUntilExpiration;
+    
+}*/
 
 
 #pragma mark - Navigation

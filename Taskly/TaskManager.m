@@ -21,6 +21,7 @@
     
     //NSString *locationString = [self locationFromPlacemark:task.location];
     [newTask setObject:task.location forKey:@"location"];
+    [newTask setObject:task.endDate forKey:@"end_date"];
     
     [newTask saveInBackground];
 }

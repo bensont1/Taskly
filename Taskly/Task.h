@@ -16,6 +16,7 @@
 @property NSNumber *price;
 @property PFGeoPoint *location;
 @property NSNumber *duration; //duration stored as seconds, format correctly when needed
+@property NSDate *endDate;
 @property PFUser *user;
 @property PFUser *filler;
 
