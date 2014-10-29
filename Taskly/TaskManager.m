@@ -17,6 +17,7 @@
     [newTask setObject:task.price forKey:@"price"];
     [newTask setObject:task.duration forKey:@"duration"];
     [newTask setObject:task.owner forKey:@"owner"];
+    [newTask setObject:task.filler forKey:@"filler"];
     //[newTask setObject:task.filler forKey:@"filler"];
     
     //NSString *locationString = [self locationFromPlacemark:task.location];
