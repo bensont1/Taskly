@@ -153,7 +153,58 @@
                     <view key="view" contentMode="scaleToFill" id="9t1-5S-093">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="You can add a personal message here if you'd like." translatesAutoresizingMaskIntoConstraints="NO" id="Vzs-1d-ezA">
+                                <rect key="frame" x="0.0" y="345" width="600" height="206"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How can you be contacted?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qet-Xr-44o">
+                                <rect key="frame" x="0.0" y="278" width="600" height="67"/>
+                                <color key="backgroundColor" white="0.73964707169999999" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much would you like?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bM-VZ-Cg4">
+                                <rect key="frame" x="0.0" y="223" width="276" height="55"/>
+                                <color key="backgroundColor" white="0.89663856907894746" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGV-jV-lBW">
+                                <rect key="frame" x="276" y="223" width="324" height="55"/>
+                                <color key="backgroundColor" white="0.89663856909999995" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TZ-J4-JMc">
+                                <rect key="frame" x="351" y="228" width="39" height="23"/>
+                                <state key="normal" title="Button" image="stepper_up.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixs-X1-Fie">
+                                <rect key="frame" x="351" y="249" width="39" height="23"/>
+                                <state key="normal" title="Button" image="stepper_down.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyP-Iq-bj1">
+                                <rect key="frame" x="398" y="240" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HRQ-BC-u9m" firstAttribute="top" secondItem="Vzs-1d-ezA" secondAttribute="bottom" id="DfH-8Y-seA"/>
+                            <constraint firstItem="Qet-Xr-44o" firstAttribute="width" secondItem="9t1-5S-093" secondAttribute="width" id="PD4-aL-7Nd"/>
+                            <constraint firstItem="Vzs-1d-ezA" firstAttribute="width" secondItem="9t1-5S-093" secondAttribute="width" id="UDd-8A-rJp"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIv-Rq-Myc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,13 +229,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What's your budget?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-4N-cNS">
-                                <rect key="frame" x="0.0" y="223" width="219" height="70"/>
-                                <color key="backgroundColor" white="0.75410879630000005" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nIb-R1-uRW">
                                 <rect key="frame" x="0.0" y="329" width="600" height="225"/>
                                 <date key="date" timeIntervalSinceReferenceDate="435554535.12396002">
@@ -209,6 +253,13 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="jt7-1j-pdI"/>
                                 </connections>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What's your budget?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-4N-cNS">
+                                <rect key="frame" x="0.0" y="223" width="219" height="70"/>
+                                <color key="backgroundColor" white="0.75410879630000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8C4-DZ-Hue">
                                 <rect key="frame" x="219" y="223" width="381" height="70"/>
                                 <subviews>
@@ -393,7 +444,7 @@
                             <constraint firstAttribute="centerX" secondItem="zKh-UG-FHQ" secondAttribute="centerX" constant="-0.5" id="yDN-w4-BsA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" selectedImage="first" id="2xN-iP-WjJ"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="first" selectedImage="first" id="2xN-iP-WjJ"/>
                     <connections>
                         <outlet property="userLabel" destination="OvU-8e-4sL" id="fb7-So-odT"/>
                     </connections>
