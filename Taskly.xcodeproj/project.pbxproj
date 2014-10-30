@@ -37,6 +37,7 @@
 		3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */; };
 		3951495119F5FA130063C4CF /* stepper_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951494F19F5FA130063C4CF /* stepper_up.png */; };
 		3951495219F5FA130063C4CF /* stepper_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951495019F5FA130063C4CF /* stepper_down.png */; };
+		39B3138B1A02EB4600E62850 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B3138A1A02EB4600E62850 /* Offer.m */; };
 		39B98F6219FEC1AC00CBC247 /* RespondToTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */; };
 		39CDCA7F19F63A2E00108DCB /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */; };
 		39CDCA8219F63AC300108DCB /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA8119F63AC300108DCB /* NewTaskViewController.m */; };
@@ -102,6 +103,8 @@
 		3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskDetailViewController.m; sourceTree = "<group>"; };
 		3951494F19F5FA130063C4CF /* stepper_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_up.png; sourceTree = "<group>"; };
 		3951495019F5FA130063C4CF /* stepper_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_down.png; sourceTree = "<group>"; };
+		39B313891A02EB4600E62850 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		39B3138A1A02EB4600E62850 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		39B98F6019FEC1AC00CBC247 /* RespondToTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondToTaskViewController.h; sourceTree = "<group>"; };
 		39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondToTaskViewController.m; sourceTree = "<group>"; };
 		39CDCA7D19F63A2E00108DCB /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
@@ -185,8 +188,7 @@
 				390A288419EBAB48009976F7 /* AppDelegate.m */,
 				390A28B019EBC27B009976F7 /* TaskManager.h */,
 				390A28B119EBC27B009976F7 /* TaskManager.m */,
-				390A28B319EBC330009976F7 /* Task.h */,
-				390A28B419EBC330009976F7 /* Task.m */,
+				39B3138C1A02EB9B00E62850 /* Objects */,
 				390A28AF19EBC0E5009976F7 /* ViewControllers */,
 				390A288C19EBAB48009976F7 /* Main.storyboard */,
 				390A288F19EBAB48009976F7 /* Images.xcassets */,
@@ -268,6 +270,17 @@
 				390A28A819EBACF6009976F7 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39B3138C1A02EB9B00E62850 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				390A28B319EBC330009976F7 /* Task.h */,
+				390A28B419EBC330009976F7 /* Task.m */,
+				39B313891A02EB4600E62850 /* Offer.h */,
+				39B3138A1A02EB4600E62850 /* Offer.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		8227431019F8291B00BA373D /* FacebookSDK */ = {
@@ -418,6 +431,7 @@
 				390A288519EBAB48009976F7 /* AppDelegate.m in Sources */,
 				39CDCA8219F63AC300108DCB /* NewTaskViewController.m in Sources */,
 				39CDCA7F19F63A2E00108DCB /* TaskDetailViewController.m in Sources */,
+				39B3138B1A02EB4600E62850 /* Offer.m in Sources */,
 				3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */,
 				390A288219EBAB48009976F7 /* main.m in Sources */,
 				390A28B219EBC27B009976F7 /* TaskManager.m in Sources */,
