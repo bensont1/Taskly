@@ -15,14 +15,10 @@
     [newTask setObject:task.title forKey:@"title"];
     [newTask setObject:task.details forKey:@"details"];
     [newTask setObject:task.price forKey:@"price"];
-    [newTask setObject:task.duration forKey:@"duration"];
     [newTask setObject:task.owner forKey:@"owner"];
     [newTask setObject:task.filler forKey:@"filler"];
-    
-    //NSString *locationString = [self locationFromPlacemark:task.location];
     [newTask setObject:task.location forKey:@"location"];
-    [newTask setObject:task.endDate forKey:@"end_date"];
-    
+    [newTask setObject:task.expirationDate forKey:@"expirationDate"];
     [newTask saveInBackground];
 }
 

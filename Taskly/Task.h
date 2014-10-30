@@ -15,10 +15,9 @@
 @property NSString *details;
 @property NSNumber *price;
 @property PFGeoPoint *location;
-@property NSNumber *duration; //duration stored as seconds, format correctly when needed
 @property PFUser *owner;
 @property PFUser *filler;
-@property NSDate *endDate;
+@property NSDate *expirationDate;
 
 
 @end

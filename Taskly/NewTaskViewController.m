@@ -60,21 +60,21 @@
         self.task.title = self.taskTitleField.text;
         self.task.details = self.additionalDetailField.text;
         self.task.price = [NSNumber numberWithFloat:price];
-        self.task.duration = [NSNumber numberWithInt:self.hourMinutePicker.countDownDuration]; //picker gives seconds only so store as seconds
         
-        // set time zone of Parse createdAt object
-        NSCalendar *cal=[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        //set time zone of Parse createdAt object
+        NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         [cal setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+        
         //NSDateComponents *timeZoneComps=[[NSDateComponents alloc] init];
         //[timeZoneComps set]
-        NSDate *now = [NSDate date];
-        NSDate *endDate = [now dateByAddingTimeInterval:self.hourMinutePicker.countDownDuration];
-        NSDateComponents *timeZoneComps = [cal components:NSCalendarUnitWeekday|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:endDate];
-        //specify whatever day, month, and year is appropriate
         
+        NSDate *now = [NSDate date];
+        NSDate *expirationDate = [now dateByAddingTimeInterval:self.hourMinutePicker.countDownDuration];
+        
+        //NSDateComponents *timeZoneComps = [cal components:NSCalendarUnitWeekday|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:expirationDate];
         //NSDate *date=[cal dateFromComponents:timeZoneComps];
         
-        self.task.endDate = endDate;
+        self.task.expirationDate = expirationDate;
     }
 }
 

@@ -42,13 +42,14 @@
 }
 
 - (NSString *)getTimeToExpiration {
-    NSDate *createdAtDate = [self.task createdAt];
-    int taskDurationInSeconds = [[self.task objectForKey:@"duration"] intValue];
-    NSDate *expirationDate = [createdAtDate dateByAddingTimeInterval:taskDurationInSeconds];
+    NSDate *now = [NSDate date];
+    NSDate *expirationDate = [self.task objectForKey:@"expirationDate"];
+
+    //NSDate *expirationDate = [createdAtDate dateByAddingTimeInterval:taskDurationInSeconds];
     
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitHour | NSCalendarUnitMinute
-                                                        fromDate:createdAtDate
+                                                        fromDate:now
                                                           toDate:expirationDate
                                                          options:0];
     NSString *timeUntilExpiration = [NSString stringWithFormat:@"%ld hours and %ld minutes", [components hour], [components minute]];
