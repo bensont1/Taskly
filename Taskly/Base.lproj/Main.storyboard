@@ -445,7 +445,6 @@
         <!--Account View Controller-->
         <scene sceneID="1Wa-5m-hRz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rPr-QW-oyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="6ED-uk-49a" customClass="AccountViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mJ3-r8-eBN"/>
@@ -455,9 +454,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZDF-kz-enQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZDF-kz-enQ">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" textLabel="s8Z-Z3-1Y0" detailTextLabel="84p-Hx-ArZ" style="IBUITableViewCellStyleSubtitle" id="dy3-6i-aK5">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -499,6 +498,7 @@
                         <outlet property="taskTable" destination="ZDF-kz-enQ" id="DJR-AT-oPs"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPr-QW-oyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-540" y="304"/>
         </scene>
