@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Task.h"
+#import "Offer.h"
 
 @interface TaskManager : NSObject
 
 + (void)addTask:(Task *)task;
++ (void)respondToTask:(PFObject *)task withOffer:(Offer *)offer;
 
 @end

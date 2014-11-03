@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Task.h"
 
 @interface RespondToTaskViewController : UIViewController
+
+@property PFObject *task;
 
 @end

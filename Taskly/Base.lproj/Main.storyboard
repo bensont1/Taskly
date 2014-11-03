@@ -185,12 +185,18 @@
                                 <state key="normal" title="Button" image="stepper_up.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="incrementAmount:" destination="ggY-Gi-TIR" eventType="touchUpInside" id="0ca-BL-Rup"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixs-X1-Fie">
                                 <rect key="frame" x="351" y="249" width="39" height="23"/>
                                 <state key="normal" title="Button" image="stepper_down.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="decrementAmount:" destination="ggY-Gi-TIR" eventType="touchUpInside" id="DId-xO-qaW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyP-Iq-bj1">
                                 <rect key="frame" x="398" y="240" width="110" height="21"/>
@@ -206,6 +212,11 @@
                             <constraint firstItem="Vzs-1d-ezA" firstAttribute="width" secondItem="9t1-5S-093" secondAttribute="width" id="UDd-8A-rJp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="additionalDetailsField" destination="Vzs-1d-ezA" id="q07-f1-Zmf"/>
+                        <outlet property="amountLabel" destination="AyP-Iq-bj1" id="H6K-9q-ync"/>
+                        <outlet property="contactField" destination="Qet-Xr-44o" id="p7Y-IW-dYc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIv-Rq-Myc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
