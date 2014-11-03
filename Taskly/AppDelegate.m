@@ -20,6 +20,9 @@
 #warning TODO: use previous completed task history to give user tasks from the same person
 #warning TODO: create a rating mechanism for trusted task do-ers, increase as more tasks are marked complete and task originator has marked success/good job done
 
+#warning TODO: Allow useres to use Phone Number to login, instead of Facebook
+#warning TODO: Allow Points of Interest search on maps, currently only citys are searched, example: Safeway, Frys
+
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
