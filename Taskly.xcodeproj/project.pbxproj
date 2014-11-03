@@ -19,6 +19,7 @@
 		390A28B219EBC27B009976F7 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A28B119EBC27B009976F7 /* TaskManager.m */; };
 		390A28B519EBC330009976F7 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A28B419EBC330009976F7 /* Task.m */; };
 		390A28C019EBC970009976F7 /* hamburger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 390A28BF19EBC970009976F7 /* hamburger_icon.png */; };
+		3949FB131A070A7B00DD9F2C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3949FB121A070A7B00DD9F2C /* AccountViewController.m */; };
 		3951492419F5C2980063C4CF /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951492319F5C2980063C4CF /* Twitter.framework */; };
 		3951492619F5C2AF0063C4CF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951492519F5C2AF0063C4CF /* ImageIO.framework */; };
 		3951492819F5C2B40063C4CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951492719F5C2B40063C4CF /* Foundation.framework */; };
@@ -83,6 +84,8 @@
 		390A28B319EBC330009976F7 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		390A28B419EBC330009976F7 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		390A28BF19EBC970009976F7 /* hamburger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_icon.png; sourceTree = "<group>"; };
+		3949FB111A070A7B00DD9F2C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		3949FB121A070A7B00DD9F2C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		3951492319F5C2980063C4CF /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		3951492519F5C2AF0063C4CF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3951492719F5C2B40063C4CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +241,8 @@
 				3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */,
 				3951494519F5C88B0063C4CF /* SettingsViewController.h */,
 				3951494619F5C88B0063C4CF /* SettingsViewController.m */,
+				3949FB111A070A7B00DD9F2C /* AccountViewController.h */,
+				3949FB121A070A7B00DD9F2C /* AccountViewController.m */,
 				390A28AC19EBC0DF009976F7 /* TaskTabViewController.h */,
 				390A28AD19EBC0DF009976F7 /* TaskTabViewController.m */,
 				39CDCA7D19F63A2E00108DCB /* TaskDetailViewController.h */,
@@ -436,6 +441,7 @@
 				390A288219EBAB48009976F7 /* main.m in Sources */,
 				390A28B219EBC27B009976F7 /* TaskManager.m in Sources */,
 				390A28AE19EBC0DF009976F7 /* TaskTabViewController.m in Sources */,
+				3949FB131A070A7B00DD9F2C /* AccountViewController.m in Sources */,
 				3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
