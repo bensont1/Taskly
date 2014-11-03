@@ -22,12 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self loadOwnedTasks];
-    [self loadFillingTasks];
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadOwnedTasks];
     [self loadFillingTasks];
 }
