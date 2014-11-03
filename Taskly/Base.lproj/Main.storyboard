@@ -395,6 +395,24 @@
             </objects>
             <point key="canvasLocation" x="186" y="304"/>
         </scene>
+        <!--Account Offer Detail View Controller-->
+        <scene sceneID="gQz-o9-s2n">
+            <objects>
+                <viewController id="GGF-zs-O8E" customClass="AccountOfferDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oqO-7a-tnh"/>
+                        <viewControllerLayoutGuide type="bottom" id="sTc-ai-u5u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jq1-ZB-RB0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZr-Xu-SYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-179" y="1032"/>
+        </scene>
         <!--New Task Detail View Controller-->
         <scene sceneID="rCK-nH-upp">
             <objects>
@@ -543,11 +561,31 @@
                     <connections>
                         <outlet property="fillingTaskTable" destination="Wnf-TC-3sU" id="yvD-Oc-IiH"/>
                         <outlet property="ownedTaskTable" destination="ZDF-kz-enQ" id="R2Z-Df-M3U"/>
+                        <segue destination="sP1-Ow-CQh" kind="show" identifier="toTaskDetails" id="5Q0-co-nZ0"/>
+                        <segue destination="GGF-zs-O8E" kind="show" identifier="toOfferDetails" id="zSD-EC-GqK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPr-QW-oyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-540" y="304"/>
+        </scene>
+        <!--Account Task Detail View Controller-->
+        <scene sceneID="kzi-4C-Q5m">
+            <objects>
+                <viewController id="sP1-Ow-CQh" customClass="AccountTaskDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gih-RS-cBh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uja-AY-oW6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YMD-j2-W75">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wp-nf-qdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-901" y="1032"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

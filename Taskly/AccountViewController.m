@@ -7,16 +7,21 @@
 //
 
 #import "AccountViewController.h"
+#import "AccountTaskDetailViewController.h"
+#import "AccountOfferDetailViewController.h"
 #import <Parse/Parse.h>
 
 @interface AccountViewController ()
+
 @property (weak, nonatomic) IBOutlet UITableView *ownedTaskTable;
 @property (weak, nonatomic) IBOutlet UITableView *fillingTaskTable;
+
 @end
 
 @implementation AccountViewController {
     NSArray *ownedTasks;
     NSArray *fillingTasks;
+    PFObject *objectToSend;
 }
 
 - (void)viewDidLoad {
@@ -103,7 +108,7 @@ NSLog(@"called loadfillingtasks");
         return @"Tasks You Own";
     }
     else if(tableView == self.fillingTaskTable) {
-        return @"Tasks You're Filling";
+        return @"Tasks You've Offered To Fill";
     }
     else {
         return @"Invalid Section";
@@ -129,9 +134,9 @@ NSLog(@"called loadfillingtasks");
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"fillingTaskCell"];
         }
         
-        PFObject *task = [fillingTasks objectAtIndex:indexPath.row];
-        cell.textLabel.text = [task objectForKey:@"title"];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"You offered to do this task for $%@.00", [task objectForKey:@"amount"]];
+        PFObject *offer = [fillingTasks objectAtIndex:indexPath.row];
+        cell.textLabel.text = [offer objectForKey:@"title"];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"You offered to do this task for $%@.00", [offer objectForKey:@"amount"]];
         return cell;
     }
     else {
@@ -140,14 +145,37 @@ NSLog(@"called loadfillingtasks");
     }
 }
 
-/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(tableView == self.ownedTaskTable) {
+        PFObject *task = [ownedTasks objectAtIndex:indexPath.row];
+        objectToSend = task;
+        [self performSegueWithIdentifier:@"toTaskDetails" sender:self];
+    }
+    
+    else if(tableView == self.fillingTaskTable) {
+        PFObject *offer = [fillingTasks objectAtIndex:indexPath.row];
+        objectToSend = offer;
+        [self performSegueWithIdentifier:@"toOfferDetails" sender:self];
+    }
+    
+    else {
+        NSLog(@"Error: Invalid TableView");
+    }
+
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.destinationViewController isKindOfClass:[AccountTaskDetailViewController class]]) {
+        AccountTaskDetailViewController *destination = segue.destinationViewController;
+        destination.task = objectToSend;
+    }
+    else if([segue.destinationViewController isKindOfClass:[AccountOfferDetailViewController class]]) {
+        AccountOfferDetailViewController *destination = segue.destinationViewController;
+        destination.offer = objectToSend;
+    }
 }
-*/
+
 
 @end
