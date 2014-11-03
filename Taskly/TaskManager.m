@@ -24,6 +24,8 @@
 
 + (void)respondToTask:(PFObject *)task withOffer:(Offer *)offer {
     PFObject *newOffer = [PFObject objectWithClassName:@"Offers"];
+    NSString *taskTitle = [task objectForKey:@"title"];
+    [newOffer setObject:taskTitle forKey:@"title"];
     [newOffer setObject:offer.user forKey:@"user"];
     [newOffer setObject:offer.amount forKey:@"amount"];
     [newOffer setObject:offer.contactInfo forKey:@"contactInfo"];

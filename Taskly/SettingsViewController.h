@@ -11,7 +11,4 @@
 
 @interface SettingsViewController : UIViewController
 
-- (IBAction)performLogout:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *userLabel;
-
 @end

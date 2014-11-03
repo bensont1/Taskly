@@ -12,10 +12,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.userLabel.text = [[PFUser currentUser] objectForKey:@"fullName"];
 }
 
-- (IBAction)performLogout:(id)sender {
-    [PFUser logOut];
-}
 @end
