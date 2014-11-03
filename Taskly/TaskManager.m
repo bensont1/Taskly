@@ -19,6 +19,7 @@
     [newTask setObject:task.filler forKey:@"filler"];
     [newTask setObject:task.location forKey:@"location"];
     [newTask setObject:task.expirationDate forKey:@"expirationDate"];
+    [newTask setObject: [NSNumber numberWithBool:NO] forKey:@"completed"];
     [newTask saveInBackground];
 }
 
