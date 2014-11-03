@@ -26,6 +26,12 @@
     [self loadFillingTasks];
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self loadOwnedTasks];
+    [self loadFillingTasks];
+}
+
 - (void)loadOwnedTasks {
     int previousTaskCount = ownedTasks.count;
     
