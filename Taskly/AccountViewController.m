@@ -7,21 +7,31 @@
 //
 
 #import "AccountViewController.h"
+#import "AccountTaskDetailViewController.h"
+#import "AccountOfferDetailViewController.h"
 #import <Parse/Parse.h>
 
 @interface AccountViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *taskTable;
+
+@property (weak, nonatomic) IBOutlet UITableView *ownedTaskTable;
+@property (weak, nonatomic) IBOutlet UITableView *fillingTaskTable;
 
 @end
 
 @implementation AccountViewController {
     NSArray *ownedTasks;
     NSArray *fillingTasks;
+    PFObject *objectToSend;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.automaticallyAdjustsScrollViewInsets = NO;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadOwnedTasks];
     [self loadFillingTasks];
 }
@@ -41,7 +51,7 @@
                 for(int i=previousTaskCount; i<ownedTasks.count; i++) {
                     [newIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
                 }
-                [self.taskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.ownedTaskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
             }
             else {
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -63,9 +73,9 @@
                 
                 NSMutableArray *newIndexPaths = [NSMutableArray new];
                 for(int i=previousTaskCount; i<fillingTasks.count; i++) {
-                    [newIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:1]];
+                    [newIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
                 }
-                [self.taskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.fillingTaskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
             }
             else {
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -77,55 +87,94 @@
 #pragma mark - TableView Delegation
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(section == 0) {
+    if(tableView == self.ownedTaskTable) {
         return ownedTasks.count;
     }
-    else {
+    else if(tableView == self.fillingTaskTable) {
         return fillingTasks.count;
+    }
+    else {
+        return 0;
     }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if(section == 0) {
-        return @"Tasks you own";
+    if(tableView == self.ownedTaskTable) {
+        return @"Tasks You Own";
+    }
+    else if(tableView == self.fillingTaskTable) {
+        return @"Tasks You've Offered To Fill";
     }
     else {
-        return @"Tasks you're filling";
+        return @"Invalid Section";
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell" forIndexPath:indexPath];
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"taskCell"];
-    }
-    
-    if(indexPath.section == 0) {
+    if(tableView == self.ownedTaskTable) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ownedTaskCell" forIndexPath:indexPath];
+        if(!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ownedTaskCell"];
+        }
+        
         PFObject *task = [ownedTasks objectAtIndex:indexPath.row];
         cell.textLabel.text = [task objectForKey:@"title"];
         cell.detailTextLabel.text = [task objectForKey:@"details"];
+        return cell;
+    }
+    else if(tableView == self.fillingTaskTable) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fillingTaskCell" forIndexPath:indexPath];
+        if(!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"fillingTaskCell"];
+        }
+        
+        PFObject *offer = [fillingTasks objectAtIndex:indexPath.row];
+        cell.textLabel.text = [offer objectForKey:@"title"];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"You offered to do this task for $%@.00", [offer objectForKey:@"amount"]];
+        return cell;
     }
     else {
-        PFObject *task = [fillingTasks objectAtIndex:indexPath.row];
-        cell.textLabel.text = [task objectForKey:@"title"];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"You offered to do this task for $%@.00", [task objectForKey:@"amount"]];
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        return cell;
     }
-    return cell;        
 }
 
-/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(tableView == self.ownedTaskTable) {
+        PFObject *task = [ownedTasks objectAtIndex:indexPath.row];
+        objectToSend = task;
+        [self performSegueWithIdentifier:@"toTaskDetails" sender:self];
+    }
+    
+    else if(tableView == self.fillingTaskTable) {
+        PFObject *offer = [fillingTasks objectAtIndex:indexPath.row];
+        objectToSend = offer;
+        [self performSegueWithIdentifier:@"toOfferDetails" sender:self];
+    }
+    
+    else {
+        NSLog(@"Error: Invalid TableView");
+    }
+
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.destinationViewController isKindOfClass:[AccountTaskDetailViewController class]]) {
+        AccountTaskDetailViewController *destination = segue.destinationViewController;
+        destination.task = objectToSend;
+    }
+    else if([segue.destinationViewController isKindOfClass:[AccountOfferDetailViewController class]]) {
+        AccountOfferDetailViewController *destination = segue.destinationViewController;
+        destination.offer = objectToSend;
+    }
 }
-*/
+
 
 @end

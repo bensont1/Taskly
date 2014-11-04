@@ -19,6 +19,7 @@
     [newTask setObject:task.filler forKey:@"filler"];
     [newTask setObject:task.location forKey:@"location"];
     [newTask setObject:task.expirationDate forKey:@"expirationDate"];
+    [newTask setObject: [NSNumber numberWithBool:NO] forKey:@"completed"];
     [newTask saveInBackground];
 }
 
@@ -33,9 +34,13 @@
     
     [newOffer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(!error) {
-            PFRelation *relation = [task relationForKey:@"offered"];
-            [relation addObject:newOffer];
+            PFRelation *taskRelation = [task relationForKey:@"offered"];
+            [taskRelation addObject:newOffer];
             [task saveInBackground];
+            
+            PFRelation *offerRelation = [newOffer relationForKey:@"forTask"];
+            [offerRelation addObject:task];
+            [newOffer saveInBackground];
         }
         else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);

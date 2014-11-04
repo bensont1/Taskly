@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390901421A084116009D6447 /* AccountTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390901411A084116009D6447 /* AccountTaskDetailViewController.m */; };
+		390901451A08413B009D6447 /* AccountOfferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390901441A08413B009D6447 /* AccountOfferDetailViewController.m */; };
 		390A288219EBAB48009976F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A288119EBAB48009976F7 /* main.m */; };
 		390A288519EBAB48009976F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 390A288419EBAB48009976F7 /* AppDelegate.m */; };
 		390A288E19EBAB48009976F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390A288C19EBAB48009976F7 /* Main.storyboard */; };
@@ -64,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390901401A084116009D6447 /* AccountTaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTaskDetailViewController.h; sourceTree = "<group>"; };
+		390901411A084116009D6447 /* AccountTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTaskDetailViewController.m; sourceTree = "<group>"; };
+		390901431A08413B009D6447 /* AccountOfferDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountOfferDetailViewController.h; sourceTree = "<group>"; };
+		390901441A08413B009D6447 /* AccountOfferDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountOfferDetailViewController.m; sourceTree = "<group>"; };
 		390A287C19EBAB48009976F7 /* Taskly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		390A288019EBAB48009976F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		390A288119EBAB48009976F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -165,6 +171,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		390901461A0844B9009D6447 /* Account Tab */ = {
+			isa = PBXGroup;
+			children = (
+				3949FB111A070A7B00DD9F2C /* AccountViewController.h */,
+				3949FB121A070A7B00DD9F2C /* AccountViewController.m */,
+				3951494519F5C88B0063C4CF /* SettingsViewController.h */,
+				3951494619F5C88B0063C4CF /* SettingsViewController.m */,
+				390901401A084116009D6447 /* AccountTaskDetailViewController.h */,
+				390901411A084116009D6447 /* AccountTaskDetailViewController.m */,
+				390901431A08413B009D6447 /* AccountOfferDetailViewController.h */,
+				390901441A08413B009D6447 /* AccountOfferDetailViewController.m */,
+			);
+			name = "Account Tab";
+			sourceTree = "<group>";
+		};
+		390901471A0844E0009D6447 /* New Task Tab */ = {
+			isa = PBXGroup;
+			children = (
+				39CDCA8019F63AC300108DCB /* NewTaskViewController.h */,
+				39CDCA8119F63AC300108DCB /* NewTaskViewController.m */,
+				3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */,
+				3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */,
+			);
+			name = "New Task Tab";
+			sourceTree = "<group>";
+		};
+		390901481A0844F8009D6447 /* Tasks Tab */ = {
+			isa = PBXGroup;
+			children = (
+				390A28AC19EBC0DF009976F7 /* TaskTabViewController.h */,
+				390A28AD19EBC0DF009976F7 /* TaskTabViewController.m */,
+				39CDCA7D19F63A2E00108DCB /* TaskDetailViewController.h */,
+				39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */,
+				39B98F6019FEC1AC00CBC247 /* RespondToTaskViewController.h */,
+				39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */,
+			);
+			name = "Tasks Tab";
+			sourceTree = "<group>";
+		};
 		390A287319EBAB48009976F7 = {
 			isa = PBXGroup;
 			children = (
@@ -233,20 +278,9 @@
 		390A28AF19EBC0E5009976F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				39B98F6019FEC1AC00CBC247 /* RespondToTaskViewController.h */,
-				39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */,
-				39CDCA8019F63AC300108DCB /* NewTaskViewController.h */,
-				39CDCA8119F63AC300108DCB /* NewTaskViewController.m */,
-				3951494C19F5F8E30063C4CF /* NewTaskDetailViewController.h */,
-				3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */,
-				3951494519F5C88B0063C4CF /* SettingsViewController.h */,
-				3951494619F5C88B0063C4CF /* SettingsViewController.m */,
-				3949FB111A070A7B00DD9F2C /* AccountViewController.h */,
-				3949FB121A070A7B00DD9F2C /* AccountViewController.m */,
-				390A28AC19EBC0DF009976F7 /* TaskTabViewController.h */,
-				390A28AD19EBC0DF009976F7 /* TaskTabViewController.m */,
-				39CDCA7D19F63A2E00108DCB /* TaskDetailViewController.h */,
-				39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */,
+				390901461A0844B9009D6447 /* Account Tab */,
+				390901481A0844F8009D6447 /* Tasks Tab */,
+				390901471A0844E0009D6447 /* New Task Tab */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -438,8 +472,10 @@
 				39CDCA7F19F63A2E00108DCB /* TaskDetailViewController.m in Sources */,
 				39B3138B1A02EB4600E62850 /* Offer.m in Sources */,
 				3951494719F5C88B0063C4CF /* SettingsViewController.m in Sources */,
+				390901421A084116009D6447 /* AccountTaskDetailViewController.m in Sources */,
 				390A288219EBAB48009976F7 /* main.m in Sources */,
 				390A28B219EBC27B009976F7 /* TaskManager.m in Sources */,
+				390901451A08413B009D6447 /* AccountOfferDetailViewController.m in Sources */,
 				390A28AE19EBC0DF009976F7 /* TaskTabViewController.m in Sources */,
 				3949FB131A070A7B00DD9F2C /* AccountViewController.m in Sources */,
 				3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */,

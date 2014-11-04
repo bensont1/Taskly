@@ -42,7 +42,7 @@
     // Initialize FacebookUtils
     [PFFacebookUtils initializeFacebook];
     
-    //set UI options
+    //set UI options//button color changes something in here
     self.window.tintColor = [UIColor colorWithRed:230.0f/255.0f
                                             green:230.0f/255.0f
                                              blue:230.0f/255.0f

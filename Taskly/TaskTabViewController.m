@@ -23,6 +23,12 @@
     NSString *priceTextKey;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    //self.automaticallyAdjustsScrollViewInsets = NO; //removes weird space above first cell
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -165,11 +171,7 @@
     NSLog(@"User dismissed the signUpViewController");
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
-    //self.automaticallyAdjustsScrollViewInsets = NO; //removes weird space above first cell
-}
+#pragma mark - TableViewDelegation
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
@@ -183,23 +185,16 @@
     selectedTask = [self.objects objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"segueToTaskDetail" sender:self];
 }
-/*
+
+//only get tasks that are not filled and haven't expired
 -(PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query whereKey:@"completed" equalTo:[NSNumber numberWithBool:NO]];
     
-//        NSDate *createdAtDate = [self.task createdAt];
-//        int taskDurationInSeconds = [[self.task objectForKey:@"duration"] intValue];
-//        NSDate *expirationDate = [createdAtDate dateByAddingTimeInterval:taskDurationInSeconds];
-//        
-//        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-//        NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitHour | NSCalendarUnitMinute
-//                                                            fromDate:createdAtDate
-//                                                              toDate:expirationDate
-//                                                             options:0];
-//        NSString *timeUntilExpiration = [NSString stringWithFormat:@"%ld hours and %ld minutes", [components hour], [components minute]];
-//        return timeUntilExpiration;
-    
-}*/
+    NSDate *now = [NSDate date];
+    [query whereKey:@"expirationDate" greaterThan:now];
+    return query;
+}
 
 
 #pragma mark - Navigation
