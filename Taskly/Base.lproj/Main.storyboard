@@ -406,8 +406,86 @@
                     <view key="view" contentMode="scaleToFill" id="Jq1-ZB-RB0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-91-JaO">
+                                <rect key="frame" x="0.0" y="64" width="600" height="146"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Awaiting Task Owner's Response" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bij-0I-Dau">
+                                        <rect key="frame" x="0.0" y="43" width="600" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please check back soon." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t36-xg-E7T">
+                                        <rect key="frame" x="0.0" y="80" width="600" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t36-xg-E7T" secondAttribute="width" id="IBP-Ii-tz5"/>
+                                    <constraint firstAttribute="width" secondItem="Bij-0I-Dau" secondAttribute="width" id="qnz-yQ-LRf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8sG-UX-Syr">
+                                <rect key="frame" x="0.0" y="64" width="600" height="146"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Offer Has Been Accepted!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpZ-8M-bdu">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You will be hearing from the task owner shortly." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tok-OL-ADi">
+                                        <rect key="frame" x="0.0" y="71" width="600" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tok-OL-ADi" firstAttribute="width" secondItem="8sG-UX-Syr" secondAttribute="width" id="Wlv-nd-Hmc"/>
+                                    <constraint firstAttribute="width" secondItem="kpZ-8M-bdu" secondAttribute="width" id="rK0-bc-FLx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a34-Jh-NDi">
+                                <rect key="frame" x="0.0" y="64" width="600" height="146"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Offer Was Declined" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78E-cr-HWa">
+                                        <rect key="frame" x="0.0" y="21" width="600" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="The task owner chose another offer, better luck next time!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj5-nd-Kvg">
+                                        <rect key="frame" x="0.0" y="62" width="600" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hj5-nd-Kvg" secondAttribute="width" id="uhk-kz-MqG"/>
+                                    <constraint firstItem="78E-cr-HWa" firstAttribute="width" secondItem="a34-Jh-NDi" secondAttribute="width" id="yr2-UM-Uwh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dh3-91-JaO" firstAttribute="width" secondItem="Jq1-ZB-RB0" secondAttribute="width" id="IdK-J2-Q1T"/>
+                            <constraint firstItem="8sG-UX-Syr" firstAttribute="width" secondItem="Jq1-ZB-RB0" secondAttribute="width" id="a0g-ob-tq8"/>
+                            <constraint firstAttribute="width" secondItem="a34-Jh-NDi" secondAttribute="width" id="uUD-Va-FR1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="awaitingResponseView" destination="dh3-91-JaO" id="t7M-6w-NVd"/>
+                        <outlet property="offerAcceptedView" destination="8sG-UX-Syr" id="0SG-x7-Xpw"/>
+                        <outlet property="offerRejectedView" destination="a34-Jh-NDi" id="I0W-Qt-u1I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZr-Xu-SYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

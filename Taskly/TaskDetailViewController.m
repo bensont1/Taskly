@@ -80,7 +80,25 @@
 }
 
 - (void)respondToTask {
-    [self performSegueWithIdentifier:@"toRespondPage" sender:self];
+    //tried to make it so you can't respond to your own task, but I can't figure it out
+    
+    /*if([[self.task objectForKey:@"owner"] objectForKey:@"username"] == [[PFUser currentUser] objectForKey:@"username"]) {
+        [self showYourTaskAlert];
+    }
+    else {*/
+        [self performSegueWithIdentifier:@"toRespondPage" sender:self];
+    //}
+}
+
+
+#pragma mark - Alerts
+
+-(void)showYourTaskAlert {
+    [[[UIAlertView alloc] initWithTitle:@"This is Your task!"
+                                message:@"Please fill out the contact information section. If your offer is accepted, the owner needs a way to get in touch with you!"
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 @end
