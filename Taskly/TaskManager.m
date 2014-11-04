@@ -34,9 +34,13 @@
     
     [newOffer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(!error) {
-            PFRelation *relation = [task relationForKey:@"offered"];
-            [relation addObject:newOffer];
+            PFRelation *taskRelation = [task relationForKey:@"offered"];
+            [taskRelation addObject:newOffer];
             [task saveInBackground];
+            
+            PFRelation *offerRelation = [newOffer relationForKey:@"forTask"];
+            [offerRelation addObject:task];
+            [newOffer saveInBackground];
         }
         else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);

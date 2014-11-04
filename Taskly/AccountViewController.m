@@ -61,7 +61,6 @@
 }
 
 - (void)loadFillingTasks {
-NSLog(@"called loadfillingtasks");
     int previousTaskCount = fillingTasks.count;
     
     if([PFUser currentUser] != nil) {
