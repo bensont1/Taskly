@@ -8,6 +8,8 @@
 
 // Below are listed in our REQUIREMENTS doc, for grading purposes
 
+#warning TODO: Can't respond to own task, and cannot respond to same task twice
+#warning TODO: show user name in responding to task view
 
 // Below are nice features to add
 #warning TODO: add button on new task page to set location as current location

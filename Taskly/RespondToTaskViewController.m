@@ -96,11 +96,13 @@
 }
 
 -(void)showSuccessfulResponseAlert {
-    [[[UIAlertView alloc] initWithTitle:@"Offer Sent!"
+    UIAlertView *responseSuccessAlert = [[UIAlertView alloc] initWithTitle:@"Offer Sent!"
                                 message:@"Your offer has been successfully sent to the task owner. We'll let you know if you are chosen, and you can also check the status of this offer on the Account page."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+                               delegate:self
+                      cancelButtonTitle:nil
+                      otherButtonTitles:@"OK", nil];
+    [responseSuccessAlert setTag:1];
+    [responseSuccessAlert show];
 }
 
 #pragma mark - TextView Delegation
@@ -115,6 +117,16 @@
 - (void)textViewDidEndEditing:(UITextView *)textView {
     if([textView.text isEqualToString: @""]) {
         textView.text = PLACEHOLDER_TEXT;
+    }
+}
+
+#pragma mark - Alert Delgation
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(alertView.tag == 1) {
+        if(buttonIndex != [alertView cancelButtonIndex]) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            //[self.parentViewController.tabBarController
+        }
     }
 }
 
