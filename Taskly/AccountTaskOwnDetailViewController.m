@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *taskPosted;
 @property (weak, nonatomic) IBOutlet UILabel *taskContact;
 @property (weak, nonatomic) IBOutlet UITextView *taskDetails;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UILabel *finalOfferAmount;
 - (IBAction)closeDetailView:(id)sender;
 
@@ -24,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.closeButton setTintColor:[UIColor blueColor]];
     // Do any additional setup after loading the view.
     [self loadOfferDetails];
     
