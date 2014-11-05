@@ -54,16 +54,16 @@
                                             green:230.0f/255.0f
                                              blue:230.0f/255.0f
                                             alpha:1.0f];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:57.0f/255.0f
-                                                    green:129.0f/255.0f
-                                                    blue:125.0f/255.0f
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:21.0f/255.0f
+                                                    green:189.0f/255.0f
+                                                    blue:170.0f/255.0f
                                                     alpha:1.0f]];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:57.0f/255.0f
-                                                           green:129.0f/255.0f
-                                                            blue:125.0f/255.0f
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:21.0f/255.0f
+                                                           green:189.0f/255.0f
+                                                            blue:170.0f/255.0f
                                                            alpha:1.0f]];
-    //color: 101,175,180
-    //color: 57, 129, 125
+
+    //color: 57,129,125
     return YES;
 }
 
