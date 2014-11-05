@@ -108,7 +108,13 @@
     
     PFObject *offer = [offers objectAtIndex:indexPath.row];
     PFUser *userOfOffer = [offer objectForKey:@"user"];
-    cell.textLabel.text = [userOfOffer objectForKey:@"fullName"];
+    NSString *nameToDisplay = [userOfOffer objectForKey:@"fullName"];
+    
+    if(!nameToDisplay) {
+        nameToDisplay = [userOfOffer objectForKey:@"username"];
+    }
+
+    cell.textLabel.text = nameToDisplay;
     
     NSNumber *amountOffered = [offer objectForKey:@"amount"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"This user will complete your task for $%@.00", amountOffered];
