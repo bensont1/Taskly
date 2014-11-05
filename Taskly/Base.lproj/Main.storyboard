@@ -749,7 +749,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRD-Ji-M0P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Task Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRD-Ji-M0P">
                                 <rect key="frame" x="0.0" y="285" width="600" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -761,13 +761,13 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-u6-GcX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Additional Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-u6-GcX">
                                 <rect key="frame" x="0.0" y="348" width="600" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Offer Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WW-re-LbB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Final Offer Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WW-re-LbB">
                                 <rect key="frame" x="0.0" y="157" width="600" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -790,7 +790,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="finalOfferAmount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uca-ae-GoB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="finalOfferAmount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uca-ae-GoB">
                                 <rect key="frame" x="0.0" y="192" width="600" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -799,11 +799,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uca-ae-GoB" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="Ahh-JA-95e"/>
                             <constraint firstItem="UKx-ez-3NB" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="Ao2-7O-q1S"/>
-                            <constraint firstItem="cpW-7X-HMT" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="ZAq-6m-bS9"/>
                             <constraint firstItem="6xw-bE-tic" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="Zzc-hH-afF"/>
+                            <constraint firstAttribute="width" secondItem="cpW-7X-HMT" secondAttribute="width" id="aK1-rM-A5C"/>
+                            <constraint firstAttribute="width" secondItem="NCm-Il-8Gc" secondAttribute="width" id="bJr-rc-Utx"/>
+                            <constraint firstAttribute="width" secondItem="eZA-u6-GcX" secondAttribute="width" id="guW-ET-ngc"/>
+                            <constraint firstAttribute="width" secondItem="3WW-re-LbB" secondAttribute="width" id="hWP-cJ-QWm"/>
                             <constraint firstItem="Dpp-nG-O60" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="nIK-3C-ope"/>
-                            <constraint firstAttribute="width" secondItem="NCm-Il-8Gc" secondAttribute="width" id="xk7-dg-6Ib"/>
+                            <constraint firstItem="BRD-Ji-M0P" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="z31-Eo-EUn"/>
                         </constraints>
                     </view>
                     <connections>
