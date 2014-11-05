@@ -81,10 +81,13 @@
         PFUser *userOfOffer = [offer objectForKey:@"user"];
         
         [TaskManager acceptFiller:self.task withUser:userOfOffer];
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 
 #pragma mark TABLEVIEW
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Offers To Complete This Task";
 }
@@ -115,8 +118,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *offer = [offers objectAtIndex:indexPath.row];
     PFUser *userOfOffer = [offer objectForKey:@"user"];
-    NSString *fullNameOfOffer = [userOfOffer objectForKey:@"fullName"];
-    NSString *offerMessage = [NSString stringWithFormat:@"You have selected %@ to complete your task. Do you wish to accept this offer?", fullNameOfOffer];
+    NSString *nameToDisplay = [userOfOffer objectForKey:@"fullName"];
+
+    if(!nameToDisplay) {
+        nameToDisplay = [userOfOffer objectForKey:@"username"];
+    }
+    NSString *offerMessage = [NSString stringWithFormat:@"You have selected %@ to complete your task. Do you wish to accept this offer?", nameToDisplay];
     UIAlertView *selectRow = [[UIAlertView alloc] initWithTitle:@"Selected Offer" message:offerMessage delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Accept", nil];
     
     [selectRow show];
