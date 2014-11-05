@@ -9,6 +9,7 @@
 #import "AccountViewController.h"
 #import "AccountTaskDetailViewController.h"
 #import "AccountOfferDetailViewController.h"
+#import "AccountTaskOwnDetailViewController.h"
 #import <Parse/Parse.h>
 
 @interface AccountViewController ()
@@ -22,6 +23,7 @@
     NSArray *ownedTasks;
     NSArray *fillingTasks;
     PFObject *objectToSend;
+    PFUser *fillerToSend;
 }
 
 - (void)viewDidLoad {
@@ -37,7 +39,7 @@
 }
 
 - (void)loadOwnedTasks {
-    int previousTaskCount = ownedTasks.count;
+    int previousTaskCount = (int)ownedTasks.count;
     
     if([PFUser currentUser] != nil) {
         PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
@@ -61,7 +63,7 @@
 }
 
 - (void)loadFillingTasks {
-    int previousTaskCount = fillingTasks.count;
+    int previousTaskCount = (int) fillingTasks.count;
     
     if([PFUser currentUser] != nil) {
         PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
@@ -81,6 +83,16 @@
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }];
+    }
+}
+
+-(BOOL)checkTaskFiller {
+    PFUser *fillerUser = [objectToSend objectForKey:@"filler"];
+    if([[fillerUser valueForKey:@"objectId"] isEqualToString:@"JUTSUpXtKt"]) {
+        return NO;
+    }
+    else {
+        return YES;
     }
 }
 
@@ -148,7 +160,13 @@
     if(tableView == self.ownedTaskTable) {
         PFObject *task = [ownedTasks objectAtIndex:indexPath.row];
         objectToSend = task;
-        [self performSegueWithIdentifier:@"toTaskDetails" sender:self];
+        if(![self checkTaskFiller]) {
+            [self performSegueWithIdentifier:@"toTaskDetails" sender:self];
+        }
+        else {
+            fillerToSend = [objectToSend objectForKey:@"filler"];
+            [self performSegueWithIdentifier:@"toFilledTask" sender:self];
+        }
     }
     
     else if(tableView == self.fillingTaskTable) {
@@ -173,6 +191,11 @@
     else if([segue.destinationViewController isKindOfClass:[AccountOfferDetailViewController class]]) {
         AccountOfferDetailViewController *destination = segue.destinationViewController;
         destination.offer = objectToSend;
+    }
+    else if([segue.destinationViewController isKindOfClass:[AccountTaskOwnDetailViewController class]]) {
+        AccountTaskOwnDetailViewController *destination = segue.destinationViewController;
+        destination.task = objectToSend;
+        destination.taskFiller = fillerToSend;
     }
 }
 

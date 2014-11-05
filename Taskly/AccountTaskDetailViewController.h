@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface AccountTaskDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface AccountTaskDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property PFObject *task;
 

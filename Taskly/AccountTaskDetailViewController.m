@@ -7,6 +7,7 @@
 //
 
 #import "AccountTaskDetailViewController.h"
+#import "TaskManager.h"
 
 @interface AccountTaskDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *taskTitleLabel;
@@ -17,6 +18,7 @@
 
 @implementation AccountTaskDetailViewController {
     NSArray *offers;
+    int selected;
 }
 
 - (void)viewDidLoad {
@@ -46,11 +48,12 @@
 }
 
 - (void)loadOffers {
-    int previousOfferCount = offers.count;
+    int previousOfferCount = (int) offers.count;
     
     if([PFUser currentUser] != nil) {
         PFRelation *relation = [self.task relationForKey:@"offered"];
         PFQuery *query = [relation query];
+        [query includeKey:@"user"];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if(!error) {
@@ -69,6 +72,19 @@
     }
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex != [alertView cancelButtonIndex]) {
+        NSLog(@"OBJECT AT INDEX %d, %@", selected, offers[selected]);
+        NSLog(@"FOR TASK: %@", self.task);
+        
+        PFObject *offer = offers[selected];
+        PFUser *userOfOffer = [offer objectForKey:@"user"];
+        
+        [TaskManager acceptFiller:self.task withUser:userOfOffer];
+    }
+}
+
+#pragma mark TABLEVIEW
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Offers To Complete This Task";
 }
@@ -88,12 +104,28 @@
     }
     
     PFObject *offer = [offers objectAtIndex:indexPath.row];
-    cell.textLabel.text = [offer objectForKey:@"title"];
+    PFUser *userOfOffer = [offer objectForKey:@"user"];
+    cell.textLabel.text = [userOfOffer objectForKey:@"fullName"];
     
     NSNumber *amountOffered = [offer objectForKey:@"amount"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"This user will complete your task for $%@.00", amountOffered];
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFObject *offer = [offers objectAtIndex:indexPath.row];
+    PFUser *userOfOffer = [offer objectForKey:@"user"];
+    NSString *fullNameOfOffer = [userOfOffer objectForKey:@"fullName"];
+    NSString *offerMessage = [NSString stringWithFormat:@"You have selected %@ to complete your task. Do you wish to accept this offer?", fullNameOfOffer];
+    UIAlertView *selectRow = [[UIAlertView alloc] initWithTitle:@"Selected Offer" message:offerMessage delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Accept", nil];
+    
+    [selectRow show];
+    
+    selected = (int) indexPath.row;
+    NSLog(@"%ld", (long)indexPath.row);
+}
+
+
 
 
 

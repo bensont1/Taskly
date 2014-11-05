@@ -7,8 +7,10 @@
 //
 
 // Below are listed in our REQUIREMENTS doc, for grading purposes
-#warning TODO: PRIORITY: Allow users to respond to posted Task
-#warning TODO: PRIOROTY: Store users task history
+#warning TODO: PRIORITY: Allow users to respond to posted Task (partly complete); must allow Filler/User to mark task as completed and change value on Parse
+#warning TODO: PRIORITY: Layout for AccountTaskOwnsDetailViewController messed up
+
+
 
 // Below are nice features to add
 #warning TODO: add button on new task page to set location as current location
@@ -22,6 +24,8 @@
 
 #warning TODO: Allow useres to use Phone Number to login, instead of Facebook
 #warning TODO: Allow Points of Interest search on maps, currently only citys are searched, example: Safeway, Frys
+#warning TODO: Allow users to remove tasks from history on Account page
+#warning TODO: Push notifications to users/filler when job has been accepted/completed
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>

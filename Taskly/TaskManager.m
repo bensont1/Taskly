@@ -48,6 +48,17 @@
     }];
 }
 
++(void)acceptFiller:(PFObject *)task withUser:(PFUser *)user {
+    NSLog(@"Accept Filler Function");
+    PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
+    NSString *objectID = [task valueForKey:@"objectId"];
+    NSLog(@"ID HERE: %@", objectID);
+    [query getObjectInBackgroundWithId:objectID block:^(PFObject *object, NSError *error) {
+        object[@"filler"] = user;
+        [object saveInBackground];
+    }];
+}
+
 + (NSString *)locationFromPlacemark:(CLPlacemark*)placemark {
     NSString *formattedLocation;
     

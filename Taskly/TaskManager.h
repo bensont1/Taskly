@@ -14,5 +14,6 @@
 
 + (void)addTask:(Task *)task;
 + (void)respondToTask:(PFObject *)task withOffer:(Offer *)offer;
++(void)acceptFiller:(PFObject *)task withUser:(PFUser *)user;
 
 @end

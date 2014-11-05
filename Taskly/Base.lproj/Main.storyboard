@@ -646,6 +646,7 @@
                         <outlet property="ownedTaskTable" destination="ZDF-kz-enQ" id="R2Z-Df-M3U"/>
                         <segue destination="sP1-Ow-CQh" kind="show" identifier="toTaskDetails" id="5Q0-co-nZ0"/>
                         <segue destination="GGF-zs-O8E" kind="show" identifier="toOfferDetails" id="zSD-EC-GqK"/>
+                        <segue destination="0dv-SK-zY9" kind="presentation" identifier="toFilledTask" modalTransitionStyle="flipHorizontal" id="n7F-mx-hDM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPr-QW-oyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -723,6 +724,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wp-nf-qdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-901" y="1032"/>
+        </scene>
+        <!--Account Task Own Detail View Controller-->
+        <scene sceneID="yJ6-Rm-u6d">
+            <objects>
+                <viewController id="0dv-SK-zY9" customClass="AccountTaskOwnDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fT2-E3-vWv"/>
+                        <viewControllerLayoutGuide type="bottom" id="sUw-DD-PZL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o5W-gX-mr6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Task Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xw-bE-tic">
+                                <rect key="frame" x="0.0" y="79" width="600" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You posted this task for $10.00 on 9/3/13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKx-ez-3NB">
+                                <rect key="frame" x="0.0" y="116" width="600" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpp-nG-O60">
+                                <rect key="frame" x="108" y="489" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeDetailView:" destination="0dv-SK-zY9" eventType="touchUpInside" id="Cq8-Pw-2mY"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="AdditionalDetailsHolder" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cp6-M0-hnR">
+                                <rect key="frame" x="108" y="368" width="374" height="92"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRD-Ji-M0P">
+                                <rect key="frame" x="245" y="276" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Contact the Filler:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpW-7X-HMT">
+                                <rect key="frame" x="227" y="247" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Details:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-u6-GcX">
+                                <rect key="frame" x="226" y="339" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Offer Amount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WW-re-LbB">
+                                <rect key="frame" x="226" y="157" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="finalOfferAmount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uca-ae-GoB">
+                                <rect key="frame" x="235" y="186" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UKx-ez-3NB" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="Ao2-7O-q1S"/>
+                            <constraint firstItem="cpW-7X-HMT" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="ZAq-6m-bS9"/>
+                            <constraint firstItem="6xw-bE-tic" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="Zzc-hH-afF"/>
+                            <constraint firstItem="Dpp-nG-O60" firstAttribute="width" secondItem="o5W-gX-mr6" secondAttribute="width" id="nIK-3C-ope"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="finalOfferAmount" destination="uca-ae-GoB" id="0UH-st-N5M"/>
+                        <outlet property="taskContact" destination="BRD-Ji-M0P" id="N9f-wW-YRJ"/>
+                        <outlet property="taskDetails" destination="Cp6-M0-hnR" id="QgE-zH-dI8"/>
+                        <outlet property="taskPosted" destination="UKx-ez-3NB" id="Xo6-SX-aus"/>
+                        <outlet property="taskTitle" destination="6xw-bE-tic" id="jvt-dJ-j0k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sbi-fQ-EVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-901" y="1755"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
