@@ -117,6 +117,9 @@
     self.taskTitleField.text = @"";
     self.additionalDetailField.text = @"Fill in additional details here";
     self.priceLabel.text = @"$10.00";
+    
+    NSTimeInterval defaultTime = 0.00;
+    self.hourMinutePicker.countDownDuration = defaultTime;
 }
 
 #pragma mark - TextView Delegation
