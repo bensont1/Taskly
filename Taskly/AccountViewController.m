@@ -167,12 +167,15 @@
             fillerToSend = [objectToSend objectForKey:@"filler"];
             [self performSegueWithIdentifier:@"toFilledTask" sender:self];
         }
+        [self.ownedTaskTable deselectRowAtIndexPath:indexPath animated:YES];
     }
     
     else if(tableView == self.fillingTaskTable) {
         PFObject *offer = [fillingTasks objectAtIndex:indexPath.row];
         objectToSend = offer;
         [self performSegueWithIdentifier:@"toOfferDetails" sender:self];
+        
+        [self.fillingTaskTable deselectRowAtIndexPath:indexPath animated:YES];
     }
     
     else {

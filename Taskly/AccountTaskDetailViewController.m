@@ -135,7 +135,8 @@
     [selectRow show];
     
     selected = (int) indexPath.row;
-    NSLog(@"%ld", (long)indexPath.row);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
