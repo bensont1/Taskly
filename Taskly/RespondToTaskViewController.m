@@ -75,9 +75,13 @@
     }
     else {
         [self setFields];
-        [TaskManager respondToTask:self.task withOffer:self.offer];
-        [self showSuccessfulResponseAlert];
-        //segue to main page, idk how
+        if([self checkAlreadyRespond]) {
+            [self showAlreadyRespondedAlert];
+        }
+        else {
+            [TaskManager respondToTask:self.task withOffer:self.offer];
+            [self showSuccessfulResponseAlert];
+        }
     }
 }
 
@@ -85,14 +89,31 @@
     [self.view endEditing:YES];
 }
 
+-(BOOL)checkAlreadyRespond {
+    PFRelation *relation = [self.task relationForKey:@"offered"];
+    PFQuery *query = [relation query];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    
+    PFObject *testIfQuerySuccess = [query getFirstObject];
+    
+    if(testIfQuerySuccess) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
 #pragma mark - Alerts
 
 -(void)showFillOutContactInfoAlert {
-    [[[UIAlertView alloc] initWithTitle:@"Form Incomplete"
+    UIAlertView *contactInfoErrorAlert = [[UIAlertView alloc] initWithTitle:@"Form Incomplete"
                                 message:@"Please fill out the contact information section. If your offer is accepted, the owner needs a way to get in touch with you!"
-                               delegate:nil
+                               delegate:self
                       cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+                      otherButtonTitles:nil];
+    [contactInfoErrorAlert setTag:0];
+    [contactInfoErrorAlert show];
 }
 
 -(void)showSuccessfulResponseAlert {
@@ -103,6 +124,16 @@
                       otherButtonTitles:@"OK", nil];
     [responseSuccessAlert setTag:1];
     [responseSuccessAlert show];
+}
+
+-(void)showAlreadyRespondedAlert {
+    UIAlertView *alreadyRespondAlert = [[UIAlertView alloc] initWithTitle:@"Already Responded"
+                                message:@"You have already responded to this Task. Check the Account Page to see if the Task Owner has accepted your offer."
+                               delegate:self
+                      cancelButtonTitle:nil
+                      otherButtonTitles:@"OK", nil];
+    [alreadyRespondAlert setTag:2];
+    [alreadyRespondAlert show];
 }
 
 #pragma mark - TextView Delegation
@@ -122,10 +153,9 @@
 
 #pragma mark - Alert Delgation
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if(alertView.tag == 1) {
+    if(alertView.tag == 1 || alertView.tag == 2) {
         if(buttonIndex != [alertView cancelButtonIndex]) {
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            //[self.parentViewController.tabBarController
+                [self.navigationController popToRootViewControllerAnimated:YES];
         }
     }
 }
