@@ -12,6 +12,7 @@
 @interface NewTaskDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -111,6 +112,15 @@
 //    return YES;
 //}
 
+-(void)resetFields {
+    // reset map
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.mapView.centerCoordinate, MKCoordinateSpanMake(180, 360));
+    [self.mapView setRegion:region animated:YES];
+    
+    // reset search bar
+    self.searchBar.text = @"";
+}
+
 -(void)showTaskAddedAlert {
     UIAlertView *taskAddedSuccessAlert = [[UIAlertView alloc] initWithTitle:@"Task Added!"
                                 message:@"Your task has been added successfully! Hopefully it will be filled soon."
@@ -132,8 +142,8 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(alertView.tag == 1) {
         if(buttonIndex == [alertView cancelButtonIndex]) {
-            NSLog(@"Am i running");
             [self.parentViewController.tabBarController setSelectedIndex:0];
+            [self resetFields];
         }
     }
 }
