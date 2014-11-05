@@ -8,6 +8,7 @@
 
 #import "RespondToTaskViewController.h"
 #import "TaskManager.h"
+#define PLACEHOLDER_TEXT @"You can add a personal message here if you'd like."
 
 @interface RespondToTaskViewController ()
 
@@ -36,6 +37,8 @@
                                    target:self
                                    action:@selector(submitResponse)];
     self.navigationItem.rightBarButtonItem = submitButton;
+    
+    self.additionalDetailsField.delegate = self;
     
     self.offer = [[Offer alloc] init];
     amount = 10.00;
@@ -99,5 +102,21 @@
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
 }
+
+#pragma mark - TextView Delegation
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if([textView.text isEqualToString:PLACEHOLDER_TEXT]) {
+        textView.text = @"";
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if([textView.text isEqualToString: @""]) {
+        textView.text = PLACEHOLDER_TEXT;
+    }
+}
+
 
 @end

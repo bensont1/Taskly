@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Task.h"
 
-@interface RespondToTaskViewController : UIViewController
+@interface RespondToTaskViewController : UIViewController <UITextViewDelegate>
 
 @property PFObject *task;
 
