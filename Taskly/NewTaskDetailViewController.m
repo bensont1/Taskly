@@ -78,6 +78,10 @@
     return locationString;
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 -(void)addTask:(UIButton *)sender {
     //if(![self verifyAddress]) {
         //[self showInvalidLocationAlert];
