@@ -38,6 +38,8 @@
                                    action:@selector(submitResponse)];
     self.navigationItem.rightBarButtonItem = submitButton;
     
+    self.additionalDetailsField.delegate = self;
+    
     self.offer = [[Offer alloc] init];
     amount = 10.00;
 }
@@ -101,7 +103,7 @@
                       otherButtonTitles:nil] show];
 }
 
-#pragma mark - Textview Delegation
+#pragma mark - TextView Delegation
 
 -(void)textViewDidBeginEditing:(UITextView *)textView
 {
