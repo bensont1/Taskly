@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "Task.h"
 
-@interface NewTaskDetailViewController : UIViewController <UISearchBarDelegate, UIAlertViewDelegate>
+@interface NewTaskDetailViewController : UIViewController <UISearchBarDelegate, UIAlertViewDelegate, CLLocationManagerDelegate>
 
 @property Task *task;
 
