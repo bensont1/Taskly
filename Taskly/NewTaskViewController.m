@@ -113,6 +113,12 @@
     [self.view endEditing:YES];
 }
 
+-(void)resetFields {
+    self.taskTitleField.text = @"";
+    self.additionalDetailField.text = @"Fill in additional details here";
+    self.priceLabel.text = @"$10.00";
+}
+
 #pragma mark - TextView Delegation
 
 -(void)textViewDidBeginEditing:(UITextView *)textView
