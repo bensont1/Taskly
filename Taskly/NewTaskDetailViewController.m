@@ -51,6 +51,8 @@
     
     [self.mapView setRegion:MKCoordinateRegionMake(coord,MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
     [self.mapView addAnnotation:marker];
+    
+    location = [PFGeoPoint geoPointWithLatitude:coord.latitude longitude:coord.longitude];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -75,8 +77,7 @@
         CLLocation *placemarkLocation = placemark.location;
         CLLocationCoordinate2D coordinate = [placemarkLocation coordinate];
         
-        location = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
-                                                      longitude:coordinate.longitude];
+        location = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
         
         MKPlacemark *MKplacemark = [[MKPlacemark alloc] initWithPlacemark:placemark];
         
