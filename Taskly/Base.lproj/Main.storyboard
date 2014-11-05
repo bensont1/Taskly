@@ -513,17 +513,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-Rl-6Ie">
-                                <rect key="frame" x="0.0" y="114" width="600" height="398"/>
+                                <rect key="frame" x="0.0" y="134" width="600" height="422"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Where are you located?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoY-MU-L5t">
-                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
-                                <color key="backgroundColor" white="0.75410879629629635" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTm-34-V99">
-                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="BTm-34-V99">
+                                <rect key="frame" x="0.0" y="90" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="TT2-Qu-cWd"/>
                                 </constraints>
@@ -532,18 +525,21 @@
                                     <outlet property="delegate" destination="wn2-dh-AzQ" id="tPp-wD-aN1"/>
                                 </connections>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Where are you located?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edy-0n-odQ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="32"/>
+                                <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BTm-34-V99" firstAttribute="top" secondItem="WPm-Rl-6Ie" secondAttribute="bottom" id="31i-qk-lNx"/>
-                            <constraint firstItem="WPm-Rl-6Ie" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="5Rl-Sv-kb1"/>
-                            <constraint firstItem="BTm-34-V99" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="7d0-Or-9Eq"/>
-                            <constraint firstItem="GoY-MU-L5t" firstAttribute="top" secondItem="Hh6-Zs-8rS" secondAttribute="bottom" id="JFU-zu-Zb5"/>
-                            <constraint firstItem="WPm-Rl-6Ie" firstAttribute="top" secondItem="GoY-MU-L5t" secondAttribute="bottom" id="LlL-JD-ibY"/>
-                            <constraint firstItem="v7E-Sk-lox" firstAttribute="top" secondItem="BTm-34-V99" secondAttribute="bottom" id="M8l-Le-odt"/>
-                            <constraint firstItem="GoY-MU-L5t" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="dMh-lC-gDT"/>
-                            <constraint firstItem="WPm-Rl-6Ie" firstAttribute="top" secondItem="GoY-MU-L5t" secondAttribute="bottom" id="veT-5V-JFj"/>
-                            <constraint firstItem="BTm-34-V99" firstAttribute="top" secondItem="WPm-Rl-6Ie" secondAttribute="bottom" id="wQF-FQ-zRE"/>
+                            <constraint firstAttribute="width" secondItem="Edy-0n-odQ" secondAttribute="width" id="S64-Hx-bl8"/>
+                            <constraint firstItem="v7E-Sk-lox" firstAttribute="top" secondItem="WPm-Rl-6Ie" secondAttribute="bottom" id="V9y-Ta-uFz"/>
+                            <constraint firstItem="BTm-34-V99" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="Ztf-4F-nRi"/>
+                            <constraint firstItem="WPm-Rl-6Ie" firstAttribute="top" secondItem="BTm-34-V99" secondAttribute="bottom" id="lVr-jt-Qot"/>
+                            <constraint firstAttribute="width" secondItem="WPm-Rl-6Ie" secondAttribute="width" id="oh2-4c-Kia"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
