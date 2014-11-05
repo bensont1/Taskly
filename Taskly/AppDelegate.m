@@ -9,6 +9,9 @@
 // Below are listed in our REQUIREMENTS doc, for grading purposes
 #warning TODO: PRIORITY: Allow users to respond to posted Task (partly complete); must allow Filler/User to mark task as completed and change value on Parse
 #warning TODO: PRIORITY: Layout for AccountTaskOwnsDetailViewController messed up
+#warning TODO: PRIORITY: Add full name on AccountsTaskOwnDetailView
+
+#warning TEST: affects phone users, keyboard does not disappear after touching out; in map screen keyboard covers search bar
 
 
 

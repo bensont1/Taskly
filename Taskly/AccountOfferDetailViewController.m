@@ -32,19 +32,23 @@
     if([PFUser currentUser] != nil) {
         PFRelation *relation = [self.offer relationForKey:@"forTask"];
         PFQuery *query = [relation query];
+        [query includeKey:@"filler"];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if(!error) {
                 PFObject *taskForOffer = [objects firstObject];
+                NSLog(@"COMPLETE: %@", [taskForOffer objectForKey:@"completed"]);
                 
-                if([taskForOffer objectForKey:@"completed"] == NO) {
+                PFUser *fillerUser = [taskForOffer objectForKey:@"filler"];
+                NSString *fillerID = [fillerUser valueForKey:@"objectId"];
+                
+                if([fillerID isEqualToString:@"JUTSUpXtKt"]){
                     self.awaitingResponseView.hidden = NO;
                 }
                 else {
-                    NSString *fillerID = [[taskForOffer objectForKey:@"filler"] objectId];
-                    NSString *currentUserID = [[PFUser currentUser] objectId];
-                    
-                    if([fillerID isEqualToString:currentUserID]) {
+                    // check if current user is filler, then accept
+                    NSString *currentUserId = [[PFUser currentUser] valueForKey:@"objectId"];
+                    if([fillerID isEqualToString:currentUserId]) {
                         self.offerAcceptedView.hidden = NO;
                     }
                     else {
