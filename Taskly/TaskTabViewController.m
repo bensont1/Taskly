@@ -190,6 +190,7 @@
 -(PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     [query whereKey:@"completed" equalTo:[NSNumber numberWithBool:NO]];
+    [query whereKey:@"owner" notEqualTo:[PFUser currentUser]];
     
     NSDate *now = [NSDate date];
     [query whereKey:@"expirationDate" greaterThan:now];
