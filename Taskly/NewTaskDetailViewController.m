@@ -174,6 +174,7 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(alertView.tag == 1) {
         if(buttonIndex == [alertView cancelButtonIndex]) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
             [self.parentViewController.tabBarController setSelectedIndex:0];
             [self resetFields];
         }
