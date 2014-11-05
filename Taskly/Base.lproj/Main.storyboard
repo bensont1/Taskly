@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Task Tab View Controller-->
+        <!--Find Tasks-->
         <scene sceneID="s57-wj-5tV">
             <objects>
                 <tableViewController id="QK2-cI-J9Z" customClass="TaskTabViewController" sceneMemberID="viewController">
@@ -39,7 +39,9 @@
                             <outlet property="delegate" destination="QK2-cI-J9Z" id="whu-0o-tRo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="v6L-cI-5bu"/>
+                    <navigationItem key="navigationItem" title="Find Tasks" id="v6L-cI-5bu">
+                        <barButtonItem key="backBarButtonItem" title="Find" id="CBg-KM-LIi"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="rDi-L6-IhS" kind="show" identifier="segueToTaskDetail" id="bgz-3O-xH6"/>
                     </connections>
@@ -66,7 +68,7 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Task Details" id="hgR-hK-cNf"/>
+                                    <navigationItem id="hgR-hK-cNf"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Task Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOa-aU-bEE">
@@ -229,7 +231,7 @@
             </objects>
             <point key="canvasLocation" x="897" y="-1056"/>
         </scene>
-        <!--New Task View Controller-->
+        <!--Post a Task-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="NewTaskViewController" sceneMemberID="viewController">
@@ -348,7 +350,7 @@
                             <constraint firstAttribute="width" secondItem="nIb-R1-uRW" secondAttribute="width" id="zpU-ub-NLy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="44H-mz-st2">
+                    <navigationItem key="navigationItem" title="Post a Task" id="44H-mz-st2">
                         <barButtonItem key="rightBarButtonItem" title="Continue" id="hlk-EM-mmg">
                             <connections>
                                 <action selector="continueToDetailPage:" destination="8rJ-Kc-sve" id="oAc-Yg-3o2"/>
@@ -555,7 +557,7 @@
             </objects>
             <point key="canvasLocation" x="186" y="-376"/>
         </scene>
-        <!--Account View Controller-->
+        <!--Account-->
         <scene sceneID="1Wa-5m-hRz">
             <objects>
                 <viewController id="6ED-uk-49a" customClass="AccountViewController" sceneMemberID="viewController">
@@ -637,7 +639,7 @@
                             <constraint firstItem="Wnf-TC-3sU" firstAttribute="top" secondItem="ZDF-kz-enQ" secondAttribute="bottom" constant="55" id="wt0-jh-rdf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zXQ-Du-mmC">
+                    <navigationItem key="navigationItem" title="Account" id="zXQ-Du-mmC">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="a5e-0D-ndC">
                             <connections>
                                 <segue destination="1O3-19-dOe" kind="show" id="Yao-4y-NOT"/>

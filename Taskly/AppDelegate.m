@@ -44,9 +44,9 @@
     [PFFacebookUtils initializeFacebook];
     
     //set UI options//button color changes something in here
-    self.window.tintColor = [UIColor colorWithRed:230.0f/255.0f
-                                            green:230.0f/255.0f
-                                             blue:230.0f/255.0f
+    self.window.tintColor = [UIColor colorWithRed:255.0f/255.0f
+                                            green:255.0f/255.0f
+                                             blue:255.0f/255.0f
                                             alpha:1.0f];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:21.0f/255.0f
                                                     green:189.0f/255.0f
@@ -56,6 +56,14 @@
                                                            green:189.0f/255.0f
                                                             blue:170.0f/255.0f
                                                            alpha:1.0f]];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+        [NSDictionary dictionaryWithObjectsAndKeys:
+            [UIColor colorWithRed:255.0/255.0f
+                            green:255.0/255.0f
+                             blue:255.0/255.0f
+                             alpha:1.0],
+      UITextAttributeTextColor,
+      nil]];
 
     //color: 57,129,125
     return YES;
