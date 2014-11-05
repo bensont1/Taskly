@@ -846,7 +846,7 @@
         <scene sceneID="Yh9-Tv-M2f">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cgh-Km-PxZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="new_task_icon.png" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CHL-GO-hC4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -865,7 +865,7 @@
         <scene sceneID="y6h-04-WvM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WdW-rT-5MS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Find" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Find" image="task_tab_icon.png" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCc-wA-a3i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -884,7 +884,7 @@
         <scene sceneID="Ffz-WN-oFL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etS-j8-QlA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" image="first" selectedImage="first" id="2xN-iP-WjJ"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="account_tab_icon.png" selectedImage="first" id="2xN-iP-WjJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqe-Yk-NRp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -901,9 +901,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account_tab_icon.png" width="29" height="30"/>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="new_task_icon.png" width="29" height="30"/>
         <image name="stepper_down.png" width="80" height="50"/>
         <image name="stepper_up.png" width="80" height="50"/>
+        <image name="task_tab_icon.png" width="30" height="30"/>
     </resources>
 </document>
