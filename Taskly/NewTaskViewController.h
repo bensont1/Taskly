@@ -13,6 +13,8 @@
 
 @property Task *task;
 
--(void)resetFields;
+
 
 @end
+
+
