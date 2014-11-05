@@ -884,7 +884,7 @@
         <scene sceneID="Ffz-WN-oFL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etS-j8-QlA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" image="account_tab_icon.png" selectedImage="first" id="2xN-iP-WjJ"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="account_tab_icon.png" id="2xN-iP-WjJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqe-Yk-NRp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -902,7 +902,6 @@
     </scenes>
     <resources>
         <image name="account_tab_icon.png" width="29" height="30"/>
-        <image name="first" width="30" height="30"/>
         <image name="new_task_icon.png" width="29" height="30"/>
         <image name="stepper_down.png" width="80" height="50"/>
         <image name="stepper_up.png" width="80" height="50"/>
