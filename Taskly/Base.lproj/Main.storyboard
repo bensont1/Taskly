@@ -846,7 +846,7 @@
         <scene sceneID="Yh9-Tv-M2f">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cgh-Km-PxZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" image="new_task_icon.png" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Post" image="new_task_icon.png" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CHL-GO-hC4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -884,7 +884,7 @@
         <scene sceneID="Ffz-WN-oFL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etS-j8-QlA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" image="account_tab_icon.png" selectedImage="first" id="2xN-iP-WjJ"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Account" image="account_tab_icon.png" selectedImage="first" id="2xN-iP-WjJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqe-Yk-NRp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
