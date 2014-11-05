@@ -7,6 +7,7 @@
 //
 
 #import "NewTaskDetailViewController.h"
+#import "NewTaskViewController.h"
 #import "TaskManager.h"
 
 @interface NewTaskDetailViewController ()
@@ -116,6 +117,11 @@
     // reset map
     MKCoordinateRegion region = MKCoordinateRegionMake(self.mapView.centerCoordinate, MKCoordinateSpanMake(180, 360));
     [self.mapView setRegion:region animated:YES];
+    
+    // remove all annotations
+    NSMutableArray * annotationsToRemove = [ self.mapView.annotations mutableCopy ] ;
+    [ annotationsToRemove removeObject:self.mapView.userLocation ] ;
+    [ self.mapView removeAnnotations:annotationsToRemove ] ;
     
     // reset search bar
     self.searchBar.text = @"";

@@ -55,6 +55,7 @@
     NSLog(@"ID HERE: %@", objectID);
     [query getObjectInBackgroundWithId:objectID block:^(PFObject *object, NSError *error) {
         object[@"filler"] = user;
+        object[@"complete"] = [NSNumber numberWithBool:YES];
         [object saveInBackground];
     }];
 }
