@@ -112,19 +112,30 @@
 //}
 
 -(void)showTaskAddedAlert {
-    [[[UIAlertView alloc] initWithTitle:@"Task Added!"
+    UIAlertView *taskAddedSuccessAlert = [[UIAlertView alloc] initWithTitle:@"Task Added!"
                                 message:@"Your task has been added successfully! Hopefully it will be filled soon."
-                               delegate:nil
+                               delegate:self
                       cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+                      otherButtonTitles:nil];
+    [taskAddedSuccessAlert setTag:1];
+    [taskAddedSuccessAlert show];
 }
 
 -(void)showInvalidLocationAlert {
     [[[UIAlertView alloc] initWithTitle:@"Invalid Location"
                                 message:@"Please make sure you've entered a valid address. The minimum required information is city and state."
-                               delegate:nil
+                               delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(alertView.tag == 1) {
+        if(buttonIndex == [alertView cancelButtonIndex]) {
+            NSLog(@"Am i running");
+            [self.parentViewController.tabBarController setSelectedIndex:0];
+        }
+    }
 }
 
 @end
