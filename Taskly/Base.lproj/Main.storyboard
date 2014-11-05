@@ -816,6 +816,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="Dpp-nG-O60" id="AVs-dS-nVo"/>
                         <outlet property="finalOfferAmount" destination="uca-ae-GoB" id="0UH-st-N5M"/>
                         <outlet property="taskContact" destination="BRD-Ji-M0P" id="N9f-wW-YRJ"/>
                         <outlet property="taskDetails" destination="NCm-Il-8Gc" id="sMx-by-iB6"/>
