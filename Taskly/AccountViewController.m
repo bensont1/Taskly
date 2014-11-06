@@ -21,7 +21,7 @@
 
 @implementation AccountViewController {
     NSArray *ownedTasks;
-    NSArray *fillingTasks;
+    NSMutableArray *fillingTasks;
     PFObject *objectToSend;
     PFUser *fillerToSend;
 }
@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //self.tableView.allowsMultipleSelectionDuringEditing = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
@@ -71,7 +72,7 @@
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if(!error) {
-                fillingTasks = [NSArray arrayWithArray:objects];
+                fillingTasks = [NSMutableArray arrayWithArray:objects];
                 
                 NSMutableArray *newIndexPaths = [NSMutableArray new];
                 for(int i=previousTaskCount; i<fillingTasks.count; i++) {
@@ -182,6 +183,21 @@
         NSLog(@"Error: Invalid TableView");
     }
 
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code to delete
+        PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
+        NSString *objectId = [fillingTasks[indexPath.row]valueForKey:@"objectId"];
+        [query whereKey:@"objectId" equalTo:objectId];
+        PFObject *deletedObject = [query getFirstObject];
+        [deletedObject deleteInBackground];
+        [fillingTasks removeObjectAtIndex:[indexPath row]];
+        [self.fillingTaskTable reloadData];
+        
+        
+        
+    }
 }
 
 #pragma mark - Navigation
