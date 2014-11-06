@@ -532,12 +532,28 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZp-jQ-9GB">
+                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8Wq-mt-ar1"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="pin_icon.png" id="kLQ-cX-TOx">
+                                        <connections>
+                                            <action selector="zoomToCurrentLocation:" destination="wn2-dh-AzQ" id="RGm-md-cTn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.80392156862745101" alpha="0.70000000000000007" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="v7E-Sk-lox" firstAttribute="top" secondItem="sZp-jQ-9GB" secondAttribute="bottom" id="LhG-37-8Je"/>
                             <constraint firstAttribute="width" secondItem="Edy-0n-odQ" secondAttribute="width" id="S64-Hx-bl8"/>
                             <constraint firstItem="v7E-Sk-lox" firstAttribute="top" secondItem="WPm-Rl-6Ie" secondAttribute="bottom" id="V9y-Ta-uFz"/>
                             <constraint firstItem="BTm-34-V99" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="Ztf-4F-nRi"/>
+                            <constraint firstItem="sZp-jQ-9GB" firstAttribute="width" secondItem="3YL-IT-EdJ" secondAttribute="width" id="csz-sO-XeP"/>
                             <constraint firstItem="WPm-Rl-6Ie" firstAttribute="top" secondItem="BTm-34-V99" secondAttribute="bottom" id="lVr-jt-Qot"/>
                             <constraint firstAttribute="width" secondItem="WPm-Rl-6Ie" secondAttribute="width" id="oh2-4c-Kia"/>
                         </constraints>
@@ -905,6 +921,7 @@
     <resources>
         <image name="account_tab_icon.png" width="29" height="30"/>
         <image name="new_task_icon.png" width="29" height="30"/>
+        <image name="pin_icon.png" width="30" height="30"/>
         <image name="stepper_down.png" width="80" height="50"/>
         <image name="stepper_up.png" width="80" height="50"/>
         <image name="task_tab_icon.png" width="30" height="30"/>
