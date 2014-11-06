@@ -539,12 +539,12 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem image="pin_icon.png" id="kLQ-cX-TOx">
+                                        <color key="tintColor" red="0.082352941176470587" green="0.74117647058823533" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="zoomToCurrentLocation:" destination="wn2-dh-AzQ" id="RGm-md-cTn"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.80392156862745101" alpha="0.70000000000000007" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
