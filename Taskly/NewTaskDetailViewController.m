@@ -177,6 +177,7 @@
             [self.navigationController popToRootViewControllerAnimated:YES];
             [self.parentViewController.tabBarController setSelectedIndex:0];
             [self resetFields];
+            [self.taskNewController performSelector:@selector(resetFields)];
         }
     }
 }

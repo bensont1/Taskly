@@ -184,9 +184,10 @@
  
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     [self setTaskFields];
-     NewTaskDetailViewController *destination = segue.destinationViewController;
-     destination.task = self.task;
+    [self setTaskFields];
+    NewTaskDetailViewController *destination = segue.destinationViewController;
+    destination.task = self.task;
+    destination.taskNewController = self;
 }
 
 @end
