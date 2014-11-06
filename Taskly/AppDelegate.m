@@ -9,6 +9,8 @@
 // Below are listed in our REQUIREMENTS doc, for grading purposes
 
 // Below are nice features to add
+#warning TODO: implement more Facebook stuff, get profile picture, email, phone number to use somewhere
+#warning TODO: fill out email field when responding to task automaticlaly with email stored on Parse
 #warning TODO: create custom row view, to display facebook profile image, task title and details, and price, time
 #warning TODO: create real time countdown timer on task
 #warning TODO: get users Current Location when posting task
