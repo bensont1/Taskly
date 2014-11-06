@@ -189,11 +189,13 @@
 //only get tasks that are not filled and haven't expired
 -(PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query whereKey:@"completed" equalTo:[NSNumber numberWithBool:NO]];
-    [query whereKey:@"owner" notEqualTo:[PFUser currentUser]];
-    
-    NSDate *now = [NSDate date];
-    [query whereKey:@"expirationDate" greaterThan:now];
+    if([PFUser currentUser]) {
+        [query whereKey:@"completed" equalTo:[NSNumber numberWithBool:NO]];
+        [query whereKey:@"owner" notEqualTo:[PFUser currentUser]];
+        
+        NSDate *now = [NSDate date];
+            [query whereKey:@"expirationDate" greaterThan:now];
+    }
     return query;
 }
 
