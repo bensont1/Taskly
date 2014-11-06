@@ -14,5 +14,6 @@
 @interface NewTaskDetailViewController : UIViewController <UISearchBarDelegate, UIAlertViewDelegate, CLLocationManagerDelegate>
 
 @property Task *task;
+@property (weak, nonatomic) id taskNewController;
 
 @end
