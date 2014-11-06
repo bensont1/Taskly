@@ -20,7 +20,7 @@
 @end
 
 @implementation AccountViewController {
-    NSArray *ownedTasks;
+    NSMutableArray *ownedTasks;
     NSMutableArray *fillingTasks;
     PFObject *objectToSend;
     PFUser *fillerToSend;
@@ -48,7 +48,7 @@
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if(!error) {
-                ownedTasks = [NSArray arrayWithArray:objects];
+                ownedTasks = [NSMutableArray arrayWithArray:objects];
                 
                 NSMutableArray *newIndexPaths = [NSMutableArray new];
                 for(int i=previousTaskCount; i<ownedTasks.count; i++) {
@@ -187,13 +187,28 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //add code to delete
-        PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
-        NSString *objectId = [fillingTasks[indexPath.row]valueForKey:@"objectId"];
-        [query whereKey:@"objectId" equalTo:objectId];
-        PFObject *deletedObject = [query getFirstObject];
-        [deletedObject deleteInBackground];
-        [fillingTasks removeObjectAtIndex:[indexPath row]];
-        [self.fillingTaskTable reloadData];
+        if(tableView == self.fillingTaskTable){
+            PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
+            NSString *objectId = [fillingTasks[indexPath.row]valueForKey:@"objectId"];
+            [query whereKey:@"objectId" equalTo:objectId];
+            PFObject *deletedObject = [query getFirstObject];
+            if(deletedObject){
+                [deletedObject deleteInBackground];
+                [fillingTasks removeObjectAtIndex:[indexPath row]];
+                [self.fillingTaskTable reloadData];
+            }
+        }
+        else if(tableView == self.ownedTaskTable){
+            PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
+            NSString *objectId = [ownedTasks[indexPath.row]valueForKey:@"objectId"];
+            [query whereKey:@"objectId" equalTo:objectId];
+            PFObject *deletedObject = [query getFirstObject];
+            if(deletedObject){
+                [deletedObject deleteInBackground];
+                [ownedTasks removeObjectAtIndex:indexPath.row];
+                [self.ownedTaskTable reloadData];
+            }
+        }
         
         
         
