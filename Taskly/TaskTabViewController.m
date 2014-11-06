@@ -194,7 +194,7 @@
         [query whereKey:@"owner" notEqualTo:[PFUser currentUser]];
         
         NSDate *now = [NSDate date];
-            [query whereKey:@"expirationDate" greaterThan:now];
+        [query whereKey:@"expirationDate" greaterThan:now];
     }
     return query;
 }
