@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *hourMinutePicker;
 
+- (IBAction)clearButton:(id)sender;
 - (IBAction)continueToDetailPage:(id)sender;
 - (IBAction)incrementPrice:(id)sender;
 - (IBAction)decrementPrice:(id)sender;
@@ -84,6 +85,10 @@
     [nullUserQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.task.filler = [objects firstObject];
     }];
+}
+
+- (IBAction)clearButton:(id)sender {
+    [self resetFields];
 }
 
 - (IBAction)continueToDetailPage:(id)sender {

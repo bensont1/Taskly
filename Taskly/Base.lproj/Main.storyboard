@@ -351,6 +351,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post a Task" id="44H-mz-st2">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="H5l-1I-IQq">
+                            <connections>
+                                <action selector="clearButton:" destination="8rJ-Kc-sve" id="OFF-Bx-El0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Continue" id="hlk-EM-mmg">
                             <connections>
                                 <action selector="continueToDetailPage:" destination="8rJ-Kc-sve" id="oAc-Yg-3o2"/>
