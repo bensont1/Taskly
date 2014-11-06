@@ -51,10 +51,11 @@
                 ownedTasks = [NSMutableArray arrayWithArray:objects];
                 
                 NSMutableArray *newIndexPaths = [NSMutableArray new];
-                for(int i=previousTaskCount; i<ownedTasks.count; i++) {
+                for(int i=0; i<ownedTasks.count; i++) {
                     [newIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
                 }
-                [self.ownedTaskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.ownedTaskTable reloadData];
+                //[self.ownedTaskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
             }
             else {
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -184,7 +185,7 @@
     }
 
 }
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //add code to delete
         if(tableView == self.fillingTaskTable){
@@ -206,14 +207,17 @@
             if(deletedObject){
                 [deletedObject deleteInBackground];
                 [ownedTasks removeObjectAtIndex:indexPath.row];
-                [self.ownedTaskTable reloadData];
+                //[self.ownedTaskTable reloadData];
+                NSMutableArray *deletePath = [NSMutableArray new];
+                [deletePath addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+                [self.ownedTaskTable deleteRowsAtIndexPaths:deletePath withRowAnimation:UITableViewRowAnimationAutomatic];
             }
         }
         
         
         
     }
-}
+}*/
 
 #pragma mark - Navigation
 
