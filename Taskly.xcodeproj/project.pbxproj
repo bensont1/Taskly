@@ -267,7 +267,7 @@
 				3951495019F5FA130063C4CF /* stepper_down.png */,
 				390A28BF19EBC970009976F7 /* hamburger_icon.png */,
 				390A288019EBAB48009976F7 /* Info.plist */,
-				390A288119EBAB48009976F7 /* main.m */,
+				393365201A0AF123004C4AE2 /* App Icon */,
 				391C77B11A0AB0A500E96335 /* Tab Icons */,
 			);
 			name = "Supporting Files";
@@ -308,6 +308,14 @@
 				391C77B41A0AB0CA00E96335 /* task_tab_icon.png */,
 			);
 			name = "Tab Icons";
+			sourceTree = "<group>";
+		};
+		393365201A0AF123004C4AE2 /* App Icon */ = {
+			isa = PBXGroup;
+			children = (
+				390A288119EBAB48009976F7 /* main.m */,
+			);
+			name = "App Icon";
 			sourceTree = "<group>";
 		};
 		3951494119F5C3140063C4CF /* Frameworks */ = {
