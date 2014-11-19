@@ -115,7 +115,7 @@
         return 0;
     }
 }
-
+/*
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(tableView == self.ownedTaskTable) {
         return @"Tasks You Own";
@@ -127,7 +127,7 @@
         return @"Invalid Section";
     }
 }
-
+*/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(tableView == self.ownedTaskTable) {
