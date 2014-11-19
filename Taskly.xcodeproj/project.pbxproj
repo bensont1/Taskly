@@ -48,6 +48,9 @@
 		39B98F6219FEC1AC00CBC247 /* RespondToTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */; };
 		39CDCA7F19F63A2E00108DCB /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */; };
 		39CDCA8219F63AC300108DCB /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA8119F63AC300108DCB /* NewTaskViewController.m */; };
+		39D6561C1A1D3F2B007287A2 /* MainTaskPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D6561B1A1D3F2B007287A2 /* MainTaskPageCell.xib */; };
+		39D656561A1D4406007287A2 /* MainTaskPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D656551A1D4406007287A2 /* MainTaskPageCell.m */; };
+		39D656581A1D45C7007287A2 /* placeholder_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 39D656571A1D45C7007287A2 /* placeholder_image.png */; };
 		8227441219F8291C00BA373D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8227431219F8291B00BA373D /* FacebookSDK.framework */; };
 		8227441319F8291C00BA373D /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8227431419F8291B00BA373D /* FBAudienceNetwork.framework */; };
 		8227441419F8291C00BA373D /* README_FB_Audience.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8227431519F8291B00BA373D /* README_FB_Audience.txt */; };
@@ -129,6 +132,10 @@
 		39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
 		39CDCA8019F63AC300108DCB /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskViewController.h; sourceTree = "<group>"; };
 		39CDCA8119F63AC300108DCB /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskViewController.m; sourceTree = "<group>"; };
+		39D6561B1A1D3F2B007287A2 /* MainTaskPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTaskPageCell.xib; sourceTree = "<group>"; };
+		39D656541A1D4406007287A2 /* MainTaskPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTaskPageCell.h; sourceTree = "<group>"; };
+		39D656551A1D4406007287A2 /* MainTaskPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTaskPageCell.m; sourceTree = "<group>"; };
+		39D656571A1D45C7007287A2 /* placeholder_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_image.png; sourceTree = "<group>"; };
 		8227431219F8291B00BA373D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		8227431419F8291B00BA373D /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		8227431519F8291B00BA373D /* README_FB_Audience.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README_FB_Audience.txt; sourceTree = "<group>"; };
@@ -253,6 +260,7 @@
 				390A28AF19EBC0E5009976F7 /* ViewControllers */,
 				390A288C19EBAB48009976F7 /* Main.storyboard */,
 				390A288F19EBAB48009976F7 /* Images.xcassets */,
+				39D6561D1A1D3F35007287A2 /* UI Elements */,
 				390A289119EBAB48009976F7 /* LaunchScreen.xib */,
 				390A287F19EBAB48009976F7 /* Supporting Files */,
 			);
@@ -262,6 +270,7 @@
 		390A287F19EBAB48009976F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				39D656571A1D45C7007287A2 /* placeholder_image.png */,
 				3933651E1A0ADAC6004C4AE2 /* pin_icon.png */,
 				3951494F19F5FA130063C4CF /* stepper_up.png */,
 				3951495019F5FA130063C4CF /* stepper_down.png */,
@@ -353,6 +362,16 @@
 				39B3138A1A02EB4600E62850 /* Offer.m */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		39D6561D1A1D3F35007287A2 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				39D6561B1A1D3F2B007287A2 /* MainTaskPageCell.xib */,
+				39D656541A1D4406007287A2 /* MainTaskPageCell.h */,
+				39D656551A1D4406007287A2 /* MainTaskPageCell.m */,
+			);
+			name = "UI Elements";
 			sourceTree = "<group>";
 		};
 		8227431019F8291B00BA373D /* FacebookSDK */ = {
@@ -474,6 +493,7 @@
 			files = (
 				391C77B91A0AB11100E96335 /* new_task_icon.png in Resources */,
 				3951495119F5FA130063C4CF /* stepper_up.png in Resources */,
+				39D6561C1A1D3F2B007287A2 /* MainTaskPageCell.xib in Resources */,
 				3951495219F5FA130063C4CF /* stepper_down.png in Resources */,
 				8227442C19F8291C00BA373D /* README.txt in Resources */,
 				390A288E19EBAB48009976F7 /* Main.storyboard in Resources */,
@@ -483,6 +503,7 @@
 				390A28C019EBC970009976F7 /* hamburger_icon.png in Resources */,
 				3933651F1A0ADAC6004C4AE2 /* pin_icon.png in Resources */,
 				8227442B19F8291C00BA373D /* LICENSE in Resources */,
+				39D656581A1D45C7007287A2 /* placeholder_image.png in Resources */,
 				8227441419F8291C00BA373D /* README_FB_Audience.txt in Resources */,
 				390A289019EBAB48009976F7 /* Images.xcassets in Resources */,
 			);
@@ -504,6 +525,7 @@
 			files = (
 				39B98F6219FEC1AC00CBC247 /* RespondToTaskViewController.m in Sources */,
 				390A28B519EBC330009976F7 /* Task.m in Sources */,
+				39D656561A1D4406007287A2 /* MainTaskPageCell.m in Sources */,
 				390A288519EBAB48009976F7 /* AppDelegate.m in Sources */,
 				39CDCA8219F63AC300108DCB /* NewTaskViewController.m in Sources */,
 				39CDCA7F19F63A2E00108DCB /* TaskDetailViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "TaskDetailViewController.h"
 #import "TaskManager.h"
 #import "Task.h"
+#import "MainTaskPageCell.h"
 
 @interface TaskTabViewController ()
 
@@ -175,9 +176,22 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell" forIndexPath:indexPath];
+    MainTaskPageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell"];
+
+    if(!cell) {
+        [tableView registerNib:[UINib nibWithNibName:@"MainTaskPageCell" bundle:nil] forCellReuseIdentifier:@"taskCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell"];
+    }
+    /*
     cell.textLabel.text = [object objectForKey:titleTextKey];
-    cell.detailTextLabel.text = [object objectForKey:detailTextKey];
+    cell.detailTextLabel.text = [object objectForKey:detailTextKey];*/
+    
+    cell.cellTitle = [object objectForKey:titleTextKey];
+    cell.cellDetails = [object objectForKey:detailTextKey];
+    cell.cellPrice = [object objectForKey:priceTextKey];
+    UIImage *picture = [UIImage imageNamed:@"placeholder_image.png"];
+    [cell.profImage setImage:picture];
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
