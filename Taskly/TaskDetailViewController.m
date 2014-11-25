@@ -37,24 +37,33 @@
 - (void)setFields {
     self.taskTitle.text = [self.task objectForKey:@"title"];
     self.taskDetails.text = [self.task objectForKey:@"details"];
-    self.expirationlabel.text = [self getTimeToExpiration];
+    [self getTimeToExpiration];
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", [self.task objectForKey:@"price"]];
     [self setMapViewLocation];
 }
 
-- (NSString *)getTimeToExpiration {
-    NSDate *now = [NSDate date];
-    NSDate *expirationDate = [self.task objectForKey:@"expirationDate"];
+- (void)getTimeToExpiration {
+        //Set up a timer that calls the updateTime method every second to update the label
+        NSTimer *timer;
+        timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                 target:self
+                                               selector:@selector(updateTime)
+                                               userInfo:nil
+                                                repeats:YES];
+}
 
-    //NSDate *expirationDate = [createdAtDate dateByAddingTimeInterval:taskDurationInSeconds];
+-(void)updateTime
+{
+    NSDate *expirationDate = [self.task objectForKey:@"expirationDate"];
+    //Get the time left until the specified date
+    NSInteger ti = ((NSInteger)[expirationDate timeIntervalSinceNow]);
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600) % 24;
+    NSInteger days = (ti / 86400);
     
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitHour | NSCalendarUnitMinute
-                                                        fromDate:now
-                                                          toDate:expirationDate
-                                                         options:0];
-    NSString *timeUntilExpiration = [NSString stringWithFormat:@"%ld hours and %ld minutes", [components hour], [components minute]];
-    return timeUntilExpiration;
+    //Update the label with the remaining time
+    self.expirationlabel.text = [NSString stringWithFormat:@"%02li days %02li hrs %02li min %02li sec", (long)days, (long)hours, (long)minutes, (long)seconds];
 }
 
 - (void)setMapViewLocation {
