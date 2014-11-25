@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    self.tableView.contentInset = UIEdgeInsetsMake(5.0f, 0.0f, 0.0f, 0.0f);
     //self.automaticallyAdjustsScrollViewInsets = NO; //removes weird space above first cell
 }
 
@@ -176,19 +176,25 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    MainTaskPageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell"];
+    static NSString *cellId = @"taskCell";
+    MainTaskPageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 
-    if(!cell) {
-        [tableView registerNib:[UINib nibWithNibName:@"MainTaskPageCell" bundle:nil] forCellReuseIdentifier:@"taskCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell"];
+    if (cell == nil) {
+        cell = [[MainTaskPageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
+    /*
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MainTaskPageCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }*/
     /*
     cell.textLabel.text = [object objectForKey:titleTextKey];
     cell.detailTextLabel.text = [object objectForKey:detailTextKey];*/
     
-    cell.cellTitle = [object objectForKey:titleTextKey];
-    cell.cellDetails = [object objectForKey:detailTextKey];
-    cell.cellPrice = [object objectForKey:priceTextKey];
+    cell.cellTitle.text = [object objectForKey:titleTextKey];
+    cell.cellDetails.text = [object objectForKey:detailTextKey];
+    //cell.cellPrice.text = [object objectForKey:priceTextKey];
     UIImage *picture = [UIImage imageNamed:@"placeholder_image.png"];
     [cell.profImage setImage:picture];
     

@@ -30,20 +30,9 @@
                         <color key="textColor" red="0.44705882352941173" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRE-Bv-nNy">
-                        <rect key="frame" x="8" y="8" width="64" height="64"/>
-                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRE-Bv-nNy"/>
                 </subviews>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="cellDetails" destination="hej-83-YDT" id="UaZ-mZ-fWD"/>
-                <outlet property="cellPrice" destination="JNL-1T-LbF" id="Rm9-Ti-Hbv"/>
-                <outlet property="cellTitle" destination="Fqg-rX-Ohm" id="Fx3-je-7Rb"/>
-                <outlet property="details" destination="hej-83-YDT" id="8yw-M1-5iV"/>
-                <outlet property="price" destination="JNL-1T-LbF" id="0G7-SF-SYz"/>
-                <outlet property="profImage" destination="KRE-Bv-nNy" id="ec5-z4-YLH"/>
-                <outlet property="title" destination="Fqg-rX-Ohm" id="jGg-BT-uVn"/>
-            </connections>
             <point key="canvasLocation" x="419" y="407"/>
         </tableViewCell>
     </objects>
