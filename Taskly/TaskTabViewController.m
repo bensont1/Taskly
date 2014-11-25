@@ -182,24 +182,32 @@
     if (cell == nil) {
         cell = [[MainTaskPageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    /*
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MainTaskPageCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }*/
-    /*
-    cell.textLabel.text = [object objectForKey:titleTextKey];
-    cell.detailTextLabel.text = [object objectForKey:detailTextKey];*/
     
     cell.cellTitle.text = [object objectForKey:titleTextKey];
     cell.cellDetails.text = [object objectForKey:detailTextKey];
-    //cell.cellPrice.text = [object objectForKey:priceTextKey];
+    cell.cellPrice.text = [NSString stringWithFormat:@"$%@", [object objectForKey:priceTextKey]];
+    
     UIImage *picture = [UIImage imageNamed:@"placeholder_image.png"];
-    [cell.profImage setImage:picture];
+    
+    [cell.profImage setImage:[self getRoundedRectImageFromImage:picture onReferenceView:cell.profImage withCornerRadius: cell.profImage.frame.size.width/2]];
+
+    //[cell.profImage setImage:picture];
     
     return cell;
 }
+
+- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
+{
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+    [image drawInRect:imageView.bounds];
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return finalImage;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     selectedTask = [self.objects objectAtIndex:indexPath.row];
