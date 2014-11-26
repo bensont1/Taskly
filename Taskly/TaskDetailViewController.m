@@ -35,9 +35,9 @@
 }
 
 - (void)setFields {
+    [self getTimeToExpiration];
     self.taskTitle.text = [self.task objectForKey:@"title"];
     self.taskDetails.text = [self.task objectForKey:@"details"];
-    [self getTimeToExpiration];
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", [self.task objectForKey:@"price"]];
     [self setMapViewLocation];
 }
@@ -63,7 +63,7 @@
     NSInteger days = (ti / 86400);
     
     //Update the label with the remaining time
-    self.expirationlabel.text = [NSString stringWithFormat:@"%02li days %02li hrs %02li min %02li sec", (long)days, (long)hours, (long)minutes, (long)seconds];
+    self.expirationlabel.text = [NSString stringWithFormat:@"%02li hrs %02li min %02li sec", (long)hours, (long)minutes, (long)seconds];
 }
 
 - (void)setMapViewLocation {
