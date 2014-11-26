@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "Utilities.h"
 
 @interface SettingsViewController ()
 - (IBAction)logoutPressed:(id)sender;
@@ -42,7 +43,7 @@
                                                NSData *data,
                                                NSError *connectionError) {
                                UIImage *profile = [UIImage imageWithData:data];
-                               [self.profImage setImage:profile];
+                               [self.profImage setImage:[Utilities getRoundedRectImageFromImage:profile onReferenceView:self.profImage withCornerRadius:self.profImage.frame.size.width/2]];
                            }];
 }
 

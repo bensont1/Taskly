@@ -11,6 +11,7 @@
 #import "TaskManager.h"
 #import "Task.h"
 #import "MainTaskPageCell.h"
+#import "Utilities.h"
 
 @interface TaskTabViewController ()
 
@@ -190,7 +191,7 @@
     
     UIImage *picture = [UIImage imageNamed:@"placeholder_image.png"];
     
-    [cell.profImage setImage:[self getRoundedRectImageFromImage:picture onReferenceView:cell.profImage withCornerRadius: cell.profImage.frame.size.width/2]];
+    [cell.profImage setImage:[Utilities getRoundedRectImageFromImage:picture onReferenceView:cell.profImage withCornerRadius: cell.profImage.frame.size.width/2]];
 
     //[cell.profImage setImage:picture];
     

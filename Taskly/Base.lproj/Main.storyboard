@@ -444,8 +444,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rf-zz-FoJ">
-                                <rect key="frame" x="277" y="206" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rf-zz-FoJ">
+                                <rect key="frame" x="279" y="418" width="49" height="30"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -453,19 +453,29 @@
                                     <action selector="logoutPressed:" destination="1O3-19-dOe" eventType="touchUpInside" id="UXc-6J-nPr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-4w-86x">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tQ1-BB-q8k">
+                                <rect key="frame" x="228" y="173" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PQN-JK-caA"/>
+                                    <constraint firstAttribute="width" secondItem="tQ1-BB-q8k" secondAttribute="height" multiplier="1:1" id="yKN-fr-DFO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-4w-86x">
                                 <rect key="frame" x="279" y="139" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQ1-BB-q8k">
-                                <rect key="frame" x="180" y="244" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="3Rf-zz-FoJ" secondAttribute="centerX" constant="-1.5" id="fk0-Xh-TAP"/>
+                            <constraint firstAttribute="centerX" secondItem="Rqb-4w-86x" secondAttribute="centerX" constant="-2" id="4ix-M6-yoj"/>
+                            <constraint firstItem="tQ1-BB-q8k" firstAttribute="top" secondItem="Rqb-4w-86x" secondAttribute="bottom" constant="13" id="8ot-Ie-eJu"/>
+                            <constraint firstItem="Rqb-4w-86x" firstAttribute="top" secondItem="MQD-5F-JkE" secondAttribute="bottom" constant="75" id="9nQ-J5-alI"/>
+                            <constraint firstAttribute="centerX" secondItem="3Rf-zz-FoJ" secondAttribute="centerX" constant="-3.5" id="Ahm-2P-9yA"/>
+                            <constraint firstItem="tQ1-BB-q8k" firstAttribute="top" secondItem="Kga-9G-pX1" secondAttribute="top" constant="173" id="Sau-bH-R6p"/>
+                            <constraint firstAttribute="centerX" secondItem="tQ1-BB-q8k" secondAttribute="centerX" constant="-3" id="gzD-Yd-vsu"/>
+                            <constraint firstItem="h1G-uR-BwA" firstAttribute="top" secondItem="3Rf-zz-FoJ" secondAttribute="bottom" constant="103" id="qnm-SF-TK2"/>
                         </constraints>
                     </view>
                     <connections>
