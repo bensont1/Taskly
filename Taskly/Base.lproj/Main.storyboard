@@ -20,16 +20,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nmn-ws-pQY" id="Ea0-Kb-Hqg">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7un-VK-yoC">
-                                            <rect key="frame" x="514" y="29" width="53" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="8P6-Qa-9mu"/>
-                                                <constraint firstAttribute="width" constant="53" id="oe1-EQ-Xe9"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.08235294118" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZJ-r2-RDA">
                                             <rect key="frame" x="85" y="37" width="421" height="34.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -56,9 +46,19 @@
                                             <color key="textColor" red="0.32156862749999998" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7un-VK-yoC">
+                                            <rect key="frame" x="493" y="25" width="74" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="8P6-Qa-9mu"/>
+                                                <constraint firstAttribute="width" constant="74" id="oe1-EQ-Xe9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                            <color key="textColor" red="0.98039215686274506" green="0.74509803921568629" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7un-VK-yoC" firstAttribute="leading" secondItem="jHu-M4-iBc" secondAttribute="trailing" constant="8" id="0Hw-OZ-fvM"/>
+                                        <constraint firstItem="7un-VK-yoC" firstAttribute="leading" secondItem="jHu-M4-iBc" secondAttribute="trailing" constant="-13" id="0Hw-OZ-fvM"/>
                                         <constraint firstItem="jHu-M4-iBc" firstAttribute="leading" secondItem="lek-Tl-Q8l" secondAttribute="trailing" constant="8" id="9F2-G7-C8K"/>
                                         <constraint firstAttribute="centerY" secondItem="7un-VK-yoC" secondAttribute="centerY" id="Ba2-mV-BfK"/>
                                         <constraint firstItem="lek-Tl-Q8l" firstAttribute="top" secondItem="Ea0-Kb-Hqg" secondAttribute="topMargin" id="Der-jT-73m"/>
@@ -66,7 +66,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="7un-VK-yoC" secondAttribute="trailing" constant="-8" id="GQu-yh-jNj"/>
                                         <constraint firstItem="7un-VK-yoC" firstAttribute="top" secondItem="Ea0-Kb-Hqg" secondAttribute="topMargin" constant="10" id="Uid-Tj-iaQ"/>
                                         <constraint firstAttribute="centerX" secondItem="lek-Tl-Q8l" secondAttribute="centerX" constant="137.5" id="YjP-xC-GWY"/>
-                                        <constraint firstItem="XZJ-r2-RDA" firstAttribute="top" secondItem="7un-VK-yoC" secondAttribute="bottom" constant="-13" id="etT-WJ-oBW"/>
+                                        <constraint firstItem="XZJ-r2-RDA" firstAttribute="top" secondItem="7un-VK-yoC" secondAttribute="bottom" constant="-18" id="etT-WJ-oBW"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="jHu-M4-iBc" secondAttribute="bottom" constant="35" id="fvq-6R-wLI"/>
                                         <constraint firstItem="XZJ-r2-RDA" firstAttribute="leading" secondItem="lek-Tl-Q8l" secondAttribute="trailing" constant="8" id="gBx-hf-3XP"/>
                                         <constraint firstItem="jHu-M4-iBc" firstAttribute="top" secondItem="Ea0-Kb-Hqg" secondAttribute="topMargin" id="h3v-8n-hzp"/>
