@@ -87,21 +87,7 @@
     [self.mapView addAnnotation:marker];
 }
 
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    RespondToTaskViewController *destination = segue.destinationViewController;
-    destination.task = self.task;
-}
-
 - (void)respondToTask {
-    //tried to make it so you can't respond to your own task, but I can't figure it out
-    
-    /*if([[self.task objectForKey:@"owner"] objectForKey:@"username"] == [[PFUser currentUser] objectForKey:@"username"]) {
-        [self showYourTaskAlert];
-    }*/
-    
     if([self userOwnsTask]) {
         [self showUserOwnsTaskAlert];
     }
@@ -123,6 +109,14 @@
     else {
         return NO;
     }
+}
+
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    RespondToTaskViewController *destination = segue.destinationViewController;
+    destination.task = self.task;
 }
 
 
