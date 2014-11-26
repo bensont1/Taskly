@@ -47,6 +47,13 @@
     self.navigationItem.leftBarButtonItem = currentLocationButton;*/
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *myLocation = [locations lastObject];
     currentUserLocation = myLocation;
@@ -166,10 +173,9 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(alertView.tag == 1) {
         if(buttonIndex == [alertView cancelButtonIndex]) {
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            [self.parentViewController.tabBarController setSelectedIndex:0];
             [self resetFields];
             [self.taskNewController performSelector:@selector(resetFields)];
+            [self.tabBarController setSelectedIndex:0];
         }
     }
 }
