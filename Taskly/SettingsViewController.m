@@ -21,9 +21,9 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.nameLabel.text = [[PFUser currentUser] objectForKey:@"fullName"];
     [self getFBProfilePic];
-    [self.logoutButton setTintColor:[UIColor blueColor]];
+    [self.logoutButton setTintColor:[UIColor orangeColor]];
 
 }
 
@@ -61,6 +61,7 @@
     }
 
 }
+
 
 
 @end
