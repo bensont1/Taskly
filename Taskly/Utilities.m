@@ -7,6 +7,7 @@
 //
 
 #import "Utilities.h"
+#import <Parse/Parse.h>
 
 @implementation Utilities
 
@@ -21,6 +22,23 @@
     UIGraphicsEndImageContext();
     
     return finalImage;
+}
+
++ (UIImage *)getFBProfilePic
+{
+    __block UIImage *imageReturn = [UIImage imageNamed:@"placeholder_image.png"];
+    if([[PFUser currentUser] objectForKey:@"facebookId"] != nil) {
+        NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:@"facebookId"]]];
+        NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
+        [NSURLConnection sendAsynchronousRequest:profilePictureURLRequest
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response,
+                                                   NSData *data,
+                                                   NSError *connectionError) {
+                                        imageReturn = [UIImage imageWithData:data];
+                               }];
+    }
+    return imageReturn;
 }
 
 @end

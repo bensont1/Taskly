@@ -12,5 +12,6 @@
 @interface Utilities : NSObject
 
 + (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius;
++ (UIImage *)getFBProfilePic;
 
 @end

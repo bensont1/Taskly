@@ -34,17 +34,23 @@
 
 
 -(void)getFBProfilePic {
-    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:@"facebookId"]]];
-    NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
-    NSLog(@"FACEBOOK ID: %@",[[PFUser currentUser] objectForKey:@"facebookId"]);
-    [NSURLConnection sendAsynchronousRequest:profilePictureURLRequest
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response,
-                                               NSData *data,
-                                               NSError *connectionError) {
-                               UIImage *profile = [UIImage imageWithData:data];
-                               [self.profImage setImage:[Utilities getRoundedRectImageFromImage:profile onReferenceView:self.profImage withCornerRadius:self.profImage.frame.size.width/2]];
-                           }];
+    if([[PFUser currentUser] objectForKey:@"facebookId"] != nil) {
+        NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:@"facebookId"]]];
+        NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
+        [NSURLConnection sendAsynchronousRequest:profilePictureURLRequest
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response,
+                                                   NSData *data,
+                                                   NSError *connectionError) {
+                                   UIImage *profile = [UIImage imageWithData:data];
+                                    [self.profImage setImage:[Utilities getRoundedRectImageFromImage:profile onReferenceView:self.profImage withCornerRadius:self.profImage.frame.size.width/2]];
+                               }];
+    }
+    else {
+        UIImage *profile = [UIImage imageNamed:@"placeholder_image.png"];
+        [self.profImage setImage:[Utilities getRoundedRectImageFromImage:profile onReferenceView:self.profImage withCornerRadius:self.profImage.frame.size.width/2]];
+    }
+
 }
 
 

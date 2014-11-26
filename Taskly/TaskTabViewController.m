@@ -191,7 +191,31 @@
     
     UIImage *picture = [UIImage imageNamed:@"placeholder_image.png"];
     
-    [cell.profImage setImage:[Utilities getRoundedRectImageFromImage:picture onReferenceView:cell.profImage withCornerRadius: cell.profImage.frame.size.width/2]];
+    NSString *facebookId = [[object objectForKey:@"owner"] objectForKey:@"facebookId"];
+
+    if(facebookId != nil) {
+       /*
+        NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:@"facebookId"]]];
+        NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
+        [NSURLConnection sendAsynchronousRequest:profilePictureURLRequest
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response,
+                                                   NSData *data,
+                                                   NSError *connectionError) {
+                                   UIImage *profile = [UIImage imageWithData:data];
+                                   [cell.profImage setImage:[Utilities getRoundedRectImageFromImage:profile onReferenceView:self.profImage withCornerRadius:self.profImage.frame.size.width/2]];
+                               }];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:profilePictureURLRequest delegate:self];
+        */
+        NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", facebookId]];
+        NSData * data = [NSData dataWithContentsOfURL:profilePictureURL];
+        picture = [UIImage imageWithData:data];
+    }
+    
+    NSLog(@"Getting picture");
+    [cell.profImage setImage:[Utilities getRoundedRectImageFromImage:picture onReferenceView:cell.profImage withCornerRadius:cell.profImage.frame.size.width/2]];
+
 
     //[cell.profImage setImage:picture];
     
@@ -207,6 +231,7 @@
 //only get tasks that are not filled and haven't expired
 -(PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query includeKey:@"owner"];
     if([PFUser currentUser]) {
         [query whereKey:@"completed" equalTo:[NSNumber numberWithBool:NO]];
         [query whereKey:@"owner" notEqualTo:[PFUser currentUser]];

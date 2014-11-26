@@ -117,7 +117,9 @@
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
+    [self.taskTitleField endEditing:YES];
+    [self.additionalDetailField endEditing:YES];
+    
 }
 
 -(void)resetFields {
