@@ -37,7 +37,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
     
 }
 
@@ -97,13 +97,10 @@
 }
 
 - (BOOL)userOwnsTask {
-    PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
-    [query includeKey:@"owner"];
-    [query whereKey:@"owner" equalTo:[PFUser currentUser]];
-    
-    PFObject *testIfQuerySuccess = [query getFirstObject];
-    
-    if(testIfQuerySuccess) {
+    PFUser *taskOwner = [self.task objectForKey:@"owner"];
+    NSString *taskOwnerID = [taskOwner objectId];
+    NSString *currentUserID = [[PFUser currentUser] objectId];
+    if([taskOwnerID isEqualToString:currentUserID]) {
         return YES;
     }
     else {
