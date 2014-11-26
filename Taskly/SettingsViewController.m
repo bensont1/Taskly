@@ -28,8 +28,10 @@
 }
 
 - (IBAction)logoutPressed:(id)sender {
-    
-    [PFUser logOut];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [PFUser logOut];    
+    [self.parentViewController.tabBarController setSelectedIndex:0];
+
 }
 
 
