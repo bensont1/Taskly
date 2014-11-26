@@ -453,6 +453,15 @@
                                     <action selector="logoutPressed:" destination="1O3-19-dOe" eventType="touchUpInside" id="UXc-6J-nPr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-4w-86x">
+                                <rect key="frame" x="279" y="139" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQ1-BB-q8k">
+                                <rect key="frame" x="180" y="244" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -461,6 +470,8 @@
                     </view>
                     <connections>
                         <outlet property="logoutButton" destination="3Rf-zz-FoJ" id="pMy-Uq-kVv"/>
+                        <outlet property="nameLabel" destination="Rqb-4w-86x" id="3Ej-nU-1rQ"/>
+                        <outlet property="profImage" destination="tQ1-BB-q8k" id="b4m-3P-fkx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fkj-4Z-0mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -998,6 +1009,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u22-Tt-A1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1282" y="304"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="b2g-rB-Vis">
+            <objects>
+                <viewController id="Bxv-eA-QEy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fpS-yd-ZhL"/>
+                        <viewControllerLayoutGuide type="bottom" id="qmo-ZI-dFo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CZg-Zr-zSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HAo-2L-KnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

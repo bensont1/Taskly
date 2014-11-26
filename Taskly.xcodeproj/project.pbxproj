@@ -61,6 +61,7 @@
 		822744D019F835A600BA373D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822744CD19F835A600BA373D /* Parse.framework */; };
 		822744D119F835A600BA373D /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822744CE19F835A600BA373D /* ParseFacebookUtils.framework */; };
 		8244F22A1A0A137500AF9224 /* AccountTaskOwnDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8244F2291A0A137500AF9224 /* AccountTaskOwnDetailViewController.m */; };
+		82928D0E1A2651960092D88E /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82928D0D1A2651960092D88E /* Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,8 @@
 		822744CE19F835A600BA373D /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		8244F2281A0A137500AF9224 /* AccountTaskOwnDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTaskOwnDetailViewController.h; sourceTree = "<group>"; };
 		8244F2291A0A137500AF9224 /* AccountTaskOwnDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTaskOwnDetailViewController.m; sourceTree = "<group>"; };
+		82928D0C1A2651960092D88E /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		82928D0D1A2651960092D88E /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,8 @@
 				390A288419EBAB48009976F7 /* AppDelegate.m */,
 				390A28B019EBC27B009976F7 /* TaskManager.h */,
 				390A28B119EBC27B009976F7 /* TaskManager.m */,
+				82928D0C1A2651960092D88E /* Utilities.h */,
+				82928D0D1A2651960092D88E /* Utilities.m */,
 				39B3138C1A02EB9B00E62850 /* Objects */,
 				390A28AF19EBC0E5009976F7 /* ViewControllers */,
 				390A288C19EBAB48009976F7 /* Main.storyboard */,
@@ -538,6 +543,7 @@
 				390901451A08413B009D6447 /* AccountOfferDetailViewController.m in Sources */,
 				390A28AE19EBC0DF009976F7 /* TaskTabViewController.m in Sources */,
 				3949FB131A070A7B00DD9F2C /* AccountViewController.m in Sources */,
+				82928D0E1A2651960092D88E /* Utilities.m in Sources */,
 				3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

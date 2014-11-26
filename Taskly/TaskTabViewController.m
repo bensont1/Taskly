@@ -71,7 +71,7 @@
         // Create the log in view controller
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"user_about_me", nil]];
+        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"public_profile", @"email", nil]];
         [logInViewController setFields: PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton |
          PFLogInFieldsFacebook | PFLogInFieldsSignUpButton];
         
@@ -114,7 +114,8 @@
                                           NSError *error) {
         if (!error) {
             NSString *facebookName = [result objectForKey:@"name"];
-            NSLog(@"Facebook Name: %@", facebookName);
+            NSString *facebookId = [result objectForKey:@"id"];
+            [[PFUser currentUser] setObject:facebookId forKey:@"facebookId"];
             [[PFUser currentUser] setObject:facebookName forKey:@"fullName"];
             [[PFUser currentUser] saveEventually];
         }
@@ -194,19 +195,6 @@
     //[cell.profImage setImage:picture];
     
     return cell;
-}
-
-// function from http://stackoverflow.com/questions/7399343/making-a-uiimage-to-a-circle-form
-- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
-{
-    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
-    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
-                                cornerRadius:cornerRadius] addClip];
-    [image drawInRect:imageView.bounds];
-    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return finalImage;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
