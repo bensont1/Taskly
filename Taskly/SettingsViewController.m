@@ -27,9 +27,18 @@
 
 }
 
-- (IBAction)logoutPressed:(id)sender {
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     
-    [PFUser logOut];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
+- (IBAction)logoutPressed:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [PFUser logOut];    
+    [self.parentViewController.tabBarController setSelectedIndex:0];
+
 }
 
 
