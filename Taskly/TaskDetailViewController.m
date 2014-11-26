@@ -100,21 +100,42 @@
     
     /*if([[self.task objectForKey:@"owner"] objectForKey:@"username"] == [[PFUser currentUser] objectForKey:@"username"]) {
         [self showYourTaskAlert];
+    }*/
+    
+    if([self userOwnsTask]) {
+        [self showUserOwnsTaskAlert];
     }
-    else {*/
+    else {
         [self performSegueWithIdentifier:@"toRespondPage" sender:self];
-    //}
+    }
+}
+
+- (BOOL)userOwnsTask {
+    PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
+    [query includeKey:@"owner"];
+    [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+    
+    PFObject *testIfQuerySuccess = [query getFirstObject];
+    
+    if(testIfQuerySuccess) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
 }
 
 
 #pragma mark - Alerts
 
--(void)showYourTaskAlert {
-    [[[UIAlertView alloc] initWithTitle:@"This is Your task!"
-                                message:@"Please fill out the contact information section. If your offer is accepted, the owner needs a way to get in touch with you!"
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+-(void)showUserOwnsTaskAlert {
+    UIAlertView *contactInfoErrorAlert = [[UIAlertView alloc] initWithTitle:@"This is your task!"
+                                                                    message:@"You can't fill your own task, give someone else a chance!"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+    [contactInfoErrorAlert setTag:0];
+    [contactInfoErrorAlert show];
 }
 
 @end
