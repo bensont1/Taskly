@@ -37,11 +37,20 @@
     [Parse setApplicationId:@"9JS0rzJTC9cCKVLZx2atJmLrZcwuVhCOa8kLq5Q0"
                   clientKey:@"2tuVaLZ9AT7pVFXHRFqO5JzKSoic9UbuT4NGpZWj"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+    // Register for Push Notifications
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
     
     // Initialize FacebookUtils
     [PFFacebookUtils initializeFacebook];
     
-    //set UI options//button color changes something in here
+    // Set global UI options
     self.window.tintColor = [UIColor colorWithRed:255.0f/255.0f
                                             green:255.0f/255.0f
                                              blue:255.0f/255.0f
@@ -61,9 +70,26 @@
                              alpha:1.0],
     UITextAttributeTextColor, nil]];
 
-    //color: 57,129,125
     return YES;
 }
+
+
+#pragma mark - Push Notification Methods
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[ @"global" ];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
+
+
+#pragma mark - Facebook Methods
 
 // Facebook Setup Method
 - (BOOL)application:(UIApplication *)application
@@ -73,6 +99,9 @@
     // attempt to extract a token from the url
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
 }
+
+
+#pragma mark - Login/Logout Methods
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
