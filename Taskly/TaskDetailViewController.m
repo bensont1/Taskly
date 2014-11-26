@@ -34,6 +34,13 @@
     [self setFields];
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
 - (void)setFields {
     [self getTimeToExpiration];
     self.taskTitle.text = [self.task objectForKey:@"title"];

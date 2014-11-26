@@ -27,6 +27,13 @@
 
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
 - (IBAction)logoutPressed:(id)sender {
     
     [PFUser logOut];
