@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Taskly": {
+            "applicationId": "9JS0rzJTC9cCKVLZx2atJmLrZcwuVhCOa8kLq5Q0", 
+            "masterKey": "MlAh6gT4KuSdCgqYT8Tvi4z1AgXYXzKCzfv0wkRi"
+        }, 
+        "_default": {
+            "link": "Taskly"
+        }
+    }
+}
