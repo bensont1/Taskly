@@ -196,6 +196,7 @@
     return cell;
 }
 
+// function from http://stackoverflow.com/questions/7399343/making-a-uiimage-to-a-circle-form
 - (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
 {
     UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
