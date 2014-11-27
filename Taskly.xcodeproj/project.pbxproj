@@ -44,6 +44,7 @@
 		3951494E19F5F8E30063C4CF /* NewTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */; };
 		3951495119F5FA130063C4CF /* stepper_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951494F19F5FA130063C4CF /* stepper_up.png */; };
 		3951495219F5FA130063C4CF /* stepper_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3951495019F5FA130063C4CF /* stepper_down.png */; };
+		397ECD2E1A26A6300013A104 /* taskly_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 397ECD2D1A26A6300013A104 /* taskly_logo.png */; };
 		39B3138B1A02EB4600E62850 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B3138A1A02EB4600E62850 /* Offer.m */; };
 		39B98F6219FEC1AC00CBC247 /* RespondToTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B98F6119FEC1AC00CBC247 /* RespondToTaskViewController.m */; };
 		39CDCA7F19F63A2E00108DCB /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDCA7E19F63A2E00108DCB /* TaskDetailViewController.m */; };
@@ -125,6 +126,7 @@
 		3951494D19F5F8E30063C4CF /* NewTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskDetailViewController.m; sourceTree = "<group>"; };
 		3951494F19F5FA130063C4CF /* stepper_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_up.png; sourceTree = "<group>"; };
 		3951495019F5FA130063C4CF /* stepper_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stepper_down.png; sourceTree = "<group>"; };
+		397ECD2D1A26A6300013A104 /* taskly_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taskly_logo.png; sourceTree = "<group>"; };
 		39B313891A02EB4600E62850 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		39B3138A1A02EB4600E62850 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		39B98F6019FEC1AC00CBC247 /* RespondToTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondToTaskViewController.h; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		390A287F19EBAB48009976F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				397ECD2D1A26A6300013A104 /* taskly_logo.png */,
 				39D656571A1D45C7007287A2 /* placeholder_image.png */,
 				3933651E1A0ADAC6004C4AE2 /* pin_icon.png */,
 				3951494F19F5FA130063C4CF /* stepper_up.png */,
@@ -507,6 +510,7 @@
 				391C77B51A0AB0CA00E96335 /* task_tab_icon.png in Resources */,
 				390A28C019EBC970009976F7 /* hamburger_icon.png in Resources */,
 				3933651F1A0ADAC6004C4AE2 /* pin_icon.png in Resources */,
+				397ECD2E1A26A6300013A104 /* taskly_logo.png in Resources */,
 				8227442B19F8291C00BA373D /* LICENSE in Resources */,
 				39D656581A1D45C7007287A2 /* placeholder_image.png in Resources */,
 				8227441419F8291C00BA373D /* README_FB_Audience.txt in Resources */,
