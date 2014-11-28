@@ -51,11 +51,10 @@
                 ownedTasks = [NSMutableArray arrayWithArray:objects];
                 
                 NSMutableArray *newIndexPaths = [NSMutableArray new];
-                for(int i=0; i<ownedTasks.count; i++) {
+                for(int i=previousTaskCount; i<ownedTasks.count; i++) {
                     [newIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
                 }
-                [self.ownedTaskTable reloadData];
-                //[self.ownedTaskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.ownedTaskTable insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
             }
             else {
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
