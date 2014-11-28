@@ -38,19 +38,11 @@
                                    target:self
                                    action:@selector(addTask:)];
     self.navigationItem.rightBarButtonItem = doneButton;
-    
-    /*UIBarButtonItem *currentLocationButton = [[UIBarButtonItem alloc]
-                                              initWithImage:[UIImage imageNamed:@"pin_icon.png"]
-                                              style:UIBarButtonItemStylePlain
-                                              target:self
-                                              action:@selector(zoomToCurrentLocation)];
-    self.navigationItem.leftBarButtonItem = currentLocationButton;*/
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -58,6 +50,9 @@
     CLLocation *myLocation = [locations lastObject];
     currentUserLocation = myLocation;
 }
+
+
+#pragma mark - SearchBar Delegation
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     //@optional
@@ -67,7 +62,6 @@
     //@optional
 }
 
-#warning TODO: Very messy, could use refactoring
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -79,7 +73,6 @@
         location = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
         
         MKPlacemark *MKplacemark = [[MKPlacemark alloc] initWithPlacemark:placemark];
-        
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 5000, 5000);
 
         // remove all annotations
@@ -89,20 +82,17 @@
         
         [self.mapView addAnnotation:MKplacemark];
         [self.mapView setRegion:region animated:YES];
-        
-        //NSLog([self printLocationFromPlacemark:location]);
     }];
 }
 
--(NSString*)printLocationFromPlacemark:(CLPlacemark*)placemark {
-    NSString *locationString = [NSString stringWithFormat:@"%@ %@\n%@ %@ %@\n%@",
-                   placemark.subThoroughfare, //street address #
-                   placemark.thoroughfare, //street
-                   placemark.locality, //city
-                   placemark.administrativeArea, //state
-                   placemark.postalCode, //zip code
-                   placemark.country]; //country
-    return locationString;
+- (IBAction)zoomToCurrentLocation:(id)sender {
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(currentUserLocation.coordinate.latitude, currentUserLocation.coordinate.longitude);
+    MKPlacemark *marker = [[MKPlacemark alloc] initWithCoordinate:coord addressDictionary:nil];
+    
+    [self.mapView setRegion:MKCoordinateRegionMake(coord,MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
+    [self.mapView addAnnotation:marker];
+    
+    location = [PFGeoPoint geoPointWithLatitude:coord.latitude longitude:coord.longitude];
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -110,33 +100,10 @@
 }
 
 -(void)addTask:(UIButton *)sender {
-    //if(![self verifyAddress]) {
-        //[self showInvalidLocationAlert];
-    //}
-    //else {
-        self.task.location = location;
-        [TaskManager addTask:self.task];
-        [self showTaskAddedAlert];
-        //[self performSegueWithIdentifier:@"backToAddTaskMainView" sender:self];
-    //}
+    self.task.location = location;
+    [TaskManager addTask:self.task];
+    [self showTaskAddedAlert];
 }
-
-//-(BOOL)verifyAddress {
-//    //must have city and state
-//    MKPlacemark *place = [[MKPlacemark alloc] initWithCoordinate:];
-//    if(location.locality == nil || location.administrativeArea == nil) {
-//        return NO;
-//    }
-//    
-//    //may not have street number without street name
-//    if(location.subThoroughfare != nil) {
-//        if(location.thoroughfare == nil) {
-//            return NO;
-//        }
-//    }
-//    
-//    return YES;
-//}
 
 -(void)resetFields {
     // reset map
@@ -148,9 +115,12 @@
     [ annotationsToRemove removeObject:self.mapView.userLocation ] ;
     [ self.mapView removeAnnotations:annotationsToRemove ] ;
     
-    // reset search bar
+    // reset search bar text
     self.searchBar.text = @"";
 }
+
+
+#pragma mark - Alerts
 
 -(void)showTaskAddedAlert {
     UIAlertView *taskAddedSuccessAlert = [[UIAlertView alloc] initWithTitle:@"Task Added!"
@@ -178,15 +148,5 @@
             [self.tabBarController setSelectedIndex:0];
         }
     }
-}
-
-- (IBAction)zoomToCurrentLocation:(id)sender {
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(currentUserLocation.coordinate.latitude, currentUserLocation.coordinate.longitude);
-    MKPlacemark *marker = [[MKPlacemark alloc] initWithCoordinate:coord addressDictionary:nil];
-    
-    [self.mapView setRegion:MKCoordinateRegionMake(coord,MKCoordinateSpanMake(0.01, 0.01)) animated:YES];
-    [self.mapView addAnnotation:marker];
-    
-    location = [PFGeoPoint geoPointWithLatitude:coord.latitude longitude:coord.longitude];
 }
 @end
