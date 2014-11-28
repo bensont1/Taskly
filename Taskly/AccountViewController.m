@@ -114,19 +114,7 @@
         return 0;
     }
 }
-/*
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if(tableView == self.ownedTaskTable) {
-        return @"Tasks You Own";
-    }
-    else if(tableView == self.fillingTaskTable) {
-        return @"Tasks You've Offered To Fill";
-    }
-    else {
-        return @"Invalid Section";
-    }
-}
-*/
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(tableView == self.ownedTaskTable) {
