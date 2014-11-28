@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 ASU. All rights reserved.
 //
 
-// Below are listed in our REQUIREMENTS doc, for grading purposes
-
 // Below are nice features to add
 #warning TODO: implement more Facebook stuff, get profile picture, email, phone number to use somewhere
 #warning TODO: fill out email field when responding to task automaticlaly with email stored on Parse
