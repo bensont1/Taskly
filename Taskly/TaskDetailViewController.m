@@ -67,7 +67,6 @@
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600) % 24;
-    NSInteger days = (ti / 86400);
     
     //Update the label with the remaining time
     self.expirationlabel.text = [NSString stringWithFormat:@"%02li hrs %02li min %02li sec", (long)hours, (long)minutes, (long)seconds];
