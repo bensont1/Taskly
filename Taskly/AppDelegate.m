@@ -11,14 +11,11 @@
 // Below are nice features to add
 #warning TODO: implement more Facebook stuff, get profile picture, email, phone number to use somewhere
 #warning TODO: fill out email field when responding to task automaticlaly with email stored on Parse
-#warning TODO: create custom row view, to display facebook profile image, task title and details, and price, time
-#warning TODO: create real time countdown timer on task
 #warning TODO: allow users to search by task given location
 #warning TODO: create negotiation process, ask task originator for said price
 #warning TODO: use previous completed task history to give user tasks from the same person
 #warning TODO: create a rating mechanism for trusted task do-ers, increase as more tasks are marked complete and task originator has marked success/good job done
-
-#warning TODO: Allow useres to use Phone Number to login, instead of Facebook
+#warning TODO: Allow users to use Phone Number to login, instead of Facebook
 #warning TODO: Allow Points of Interest search on maps, currently only citys are searched, example: Safeway, Frys
 #warning TODO: Push notifications to users/filler when job has been accepted/completed
 
