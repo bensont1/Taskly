@@ -27,7 +27,7 @@
     // we could use this later on if we want to send different messages to accepted/rejected offers
     //[pushQuery whereKey:@"user" notEqualTo:[task objectForKey:@"filler"];
      
-    [PFPush sendPushMessageToQueryInBackground:pushQuery withMessage:@"Once of the tasks you've made an offer on has been updated. Please check your Account page to see the updates."];
+    [PFPush sendPushMessageToQueryInBackground:pushQuery withMessage:@"One of the tasks you've made an offer on has been updated. Please check your Account page to see the updates."];
 }
 
 @end
