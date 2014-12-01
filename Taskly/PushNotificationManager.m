@@ -23,7 +23,8 @@
     PFPush *push = [[PFPush alloc] init];
     
     NSString *taskID = [task objectId];
-    [push setChannel:taskID];
+    NSString *channelID = [@"a" stringByAppendingString:taskID];
+    [push setChannel:channelID];
     [push setMessage:@"You have a new offer! Please check your Account page to view it."];
     [push sendPushInBackground];
 }

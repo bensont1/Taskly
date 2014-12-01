@@ -25,9 +25,11 @@
     [newTask saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(!error) {
             NSString *taskID = [newTask objectId];
+            NSString *channelID = [@"a" stringByAppendingString:taskID];
             PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-            [currentInstallation addUniqueObject:taskID forKey:@"channels"];
+            [currentInstallation addUniqueObject:channelID forKey:@"channels"];
             [currentInstallation saveInBackground];
+            NSLog(@"added the task son");
         }
         else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
