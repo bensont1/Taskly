@@ -90,6 +90,9 @@
     if([self userOwnsTask]) {
         [self showUserOwnsTaskAlert];
     }
+    else if([self checkAlreadyRespond]) {
+        [self showAlreadyRespondedAlert];
+    }
     else {
         [self performSegueWithIdentifier:@"toRespondPage" sender:self];
     }
@@ -100,6 +103,21 @@
     NSString *taskOwnerID = [taskOwner objectId];
     NSString *currentUserID = [[PFUser currentUser] objectId];
     if([taskOwnerID isEqualToString:currentUserID]) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
+-(BOOL)checkAlreadyRespond {
+    PFRelation *relation = [self.task relationForKey:@"offered"];
+    PFQuery *query = [relation query];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    
+    PFObject *testIfQuerySuccess = [query getFirstObject];
+    
+    if(testIfQuerySuccess) {
         return YES;
     }
     else {
@@ -126,6 +144,16 @@
                                                           otherButtonTitles:nil];
     [contactInfoErrorAlert setTag:0];
     [contactInfoErrorAlert show];
+}
+
+-(void)showAlreadyRespondedAlert {
+    UIAlertView *alreadyRespondAlert = [[UIAlertView alloc] initWithTitle:@"Already Responded"
+                                                                  message:@"You have already responded to this Task. Check the Account Page to see if the Task Owner has accepted your offer."
+                                                                 delegate:self
+                                                        cancelButtonTitle:nil
+                                                        otherButtonTitles:@"OK", nil];
+    [alreadyRespondAlert setTag:2];
+    [alreadyRespondAlert show];
 }
 
 @end

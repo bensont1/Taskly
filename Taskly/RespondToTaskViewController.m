@@ -77,34 +77,15 @@
     }
     else {
         [self setFields];
-        if([self checkAlreadyRespond]) {
-            [self showAlreadyRespondedAlert];
-        }
-        else {
-            [TaskManager respondToTask:self.task withOffer:self.offer];
-            [self showSuccessfulResponseAlert];
-            [PushNotificationManager sendOfferNotification:self.task];
-        }
+
+        [TaskManager respondToTask:self.task withOffer:self.offer];
+        [self showSuccessfulResponseAlert];
+        [PushNotificationManager sendOfferNotification:self.task];
     }
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
-}
-
--(BOOL)checkAlreadyRespond {
-    PFRelation *relation = [self.task relationForKey:@"offered"];
-    PFQuery *query = [relation query];
-    [query whereKey:@"user" equalTo:[PFUser currentUser]];
-    
-    PFObject *testIfQuerySuccess = [query getFirstObject];
-    
-    if(testIfQuerySuccess) {
-        return YES;
-    }
-    else {
-        return NO;
-    }
 }
 
 #pragma mark - Alerts
@@ -127,16 +108,6 @@
                       otherButtonTitles:@"OK", nil];
     [responseSuccessAlert setTag:1];
     [responseSuccessAlert show];
-}
-
--(void)showAlreadyRespondedAlert {
-    UIAlertView *alreadyRespondAlert = [[UIAlertView alloc] initWithTitle:@"Already Responded"
-                                message:@"You have already responded to this Task. Check the Account Page to see if the Task Owner has accepted your offer."
-                               delegate:self
-                      cancelButtonTitle:nil
-                      otherButtonTitles:@"OK", nil];
-    [alreadyRespondAlert setTag:2];
-    [alreadyRespondAlert show];
 }
 
 #pragma mark - TextView Delegation
