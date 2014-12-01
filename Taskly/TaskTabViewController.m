@@ -121,7 +121,10 @@
             [[PFUser currentUser] saveEventually];
         }
     }];
+    [self loadObjects];
+    sleep(1);
     [self dismissViewControllerAnimated:YES completion:NULL];
+
 }
 
 // Sent to the delegate when the log in attempt fails.
