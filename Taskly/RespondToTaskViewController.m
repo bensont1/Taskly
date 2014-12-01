@@ -8,6 +8,8 @@
 
 #import "RespondToTaskViewController.h"
 #import "TaskManager.h"
+#import "PushNotificationManager.h"
+
 #define PLACEHOLDER_TEXT @"You can add a personal message here if you'd like."
 
 @interface RespondToTaskViewController ()
@@ -81,6 +83,7 @@
         else {
             [TaskManager respondToTask:self.task withOffer:self.offer];
             [self showSuccessfulResponseAlert];
+            [PushNotificationManager sendOfferNotification:self.task];
         }
     }
 }
