@@ -332,11 +332,18 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="Im9-fs-YGh"/>
                                     <constraint firstAttribute="height" constant="206" id="hY6-0t-GfZ"/>
+                                    <constraint firstAttribute="height" constant="206" id="w8o-yU-E5k"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="hY6-0t-GfZ"/>
+                                    </mask>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -353,21 +360,31 @@
                             <constraint firstItem="aov-om-nHj" firstAttribute="top" secondItem="2bM-VZ-Cg4" secondAttribute="bottom" id="XIG-Kr-W6I"/>
                             <constraint firstItem="Vzs-1d-ezA" firstAttribute="top" secondItem="Qet-Xr-44o" secondAttribute="bottom" id="XbL-i7-Q5p"/>
                             <constraint firstItem="Qet-Xr-44o" firstAttribute="width" secondItem="9t1-5S-093" secondAttribute="width" id="You-OA-fUs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vzs-1d-ezA" secondAttribute="trailing" constant="-16" id="aak-XL-zQN"/>
                             <constraint firstItem="2bM-VZ-Cg4" firstAttribute="top" secondItem="h9Y-KP-2UW" secondAttribute="bottom" id="dVO-Hv-AY6"/>
                             <constraint firstAttribute="centerX" secondItem="2bM-VZ-Cg4" secondAttribute="centerX" id="ed8-xs-0lS"/>
+                            <constraint firstItem="Vzs-1d-ezA" firstAttribute="leading" secondItem="9t1-5S-093" secondAttribute="leadingMargin" constant="-16" id="g52-oh-QhX"/>
                             <constraint firstItem="HRQ-BC-u9m" firstAttribute="top" secondItem="Vzs-1d-ezA" secondAttribute="bottom" constant="104" id="gPu-cm-LaI"/>
                             <constraint firstItem="Qet-Xr-44o" firstAttribute="leading" secondItem="Vzs-1d-ezA" secondAttribute="leading" id="h4M-Eb-0M5"/>
                             <constraint firstItem="Qet-Xr-44o" firstAttribute="top" secondItem="aov-om-nHj" secondAttribute="bottom" id="kmS-Uw-W3A"/>
+                            <constraint firstItem="Vzs-1d-ezA" firstAttribute="top" secondItem="Qet-Xr-44o" secondAttribute="bottom" id="lPN-qh-b24"/>
                             <constraint firstItem="Vzs-1d-ezA" firstAttribute="top" secondItem="Qet-Xr-44o" secondAttribute="bottom" id="nqc-2C-dyK"/>
                             <constraint firstAttribute="centerX" secondItem="Vzs-1d-ezA" secondAttribute="centerX" id="umr-Gg-4V3"/>
+                            <constraint firstItem="HRQ-BC-u9m" firstAttribute="top" secondItem="Vzs-1d-ezA" secondAttribute="bottom" constant="104" id="ykf-FE-ezY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="OiB-Qu-yfj"/>
                                 <exclude reference="1sn-pS-tmN"/>
                                 <exclude reference="You-OA-fUs"/>
+                                <exclude reference="h4M-Eb-0M5"/>
                                 <exclude reference="2Yl-V0-jPB"/>
                                 <exclude reference="D2w-nQ-D1g"/>
+                                <exclude reference="FzQ-it-gom"/>
+                                <exclude reference="XbL-i7-Q5p"/>
+                                <exclude reference="nqc-2C-dyK"/>
+                                <exclude reference="umr-Gg-4V3"/>
+                                <exclude reference="gPu-cm-LaI"/>
                             </mask>
                         </variation>
                     </view>
