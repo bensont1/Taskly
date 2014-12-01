@@ -148,7 +148,7 @@
 
 -(void)showAlreadyRespondedAlert {
     UIAlertView *alreadyRespondAlert = [[UIAlertView alloc] initWithTitle:@"Already Responded"
-                                                                  message:@"You have already responded to this Task. Check the Account Page to see if the Task Owner has accepted your offer."
+                                                                  message:@"You have already responded to this task. Check the Account Page to see if the task owner has accepted your offer."
                                                                  delegate:self
                                                         cancelButtonTitle:nil
                                                         otherButtonTitles:@"OK", nil];

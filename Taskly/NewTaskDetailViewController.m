@@ -100,9 +100,16 @@
 }
 
 -(void)addTask:(UIButton *)sender {
-    self.task.location = location;
-    [TaskManager addTask:self.task];
-    [self showTaskAddedAlert];
+    if(location != nil) {
+        self.task.location = location;
+        [TaskManager addTask:self.task];
+        [self showTaskAddedAlert];
+    }
+    
+    else {
+        [self showNoLocationAlert];
+    }
+    
 }
 
 -(void)resetFields {
@@ -132,9 +139,9 @@
     [taskAddedSuccessAlert show];
 }
 
--(void)showInvalidLocationAlert {
-    [[[UIAlertView alloc] initWithTitle:@"Invalid Location"
-                                message:@"Please make sure you've entered a valid address. The minimum required information is city and state."
+-(void)showNoLocationAlert {
+    [[[UIAlertView alloc] initWithTitle:@"No Location Selected"
+                                message:@"Please make sure you've chosen a location so people will know to respond!"
                                delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
