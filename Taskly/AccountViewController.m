@@ -44,6 +44,7 @@
     
     if([PFUser currentUser] != nil) {
         PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
+        [query orderByDescending:@"createdAt"];
         [query whereKey:@"owner" equalTo:[PFUser currentUser]];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -68,6 +69,7 @@
     
     if([PFUser currentUser] != nil) {
         PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
+        [query orderByDescending:@"createdAt"];
         [query whereKey:@"user" equalTo:[PFUser currentUser]];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
