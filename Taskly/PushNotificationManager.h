@@ -12,7 +12,7 @@
 
 @interface PushNotificationManager : NSObject
 
-+(void)sendOfferNotification:(PFObject *) offer;
-+(void)sendResponseNotification:(PFObject *) task;
++(void)sendOfferNotification:(PFObject *) task;
++(void)sendResponseNotification:(PFObject *) offer;
 
 @end

@@ -30,14 +30,21 @@
 }
 
 // when a task is saved, send push notifications to people who offered on it
-+(void)sendResponseNotification:(PFObject *) task {
-    PFQuery *pushQuery = [PFQuery queryWithClassName:@"Offers"];
++(void)sendResponseNotification:(PFObject *) offer {
+    /*PFQuery *pushQuery = [PFQuery queryWithClassName:@"Offers"];
     [pushQuery whereKey:@"forTask" equalTo:task];
     
     // we could use this later on if we want to send different messages to accepted/rejected offers
     //[pushQuery whereKey:@"user" notEqualTo:[task objectForKey:@"filler"];
      
-    [PFPush sendPushMessageToQueryInBackground:pushQuery withMessage:@"One of the tasks you've made an offer on has been updated. Please check your Account page to see the updates."];
+    [PFPush sendPushMessageToQueryInBackground:pushQuery withMessage:@"One of the tasks you've made an offer on has been updated. Please check your Account page to see the updates."];*/
+    
+    PFPush *push = [[PFPush alloc] init];
+    NSString *offerID = [offer objectId];
+    NSString *channelID = [@"a" stringByAppendingString:offerID];
+    [push setChannel:channelID];
+    [push setMessage:@"One of the tasks you've made an offer on has been updated. Please check your Account page to see the updates."];
+    [push sendPushInBackground];
 }
 
 @end

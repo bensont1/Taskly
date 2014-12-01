@@ -55,6 +55,12 @@
             PFRelation *offerRelation = [newOffer relationForKey:@"forTask"];
             [offerRelation addObject:task];
             [newOffer saveInBackground];
+            
+            NSString *offerID = [newOffer objectId];
+            NSString *channelID = [@"a" stringByAppendingString:offerID];
+            PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+            [currentInstallation addUniqueObject:channelID forKey:@"channels"];
+            [currentInstallation saveInBackground];
         }
         else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);

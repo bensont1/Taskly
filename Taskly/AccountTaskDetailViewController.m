@@ -8,6 +8,7 @@
 
 #import "AccountTaskDetailViewController.h"
 #import "TaskManager.h"
+#import "PushNotificationManager.h"
 
 @interface AccountTaskDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *taskTitleLabel;
@@ -81,6 +82,7 @@
         PFUser *userOfOffer = [offer objectForKey:@"user"];
         
         [TaskManager acceptFiller:self.task withUser:userOfOffer];
+        [PushNotificationManager sendResponseNotification:offer];
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
