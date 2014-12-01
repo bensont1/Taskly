@@ -20,7 +20,19 @@
     [newTask setObject:task.location forKey:@"location"];
     [newTask setObject:task.expirationDate forKey:@"expirationDate"];
     [newTask setObject: [NSNumber numberWithBool:NO] forKey:@"completed"];
-    [newTask saveInBackground];
+    //[newTask saveInBackground];
+    
+    [newTask saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(!error) {
+            NSString *taskID = [newTask objectId];
+            PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+            [currentInstallation addUniqueObject:taskID forKey:@"channels"];
+            [currentInstallation saveInBackground];
+        }
+        else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 + (void)respondToTask:(PFObject *)task withOffer:(Offer *)offer {
