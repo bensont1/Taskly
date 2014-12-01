@@ -11,12 +11,14 @@
 @implementation PushNotificationManager
 
 // when an offer is saved, send notification to task owner, telling them they have a new offer
-+(void)sendOfferNotification:(PFObject *) offer {
-    PFQuery *pushQuery = [PFQuery queryWithClassName:@"Tasks"];
-    PFUser *taskOwner = [[offer objectForKey:@"forTask"] objectForKey:@"owner"];
-    [pushQuery whereKey:@"owner" equalTo:taskOwner];
++(void)sendOfferNotification:(PFObject *) task {
+    PFObject *taskOwner = [task objectForKey:@"owner"];
+    NSString *taskOwnerID = [taskOwner objectId];
     
-    [PFPush sendPushMessageToQueryInBackground:pushQuery withMessage:@"You have a new offer! Please check your Account page to view it."];
+    PFQuery *userQuery = [PFUser query];
+    [userQuery whereKey:@"objectId" equalTo:taskOwnerID];
+
+    [PFPush sendPushMessageToQueryInBackground:userQuery withMessage:@"You have a new offer! Please check your Account page to view it."];
 }
 
 // when a task is saved, send push notifications to people who offered on it

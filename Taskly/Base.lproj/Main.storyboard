@@ -222,7 +222,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How can you be contacted?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qet-Xr-44o">
                                 <rect key="frame" x="0.0" y="174" width="600" height="67"/>
-                                <color key="backgroundColor" white="0.73964707169999999" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="S24-pW-fcc"/>
                                 </constraints>
@@ -231,7 +231,7 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much would you like?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bM-VZ-Cg4">
                                 <rect key="frame" x="0.0" y="64" width="600" height="55"/>
-                                <color key="backgroundColor" white="0.89663856907894746" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="i1H-sj-kTo"/>
                                 </constraints>
