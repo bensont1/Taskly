@@ -25,6 +25,7 @@
 		391C77B71A0AB0EF00E96335 /* account_tab_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 391C77B61A0AB0EF00E96335 /* account_tab_icon.png */; };
 		391C77B91A0AB11100E96335 /* new_task_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 391C77B81A0AB11100E96335 /* new_task_icon.png */; };
 		3933651F1A0ADAC6004C4AE2 /* pin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3933651E1A0ADAC6004C4AE2 /* pin_icon.png */; };
+		393BDB6B1A2CFFA900A08C06 /* dismiss_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 393BDB6A1A2CFFA900A08C06 /* dismiss_icon.png */; };
 		3949FB131A070A7B00DD9F2C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3949FB121A070A7B00DD9F2C /* AccountViewController.m */; };
 		3951492419F5C2980063C4CF /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951492319F5C2980063C4CF /* Twitter.framework */; };
 		3951492619F5C2AF0063C4CF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3951492519F5C2AF0063C4CF /* ImageIO.framework */; };
@@ -105,6 +106,7 @@
 		391C77B61A0AB0EF00E96335 /* account_tab_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_tab_icon.png; sourceTree = "<group>"; };
 		391C77B81A0AB11100E96335 /* new_task_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_task_icon.png; sourceTree = "<group>"; };
 		3933651E1A0ADAC6004C4AE2 /* pin_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_icon.png; sourceTree = "<group>"; };
+		393BDB6A1A2CFFA900A08C06 /* dismiss_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dismiss_icon.png; sourceTree = "<group>"; };
 		3949FB111A070A7B00DD9F2C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		3949FB121A070A7B00DD9F2C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		3951492319F5C2980063C4CF /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				397ECD2D1A26A6300013A104 /* taskly_logo.png */,
+				393BDB6A1A2CFFA900A08C06 /* dismiss_icon.png */,
 				39D656571A1D45C7007287A2 /* placeholder_image.png */,
 				3933651E1A0ADAC6004C4AE2 /* pin_icon.png */,
 				3951494F19F5FA130063C4CF /* stepper_up.png */,
@@ -508,6 +511,7 @@
 				3951495119F5FA130063C4CF /* stepper_up.png in Resources */,
 				39D6561C1A1D3F2B007287A2 /* MainTaskPageCell.xib in Resources */,
 				3951495219F5FA130063C4CF /* stepper_down.png in Resources */,
+				393BDB6B1A2CFFA900A08C06 /* dismiss_icon.png in Resources */,
 				8227442C19F8291C00BA373D /* README.txt in Resources */,
 				390A288E19EBAB48009976F7 /* Main.storyboard in Resources */,
 				391C77B71A0AB0EF00E96335 /* account_tab_icon.png in Resources */,
